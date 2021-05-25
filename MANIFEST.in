@@ -1,0 +1,2 @@
+recursive-include electrolytes/data *.json
+recursive-include tests *.py

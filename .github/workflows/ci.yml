@@ -1,0 +1,42 @@
+# Based on starter-workflows/ci/python-package.yml
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.6', '3.7', '3.8', '3.9']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install package and dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install .[lint,test] codecov build
+    - name: Check types with mypy
+      run: |
+        mypy electrolytes tests
+    - name: Check MANIFEST.in file with check-manifest
+      run: |
+        check-manifest
+    - name: Test with pytest
+      run: |
+        pytest --cov=electrolytes
+    - name: Upload code coverage results to codecov
+      run: |
+        codecov
+    - name: Check package build
+      run: |
+        python -m build

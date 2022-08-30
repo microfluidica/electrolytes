@@ -1,0 +1,7708 @@
+{
+    "constituents": [
+        {
+            "id": 0,
+            "name": "2.3-DIBROMOPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.201
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 1,
+            "name": "2.3-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.738
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 2,
+            "name": "2.3-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.57
+            ]
+        },
+        {
+            "id": 3,
+            "name": "2.3-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.018
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 4,
+            "name": "2.4.6-TRIMETHYLANILINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.38
+            ]
+        },
+        {
+            "id": 5,
+            "name": "2.4.6-TRIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                24.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.437
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 6,
+            "name": "2.4.6-TRIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                31.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.688
+            ]
+        },
+        {
+            "id": 7,
+            "name": "2.4-DIHYDROXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.395
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 8,
+            "name": "2.4-DICHLOROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.699
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 9,
+            "name": "2.4-DICHLOROPHENOXYACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 10,
+            "name": "2.4-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.182
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 11,
+            "name": "2.4-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.99
+            ]
+        },
+        {
+            "id": 12,
+            "name": "2.4-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.11
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 13,
+            "name": "2.5-DIHYDROXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.975
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 14,
+            "name": "2.5-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.977
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 15,
+            "name": "2.5-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.43
+            ]
+        },
+        {
+            "id": 16,
+            "name": "2.5-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.216
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 17,
+            "name": "2.6-DIHYDROXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                37.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.301
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 18,
+            "name": "2.6-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.246
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 19,
+            "name": "2.6-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.75
+            ]
+        },
+        {
+            "id": 20,
+            "name": "2.6-DINITROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.14
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 21,
+            "name": "2.6-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.706
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 22,
+            "name": "2-AMINO-2-METHYL-1-PROPANOL",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                33.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.72
+            ]
+        },
+        {
+            "id": 23,
+            "name": "2-AMINOPIMELIC ACID",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                25.9
+            ],
+            "uPos": [
+                26.6
+            ],
+            "pKaNeg": [
+                4.64
+            ],
+            "pKaPos": [
+                2.15
+            ]
+        },
+        {
+            "id": 24,
+            "name": "2-BROMOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.987
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 25,
+            "name": "2-BROMOPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.975
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 26,
+            "name": "2-ETHYLBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.734
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 27,
+            "name": "2-HYDROXY-3-Cl-ISOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.208
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 28,
+            "name": "2-HYDROXY-3-Cl-PROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.124
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 29,
+            "name": "2-HYDROXY-3-CHLOROBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.092
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 30,
+            "name": "2-HYDROXYBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.979
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 31,
+            "name": "2-HYDROXYISOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.971
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 32,
+            "name": "2-HYDROXY-M-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 33,
+            "name": "2-HYDROXYVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.886
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 34,
+            "name": "2-CHLORO-3-OH-BUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.602
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 35,
+            "name": "2-CHLOROBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.839
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 36,
+            "name": "2-CHLOROCROTONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                35.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.155
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 37,
+            "name": "2-CHLOROISOCROTONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                35.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.81
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 38,
+            "name": "2-CHLOROPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.796
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 39,
+            "name": "2-KETOGLUTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                59,
+                33.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.006,
+                2.8
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 40,
+            "name": "2-METHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.2
+            ]
+        },
+        {
+            "id": 41,
+            "name": "2-NAPHTALENESULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.167
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 42,
+            "name": "2-NITRO-3-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.495
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 43,
+            "name": "2-NITRO-3-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.398
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 44,
+            "name": "2-PHENYLPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.237
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 45,
+            "name": "3.4-DIHYDROXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.509
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 46,
+            "name": "3.4-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.408
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 47,
+            "name": "3.4-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.47
+            ]
+        },
+        {
+            "id": 48,
+            "name": "3.4-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.424
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 49,
+            "name": "3.5-DIHYDROXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.051
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 50,
+            "name": "3.5-DIMETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.301
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 51,
+            "name": "3.5-DIMETHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.15
+            ]
+        },
+        {
+            "id": 52,
+            "name": "3.5-DINITROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.824
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 53,
+            "name": "3.5-DINITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.699
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 54,
+            "name": "3-ETHYLGLUTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                50,
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.329,
+                4.287
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 55,
+            "name": "3-HYDROXYBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.519
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 56,
+            "name": "3-HYDROXY-O-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.983
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 57,
+            "name": "3-HYDROXY-P-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.143
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 58,
+            "name": "3-CHLOROBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.056
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 59,
+            "name": "3-CHLOROCROTONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                35.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.848
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 60,
+            "name": "3-CHLOROPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.867
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 61,
+            "name": "3-IODOPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.056
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 62,
+            "name": "3-METHOXYPIRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.91
+            ]
+        },
+        {
+            "id": 63,
+            "name": "3-METHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                5.52
+            ]
+        },
+        {
+            "id": 64,
+            "name": "3-NITRO-2-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.979
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 65,
+            "name": "3-NITRO-4-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.377
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 66,
+            "name": "3-NITRO-4-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.357
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 67,
+            "name": "3-NITRO-5-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.13
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 68,
+            "name": "3-PHENYLPROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.664
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 69,
+            "name": "3-PROPYLGLUTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                47,
+                23.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.386,
+                4.312
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 70,
+            "name": "4-AMINOPHENYL ACETIC ACID",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                30.5
+            ],
+            "uPos": [
+                30.3
+            ],
+            "pKaNeg": [
+                5.13
+            ],
+            "pKaPos": [
+                3.36
+            ]
+        },
+        {
+            "id": 71,
+            "name": "4-AMINOPHENYL BUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [
+                27.7
+            ],
+            "pKaNeg": [
+                5.15
+            ],
+            "pKaPos": [
+                4.32
+            ]
+        },
+        {
+            "id": 72,
+            "name": "4-BROMOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.585
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 73,
+            "name": "4-HYDROXYBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.721
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 74,
+            "name": "4-HYDROXY-M-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.066
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 75,
+            "name": "4-HYDROXYVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.699
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 76,
+            "name": "4-IODOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.638
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 77,
+            "name": "4-METHOXYPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.47
+            ]
+        },
+        {
+            "id": 78,
+            "name": "4-METHYLPYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.08
+            ]
+        },
+        {
+            "id": 79,
+            "name": "4-PHENYLBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                24.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.757
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 80,
+            "name": "5-BROMO-2.4-DIHYDROXYBENZOIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                50.7,
+                27.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.6,
+                3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 81,
+            "name": "5-BROMOVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.721
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 82,
+            "name": "5-CHLOROVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.697
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 83,
+            "name": "5-IODOVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.77
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 84,
+            "name": "6-HYDROXY-O-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.321
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 85,
+            "name": "ACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.756
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 86,
+            "name": "ACRYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.258
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 87,
+            "name": "ADIPIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                52.4,
+                24.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.277,
+                4.43
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 88,
+            "name": "ADP",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                53.7,
+                36.7,
+                19.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.056,
+                4.101,
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 89,
+            "name": "ALANINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                32.2
+            ],
+            "uPos": [
+                35.9
+            ],
+            "pKaNeg": [
+                9.857
+            ],
+            "pKaPos": [
+                2.25
+            ]
+        },
+        {
+            "id": 90,
+            "name": "ALLYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.674
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 91,
+            "name": "ALLYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                44.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.69
+            ]
+        },
+        {
+            "id": 92,
+            "name": "ALUMINIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                21.1,
+                42.1,
+                63.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7,
+                6,
+                4.9
+            ]
+        },
+        {
+            "id": 93,
+            "name": "AMEDIOL",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                33.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.78
+            ]
+        },
+        {
+            "id": 94,
+            "name": "AMINOADIPIC ACID",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                55,
+                27.5
+            ],
+            "uPos": [
+                28.3
+            ],
+            "pKaNeg": [
+                9.7,
+                4.5
+            ],
+            "pKaPos": [
+                2.21
+            ]
+        },
+        {
+            "id": 95,
+            "name": "AMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                76.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.25
+            ]
+        },
+        {
+            "id": 96,
+            "name": "AMP",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                39.5,
+                22.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.791,
+                3.981
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 97,
+            "name": "AMYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.63
+            ]
+        },
+        {
+            "id": 98,
+            "name": "AMYLBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 99,
+            "name": "AMYLBUTYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 100,
+            "name": "AMYLDIETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 101,
+            "name": "AMYLDIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 102,
+            "name": "AMYLHEPTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                21.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 103,
+            "name": "AMYLHEXYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                22.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 104,
+            "name": "AMYLMETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 105,
+            "name": "AMYLOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7.96
+            ]
+        },
+        {
+            "id": 106,
+            "name": "AMYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 107,
+            "name": "AMYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                32.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 108,
+            "name": "ANILINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.596
+            ]
+        },
+        {
+            "id": 109,
+            "name": "ARGININE",
+            "negCount": 1,
+            "posCount": 2,
+            "uNeg": [
+                26.9
+            ],
+            "uPos": [
+                25.5,
+                61
+            ],
+            "pKaNeg": [
+                12.48
+            ],
+            "pKaPos": [
+                8.919,
+                1.58
+            ]
+        },
+        {
+            "id": 110,
+            "name": "ARSENIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                70,
+                35.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.94,
+                2.19
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 111,
+            "name": "ASCORBIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                51,
+                25.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                10.5,
+                4.25
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 112,
+            "name": "ASPARAGINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                31.6
+            ],
+            "uPos": [
+                32
+            ],
+            "pKaNeg": [
+                9.03
+            ],
+            "pKaPos": [
+                2.1
+            ]
+        },
+        {
+            "id": 113,
+            "name": "ASPARTIC ACID",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                55.3,
+                30.1
+            ],
+            "uPos": [
+                30.6
+            ],
+            "pKaNeg": [
+                10,
+                3.9
+            ],
+            "pKaPos": [
+                1.9
+            ]
+        },
+        {
+            "id": 114,
+            "name": "ASPIRIN",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.485
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 115,
+            "name": "AZELAIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                45.9,
+                22
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.333,
+                4.55
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 116,
+            "name": "B-ALANINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                30.8
+            ],
+            "uPos": [
+                38.5
+            ],
+            "pKaNeg": [
+                10.241
+            ],
+            "pKaPos": [
+                3.42
+            ]
+        },
+        {
+            "id": 117,
+            "name": "BARIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                33,
+                66
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.7,
+                13.2
+            ]
+        },
+        {
+            "id": 118,
+            "name": "BENZENESULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 119,
+            "name": "BENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.203
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 120,
+            "name": "BENZYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.33
+            ]
+        },
+        {
+            "id": 121,
+            "name": "BENZYLASPARATIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                25.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.855
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 122,
+            "name": "BENZYLDIETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.48
+            ]
+        },
+        {
+            "id": 123,
+            "name": "BERYLLIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                23.3,
+                46.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.2,
+                3.2
+            ]
+        },
+        {
+            "id": 124,
+            "name": "B-EUCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.5
+            ]
+        },
+        {
+            "id": 125,
+            "name": "BISTRIS",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.4
+            ]
+        },
+        {
+            "id": 126,
+            "name": "BROMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                57.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 127,
+            "name": "BROMOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                40.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.901
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 128,
+            "name": "BUPIVACAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                21.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.19
+            ]
+        },
+        {
+            "id": 129,
+            "name": "BUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                37.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.59
+            ]
+        },
+        {
+            "id": 130,
+            "name": "BUTYLDIETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 131,
+            "name": "BUTYLDIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 132,
+            "name": "BUTYLETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 133,
+            "name": "BUTYLETHYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 134,
+            "name": "BUTYLHEXYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 135,
+            "name": "BUTYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 136,
+            "name": "BUTYLTRIETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 137,
+            "name": "BUTYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 138,
+            "name": "BUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.82
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 139,
+            "name": "CACODYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.184
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 140,
+            "name": "CADMIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                28,
+                56
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.6,
+                7.6
+            ]
+        },
+        {
+            "id": 141,
+            "name": "CALCIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                30.9,
+                61.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.6,
+                12.6
+            ]
+        },
+        {
+            "id": 142,
+            "name": "CAPRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                22.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 143,
+            "name": "CAPROIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.857
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 144,
+            "name": "CAPRYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.894
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 145,
+            "name": "CARBONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                71.8,
+                46.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                10.329,
+                6.352
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 146,
+            "name": "CARBOXYMETHYL CYSTEINE",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                57,
+                28.8
+            ],
+            "uPos": [
+                26.7
+            ],
+            "pKaNeg": [
+                8.4,
+                3.42
+            ],
+            "pKaPos": [
+                1.89
+            ]
+        },
+        {
+            "id": 147,
+            "name": "CDP",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                57.3,
+                40,
+                19.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.349,
+                4.782,
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 148,
+            "name": "CERIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                24.1,
+                48.3,
+                72.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 149,
+            "name": "CESIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                80.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13
+            ]
+        },
+        {
+            "id": 150,
+            "name": "CINCHOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                19.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.47
+            ]
+        },
+        {
+            "id": 151,
+            "name": "CINNAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.438
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 152,
+            "name": "CIS-CINNAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.879
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 153,
+            "name": "CITRACONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.146,
+                2.458
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 154,
+            "name": "CITRIC ACID",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                74.4,
+                54.7,
+                28.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.396,
+                4.761,
+                3.128
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 155,
+            "name": "CMP",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                40.6,
+                23.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.705,
+                4.468
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 156,
+            "name": "COBALT",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                28.5,
+                57
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                12.2,
+                11.2
+            ]
+        },
+        {
+            "id": 157,
+            "name": "COCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.69
+            ]
+        },
+        {
+            "id": 158,
+            "name": "COPPER",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                32.3,
+                55.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.5,
+                7.3
+            ]
+        },
+        {
+            "id": 159,
+            "name": "CREATININE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                37.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.828
+            ]
+        },
+        {
+            "id": 160,
+            "name": "CRESOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                10.377
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 161,
+            "name": "CROTONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.705
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 162,
+            "name": "CYANIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                67
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.47
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 163,
+            "name": "CYANOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                45
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.469
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 164,
+            "name": "CYCLOBUTANE-1.1-DICARBOXYLIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                51.1,
+                25.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.879,
+                3.127
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 165,
+            "name": "CYCLOHEXANE-1.1-DICARBOXYLIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                48,
+                24
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.11,
+                3.451
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 166,
+            "name": "CYCLOHEXYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                32.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.66
+            ]
+        },
+        {
+            "id": 167,
+            "name": "CYCLOPENTANE-1.1-DICARBOXYLIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                50,
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.08,
+                3.23
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 168,
+            "name": "CYSTEINE",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                62.7,
+                31.7
+            ],
+            "uPos": [
+                33.8
+            ],
+            "pKaNeg": [
+                10.28,
+                8.6
+            ],
+            "pKaPos": [
+                1.87
+            ]
+        },
+        {
+            "id": 169,
+            "name": "CYSTINE",
+            "negCount": 2,
+            "posCount": 2,
+            "uNeg": [
+                53.9,
+                27
+            ],
+            "uPos": [
+                27,
+                53.9
+            ],
+            "pKaNeg": [
+                9.845,
+                8.405
+            ],
+            "pKaPos": [
+                2.26,
+                1.65
+            ]
+        },
+        {
+            "id": 170,
+            "name": "DBA",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                5,
+                10
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10,
+                9
+            ]
+        },
+        {
+            "id": 171,
+            "name": "DBAG",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                5,
+                10
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.5,
+                6.5
+            ]
+        },
+        {
+            "id": 172,
+            "name": "DECAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                25.5,
+                48.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.5
+            ]
+        },
+        {
+            "id": 173,
+            "name": "DECYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.64
+            ]
+        },
+        {
+            "id": 174,
+            "name": "DECYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 175,
+            "name": "DETA",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                25,
+                58.6,
+                70
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.28,
+                9.11,
+                4.36
+            ]
+        },
+        {
+            "id": 176,
+            "name": "DIAMYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                22.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 177,
+            "name": "DIAMYLETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 178,
+            "name": "DIBROMOFLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 179,
+            "name": "DIBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 180,
+            "name": "DIBUTYLETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 181,
+            "name": "DIBUTYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 182,
+            "name": "DIETHYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.734
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 183,
+            "name": "DIETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                36.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.93
+            ]
+        },
+        {
+            "id": 184,
+            "name": "DIETHYLDIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                38.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 185,
+            "name": "DIETHYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                49.5,
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.29,
+                2.211
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 186,
+            "name": "DIETHYLMETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                39
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.43
+            ]
+        },
+        {
+            "id": 187,
+            "name": "DIETHYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                32.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 188,
+            "name": "DIFLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                40.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 189,
+            "name": "DIHEXYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                22.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11.01
+            ]
+        },
+        {
+            "id": 190,
+            "name": "DIHYDROXYTARTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                60,
+                32
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.004,
+                1.947
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 191,
+            "name": "DICHLOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                39.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.257
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 192,
+            "name": "DICHLOROFLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 193,
+            "name": "DICHROMIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                82.1,
+                58.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.723,
+                0.745
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 194,
+            "name": "DIISOAMYLAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.98
+            ]
+        },
+        {
+            "id": 195,
+            "name": "DIISOBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                27.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.68
+            ]
+        },
+        {
+            "id": 196,
+            "name": "DIMETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                53.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.77
+            ]
+        },
+        {
+            "id": 197,
+            "name": "DIMETHYLBENZYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                29.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.93
+            ]
+        },
+        {
+            "id": 198,
+            "name": "DIMETHYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                51.1,
+                25.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.059,
+                3.166
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 199,
+            "name": "DIOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                20.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.88
+            ]
+        },
+        {
+            "id": 200,
+            "name": "DIPERODONE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                19.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.79
+            ]
+        },
+        {
+            "id": 201,
+            "name": "DIPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.939
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 202,
+            "name": "DIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                29.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 203,
+            "name": "DIPROPYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                46,
+                23
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.51,
+                2.067
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 204,
+            "name": "DITHIONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                96.4,
+                48.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.4,
+                0.2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 205,
+            "name": "DITHIONOUS ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                68.9,
+                34.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.5,
+                0.3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 206,
+            "name": "DODECAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                24.2,
+                45.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.7
+            ]
+        },
+        {
+            "id": 207,
+            "name": "DODECYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                24.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.63
+            ]
+        },
+        {
+            "id": 208,
+            "name": "DODECYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                24.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 209,
+            "name": "DYSPROSIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.7,
+                45.3,
+                68
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 210,
+            "name": "E-AMINOCAPROIC ACID",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.373
+            ]
+        },
+        {
+            "id": 211,
+            "name": "ENANTHYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.893
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 212,
+            "name": "ERBIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.8,
+                45.5,
+                68.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 213,
+            "name": "ETHANOLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                44.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.498
+            ]
+        },
+        {
+            "id": 214,
+            "name": "ETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                48.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.63
+            ]
+        },
+        {
+            "id": 215,
+            "name": "ETHYLDIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 216,
+            "name": "ETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                42.3,
+                80.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.96,
+                6.838
+            ]
+        },
+        {
+            "id": 217,
+            "name": "ETHYLFUMARIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.325
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 218,
+            "name": "ETHYLMALEIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.959
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 219,
+            "name": "ETHYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                51,
+                25.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.833,
+                2.988
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 220,
+            "name": "ETHYLMETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.8
+            ]
+        },
+        {
+            "id": 221,
+            "name": "ETHYLMETHYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                35.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 222,
+            "name": "ETHYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                32.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 223,
+            "name": "ETHYLPROPYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                47,
+                23.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.43,
+                2.145
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 224,
+            "name": "ETHYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                41
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 225,
+            "name": "ETHYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                42
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 226,
+            "name": "ETHYLTRIPROPYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 227,
+            "name": "EUROPIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                23.4,
+                46.9,
+                70.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 228,
+            "name": "FLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                46
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.584
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 229,
+            "name": "FORMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                56.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.752
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 230,
+            "name": "FRUCTOSE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.03
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 231,
+            "name": "FRUCTOSE 2",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.03
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 232,
+            "name": "FUMARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                61.2,
+                31
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.384,
+                3.019
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 233,
+            "name": "GABA",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.02
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 234,
+            "name": "GADOLINIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                23.3,
+                46.5,
+                69.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 235,
+            "name": "GALACTOSE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.35
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 236,
+            "name": "GALLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.469
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 237,
+            "name": "GLUCONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.662
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 238,
+            "name": "GLUCOSE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.28
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 239,
+            "name": "GLUCURONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.677
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 240,
+            "name": "GLUTACONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.077,
+                3.767
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 241,
+            "name": "GLUTAMIC ACID",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                54.3,
+                27
+            ],
+            "uPos": [
+                28.7
+            ],
+            "pKaNeg": [
+                9.96,
+                4.324
+            ],
+            "pKaPos": [
+                2.14
+            ]
+        },
+        {
+            "id": 242,
+            "name": "GLUTAMINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                28.8
+            ],
+            "uPos": [
+                29.6
+            ],
+            "pKaNeg": [
+                9.224
+            ],
+            "pKaPos": [
+                2.1
+            ]
+        },
+        {
+            "id": 243,
+            "name": "GLUTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                55.6,
+                26.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.272,
+                4.343
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 244,
+            "name": "GLYCERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.737
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 245,
+            "name": "GLYCINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                37.4
+            ],
+            "uPos": [
+                39.5
+            ],
+            "pKaNeg": [
+                9.78
+            ],
+            "pKaPos": [
+                2.32
+            ]
+        },
+        {
+            "id": 246,
+            "name": "GLYCOLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.886
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 247,
+            "name": "GLY-GLU",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                50,
+                25.1
+            ],
+            "uPos": [
+                25.4
+            ],
+            "pKaNeg": [
+                8,
+                4.54
+            ],
+            "pKaPos": [
+                3.11
+            ]
+        },
+        {
+            "id": 248,
+            "name": "GLYOXYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                39.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.337
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 249,
+            "name": "GMP",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                54.3,
+                38,
+                21.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.5,
+                6.512,
+                2.845
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 250,
+            "name": "HEPES",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                23.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.5
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 251,
+            "name": "HEPTAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                29.7,
+                56.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                9.9
+            ]
+        },
+        {
+            "id": 252,
+            "name": "HEPTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.66
+            ]
+        },
+        {
+            "id": 253,
+            "name": "HEPTYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 254,
+            "name": "HEXAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                31.7,
+                60.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.93,
+                9.84
+            ]
+        },
+        {
+            "id": 255,
+            "name": "HEXYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                33.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.64
+            ]
+        },
+        {
+            "id": 256,
+            "name": "HEXYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 257,
+            "name": "HIPPURIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                55.1,
+                25.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.271,
+                2.7
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 258,
+            "name": "HISTIDINE",
+            "negCount": 1,
+            "posCount": 2,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [
+                26.8,
+                47.5
+            ],
+            "pKaNeg": [
+                9.33
+            ],
+            "pKaPos": [
+                6.04,
+                2.01
+            ]
+        },
+        {
+            "id": 259,
+            "name": "HOLMIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.9,
+                45.8,
+                68.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 260,
+            "name": "HYDROBROMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                81
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 261,
+            "name": "HYDROCYANIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                80.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.4
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 262,
+            "name": "HYDROFLUORIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                57.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.173
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 263,
+            "name": "HYDROGEN",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                362.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 264,
+            "name": "HYDROGEN HEXAFLUOROPHOSPHIDE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                59
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 265,
+            "name": "HYDROGEN SULFIDE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                67.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.96
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 266,
+            "name": "HYDROCHLORIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                79.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 267,
+            "name": "HYDROIODIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                79.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 268,
+            "name": "HYDROXYLYSINE",
+            "negCount": 1,
+            "posCount": 2,
+            "uNeg": [
+                22.9
+            ],
+            "uPos": [
+                22.9,
+                45.8
+            ],
+            "pKaNeg": [
+                9.67
+            ],
+            "pKaPos": [
+                8.62,
+                2.13
+            ]
+        },
+        {
+            "id": 269,
+            "name": "HYDROXYPROLINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                30.1
+            ],
+            "uPos": [
+                32.7
+            ],
+            "pKaNeg": [
+                9.816
+            ],
+            "pKaPos": [
+                1.78
+            ]
+        },
+        {
+            "id": 270,
+            "name": "HYDROXYTRIMETHYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.863
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 271,
+            "name": "HYPOPHOSPHOROUS ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                45.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 272,
+            "name": "CHES",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.55
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 273,
+            "name": "CHLORIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                67
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2.7
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 274,
+            "name": "CHLOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                43.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.865
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 275,
+            "name": "CHLORODIBROMOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 276,
+            "name": "CHLORODIFLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 277,
+            "name": "CHLOROUS ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                53.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.96
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 278,
+            "name": "CHROMIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                81.1,
+                59.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.49,
+                0.745
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 279,
+            "name": "CHROMIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                23.1,
+                46.3,
+                69.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.5,
+                5.5,
+                3.95
+            ]
+        },
+        {
+            "id": 280,
+            "name": "IMIDAZOLE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                52
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7.15
+            ]
+        },
+        {
+            "id": 281,
+            "name": "IMP",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                53.9,
+                38.2,
+                22.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.5,
+                6.545,
+                2.575
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 282,
+            "name": "IODIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.77
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 283,
+            "name": "IODOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.174
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 284,
+            "name": "IRON(II)",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                28,
+                56
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.3,
+                8.3
+            ]
+        },
+        {
+            "id": 285,
+            "name": "ISOAMYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.6
+            ]
+        },
+        {
+            "id": 286,
+            "name": "ISOBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                39.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.43
+            ]
+        },
+        {
+            "id": 287,
+            "name": "ISOBUTYRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.86
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 288,
+            "name": "ISOCAPROIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.845
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 289,
+            "name": "ISOCITRIC ACID",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                74,
+                55,
+                29
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.38,
+                4.72,
+                3.25
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 290,
+            "name": "ISOLEUCINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                26.7
+            ],
+            "uPos": [
+                29.2
+            ],
+            "pKaNeg": [
+                9.765
+            ],
+            "pKaPos": [
+                2.3
+            ]
+        },
+        {
+            "id": 291,
+            "name": "ISOPHTALIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                53,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.6,
+                3.72
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 292,
+            "name": "ISOPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                41.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.72
+            ]
+        },
+        {
+            "id": 293,
+            "name": "ISOPROPYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                52,
+                26
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.879,
+                2.943
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 294,
+            "name": "ISOVALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.78
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 295,
+            "name": "ITACONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.449,
+                3.815
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 296,
+            "name": "LACTIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.86
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 297,
+            "name": "LANTHANUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                24.1,
+                48.2,
+                72.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 298,
+            "name": "LAURYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                22.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 299,
+            "name": "LEAD",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                36,
+                72
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.9,
+                7.8
+            ]
+        },
+        {
+            "id": 300,
+            "name": "LEUCINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                26.4
+            ],
+            "uPos": [
+                29.2
+            ],
+            "pKaNeg": [
+                9.728
+            ],
+            "pKaPos": [
+                2.26
+            ]
+        },
+        {
+            "id": 301,
+            "name": "LEUCINOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                21.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.21
+            ]
+        },
+        {
+            "id": 302,
+            "name": "LEVULINIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.602
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 303,
+            "name": "LIDOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7.85
+            ]
+        },
+        {
+            "id": 304,
+            "name": "LITHIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.8
+            ]
+        },
+        {
+            "id": 305,
+            "name": "LUTETIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.3,
+                44.7,
+                67
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 306,
+            "name": "LYSINE",
+            "negCount": 1,
+            "posCount": 2,
+            "uNeg": [
+                26.4
+            ],
+            "uPos": [
+                28.6,
+                55.1
+            ],
+            "pKaNeg": [
+                10.79
+            ],
+            "pKaPos": [
+                9.127,
+                1.79
+            ]
+        },
+        {
+            "id": 307,
+            "name": "MAGNESIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                27.5,
+                55
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                12.2,
+                11.4
+            ]
+        },
+        {
+            "id": 308,
+            "name": "MALEIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                62.4,
+                41.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.225,
+                1.921
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 309,
+            "name": "MALIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                59,
+                32.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.05,
+                3.46
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 310,
+            "name": "MALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                67,
+                40.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.696,
+                2.847
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 311,
+            "name": "MANDELIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.411
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 312,
+            "name": "MANGANESE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                27.7,
+                55.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11.6,
+                10.6
+            ]
+        },
+        {
+            "id": 313,
+            "name": "MANNOSA",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.08
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 314,
+            "name": "M-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.812
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 315,
+            "name": "M-CRESOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.77
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 316,
+            "name": "M-CYANOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.598
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 317,
+            "name": "MES",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.095
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 318,
+            "name": "MESACONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.75,
+                3.098
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 319,
+            "name": "MESOTARTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                60.6,
+                32.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.815,
+                3.222
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 320,
+            "name": "METHACRYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.483
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 321,
+            "name": "METHIONINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                29.3
+            ],
+            "uPos": [
+                29.3
+            ],
+            "pKaNeg": [
+                9.344
+            ],
+            "pKaPos": [
+                2.13
+            ]
+        },
+        {
+            "id": 322,
+            "name": "METHOXYACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.57
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 323,
+            "name": "METHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                60.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.62
+            ]
+        },
+        {
+            "id": 324,
+            "name": "METHYLDIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                32.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 325,
+            "name": "METHYLETHYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                50,
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.413,
+                2.86
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 326,
+            "name": "METHYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                58.5,
+                29.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.787,
+                3.072
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 327,
+            "name": "METHYLPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                35.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.9
+            ]
+        },
+        {
+            "id": 328,
+            "name": "METHYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                50.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 329,
+            "name": "METHYLTRIPROPYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                28.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 330,
+            "name": "M-FLUOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.865
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 331,
+            "name": "M-HYDROXYBENZOIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                62,
+                34
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.609,
+                4.082
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 332,
+            "name": "M-HYDROXYCINNAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.397
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 333,
+            "name": "M-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.83
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 334,
+            "name": "M-CHLOROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.023
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 335,
+            "name": "M-IODOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.851
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 336,
+            "name": "M-IODOPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.159
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 337,
+            "name": "M-METHOXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.088
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 338,
+            "name": "M-NITROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.493
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 339,
+            "name": "M-NITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                8.399
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 340,
+            "name": "MOPS",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 341,
+            "name": "MORPHOLINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                41.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.33
+            ]
+        },
+        {
+            "id": 342,
+            "name": "M-SULFANILIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.74
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 343,
+            "name": "M-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.272
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 344,
+            "name": "M-TOLUIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.683
+            ]
+        },
+        {
+            "id": 345,
+            "name": "NANA",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.6
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 346,
+            "name": "NEODYMIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                24,
+                48,
+                72
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 347,
+            "name": "NICKEL",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                26.9,
+                53.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.6,
+                9.3
+            ]
+        },
+        {
+            "id": 348,
+            "name": "NICOTINIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.819
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 349,
+            "name": "NITRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                74.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -1.37
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 350,
+            "name": "NITROUS ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                74.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.22
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 351,
+            "name": "NONAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                27.1,
+                51.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.4
+            ]
+        },
+        {
+            "id": 352,
+            "name": "NONYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                27.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.64
+            ]
+        },
+        {
+            "id": 353,
+            "name": "O-AMINOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.939
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 354,
+            "name": "O-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.854
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 355,
+            "name": "O-BROMOPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.054
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 356,
+            "name": "OCTAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                28.3,
+                53.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.1
+            ]
+        },
+        {
+            "id": 357,
+            "name": "OCTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                29.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.65
+            ]
+        },
+        {
+            "id": 358,
+            "name": "OCTYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 359,
+            "name": "OCTYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                27.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 360,
+            "name": "O-ETHOXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.208
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 361,
+            "name": "O-ETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.793
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 362,
+            "name": "O-FLUOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.267
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 363,
+            "name": "O-HYDROXYCINNAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.613
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 364,
+            "name": "O-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.943
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 365,
+            "name": "O-CHLOROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                8.477
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 366,
+            "name": "O-IODOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.863
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 367,
+            "name": "O-IODOPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.038
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 368,
+            "name": "O-ISOPROPYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                24.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.635
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 369,
+            "name": "O-METHOXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                28.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.094
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 370,
+            "name": "O-NITROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.173
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 371,
+            "name": "O-NITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.234
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 372,
+            "name": "ORNITINE",
+            "negCount": 1,
+            "posCount": 2,
+            "uNeg": [
+                28.4
+            ],
+            "uPos": [
+                28.4,
+                56.8
+            ],
+            "pKaNeg": [
+                10.755
+            ],
+            "pKaPos": [
+                8.712,
+                1.705
+            ]
+        },
+        {
+            "id": 373,
+            "name": "OROTIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.803
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 374,
+            "name": "O-SULFANILIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.488
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 375,
+            "name": "O-T-BUTYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                23.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.535
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 376,
+            "name": "O-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.908
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 377,
+            "name": "O-TOLUIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                4.394
+            ]
+        },
+        {
+            "id": 378,
+            "name": "OXALIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                77,
+                42.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.266,
+                1.271
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 379,
+            "name": "OXALOACETIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.37,
+                2.555
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 380,
+            "name": "P-AMINOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.853
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 381,
+            "name": "P-AMINOHIPPURIC ACID",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                28
+            ],
+            "uPos": [
+                26.6
+            ],
+            "pKaNeg": [
+                3.89
+            ],
+            "pKaPos": [
+                2.56
+            ]
+        },
+        {
+            "id": 382,
+            "name": "P-BROMOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.971
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 383,
+            "name": "P-CRESOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                10.959
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 384,
+            "name": "PDC",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                55,
+                35
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.92,
+                2.16
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 385,
+            "name": "PELARGONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.955
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 386,
+            "name": "PENTAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                33.3,
+                63.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11.05,
+                9.74
+            ]
+        },
+        {
+            "id": 387,
+            "name": "PERCHLORIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                69.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 388,
+            "name": "PERIODIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                56.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.55
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 389,
+            "name": "PERMANGANIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                63.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 390,
+            "name": "PEROXYSULFURIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                89.1,
+                44.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -1,
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 391,
+            "name": "PERRHENIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                56.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 392,
+            "name": "P-ETHOXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.796
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 393,
+            "name": "P-ETHYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.353
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 394,
+            "name": "P-FLUOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.142
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 395,
+            "name": "PHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.998
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 396,
+            "name": "PHENOXYACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.171
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 397,
+            "name": "PHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.405
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 398,
+            "name": "PHENYLALANINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                26.9
+            ],
+            "uPos": [
+                27.4
+            ],
+            "pKaNeg": [
+                9.262
+            ],
+            "pKaPos": [
+                2.13
+            ]
+        },
+        {
+            "id": 399,
+            "name": "PHOSPHORIC ACID",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                71.5,
+                61.4,
+                34.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.67,
+                7.21,
+                2.16
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 400,
+            "name": "PHOSPHOROUS ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                65.9,
+                40
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.086,
+                1.3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 401,
+            "name": "PHTALIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                52.9,
+                28.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.408,
+                2.95
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 402,
+            "name": "P-HYDROXYBENZOIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                62,
+                34
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.31,
+                4.53
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 403,
+            "name": "P-HYDROXYCINNAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.678
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 404,
+            "name": "P-HYDROXYPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                26.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.171
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 405,
+            "name": "P-CHLOROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.977
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 406,
+            "name": "P-CHLOROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.378
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 407,
+            "name": "P-CHLOROPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.19
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 408,
+            "name": "PICRIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.708
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 409,
+            "name": "PIMELIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                49.9,
+                24
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.312,
+                4.509
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 410,
+            "name": "P-IODOBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.93
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 411,
+            "name": "P-IODOPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.178
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 412,
+            "name": "PIPERIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                39.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11.12
+            ]
+        },
+        {
+            "id": 413,
+            "name": "P-ISOPROPYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                24.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.354
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 414,
+            "name": "P-METHOXYBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.471
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 415,
+            "name": "P-METHOXYPHENYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.361
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 416,
+            "name": "P-NITROBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                32.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.523
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 417,
+            "name": "P-NITROPHENOL",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                7.149
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 418,
+            "name": "POTASSIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                76.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13
+            ]
+        },
+        {
+            "id": 419,
+            "name": "PRASEODYMIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                24.1,
+                48.1,
+                72.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 420,
+            "name": "PROCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.01
+            ]
+        },
+        {
+            "id": 421,
+            "name": "PROLINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                29
+            ],
+            "uPos": [
+                35.8
+            ],
+            "pKaNeg": [
+                10.64
+            ],
+            "pKaPos": [
+                1.85
+            ]
+        },
+        {
+            "id": 422,
+            "name": "PROPIONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                37.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.874
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 423,
+            "name": "PROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                42.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.53
+            ]
+        },
+        {
+            "id": 424,
+            "name": "PROPYLMALONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                52,
+                26
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.845,
+                2.971
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 425,
+            "name": "PROPYLSULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 426,
+            "name": "PSICAINE-NEU",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                21.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.54
+            ]
+        },
+        {
+            "id": 427,
+            "name": "P-TERTBUTYLBENZOIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                23.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.4
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 428,
+            "name": "P-TOLUENESULFONIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 429,
+            "name": "P-TOLUIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.373
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 430,
+            "name": "P-TOLUIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                5.091
+            ]
+        },
+        {
+            "id": 431,
+            "name": "P-TOLYLTRIMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                40.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 432,
+            "name": "PYRAZOLE-2.3-DICARBOXYLIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                33.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.228,
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 433,
+            "name": "PYRIDINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                5.18
+            ]
+        },
+        {
+            "id": 434,
+            "name": "PYRUVIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.49
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 435,
+            "name": "RADIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                34.6,
+                69.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.5,
+                13
+            ]
+        },
+        {
+            "id": 436,
+            "name": "RUBIDIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                80.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13
+            ]
+        },
+        {
+            "id": 437,
+            "name": "SACCHARIN",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.432
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 438,
+            "name": "SALICYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                35.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.107
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 439,
+            "name": "SAMARIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                23.7,
+                47.4,
+                71.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 440,
+            "name": "SCANDIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.4,
+                44.7,
+                67.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                6.9,
+                5.9,
+                4.9
+            ]
+        },
+        {
+            "id": 441,
+            "name": "SEBACIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                44.9,
+                20.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.38,
+                4.53
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 442,
+            "name": "SEC-BUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                37.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.6
+            ]
+        },
+        {
+            "id": 443,
+            "name": "SELENIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                80.5,
+                41
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.05,
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 444,
+            "name": "SELENIOUS ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                60.5,
+                41.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                8.45,
+                2.62
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 445,
+            "name": "SELENOCYANIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                67.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 446,
+            "name": "SERINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                33.6
+            ],
+            "uPos": [
+                33.4
+            ],
+            "pKaNeg": [
+                9.302
+            ],
+            "pKaPos": [
+                2.13
+            ]
+        },
+        {
+            "id": 447,
+            "name": "SILVER",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                64.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11.7
+            ]
+        },
+        {
+            "id": 448,
+            "name": "SODIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                51.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.7
+            ]
+        },
+        {
+            "id": 449,
+            "name": "SORBIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.77
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 450,
+            "name": "STRONTIUM",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                30.8,
+                61.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.7,
+                13.2
+            ]
+        },
+        {
+            "id": 451,
+            "name": "SUBERIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                47.2,
+                22.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.403,
+                4.517
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 452,
+            "name": "SUCCINIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                60.9,
+                33
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.638,
+                4.207
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 453,
+            "name": "SUCROSE",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                12.51
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 454,
+            "name": "SULFANILIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.227
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 455,
+            "name": "SULFURIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                82.9,
+                52
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.921,
+                -3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 456,
+            "name": "SULFUROUS ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                74.6,
+                51.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                6.991,
+                1.78
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 457,
+            "name": "SULPHAMIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                50.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                -2
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 458,
+            "name": "TAPS",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                25
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                8.3
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 459,
+            "name": "TARTARIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                60.7,
+                32.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.366,
+                3.036
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 460,
+            "name": "TARTRONIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                68.3,
+                36
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.735,
+                2.366
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 461,
+            "name": "TAURINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                37.9
+            ],
+            "uPos": [
+                37.9
+            ],
+            "pKaNeg": [
+                9.182
+            ],
+            "pKaPos": [
+                1.5
+            ]
+        },
+        {
+            "id": 462,
+            "name": "TERBIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                23,
+                46,
+                69
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 463,
+            "name": "TEREPHTALIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                53,
+                28
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.46,
+                3.54
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 464,
+            "name": "TERT-BUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                37.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.6
+            ]
+        },
+        {
+            "id": 465,
+            "name": "TETRACAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.3
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.29
+            ]
+        },
+        {
+            "id": 466,
+            "name": "TETRAETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                34.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 467,
+            "name": "TETRAMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                47
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 468,
+            "name": "TETRAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                35.7,
+                67.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.75,
+                9.216
+            ]
+        },
+        {
+            "id": 469,
+            "name": "TETRAPROPYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 470,
+            "name": "THALLIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                77.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                13.2
+            ]
+        },
+        {
+            "id": 471,
+            "name": "THIOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                43.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.337
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 472,
+            "name": "THIOCYANIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                68.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.848
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 473,
+            "name": "THIOCYANOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                40.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.585
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 474,
+            "name": "THIOGLYCOLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                3.545
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 475,
+            "name": "THIOSULFURIC ACID",
+            "negCount": 2,
+            "posCount": 0,
+            "uNeg": [
+                88.1,
+                44
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.72,
+                0.6
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 476,
+            "name": "THREONINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                30.9
+            ],
+            "uPos": [
+                30.4
+            ],
+            "pKaNeg": [
+                9.2
+            ],
+            "pKaPos": [
+                2.14
+            ]
+        },
+        {
+            "id": 477,
+            "name": "THULIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.6,
+                45.2,
+                67.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 478,
+            "name": "TRIBROMOACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                36.5
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 479,
+            "name": "TRIBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                23.9
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11
+            ]
+        },
+        {
+            "id": 480,
+            "name": "TRICINE-ANI",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                8.15
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 481,
+            "name": "TRIDECAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                23.4,
+                44.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.8
+            ]
+        },
+        {
+            "id": 482,
+            "name": "TRIETHANOLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7.768
+            ]
+        },
+        {
+            "id": 483,
+            "name": "TRIETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                35.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.86
+            ]
+        },
+        {
+            "id": 484,
+            "name": "TRIETHYLMETHYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                35.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 485,
+            "name": "TRIETHYLPHENYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.8
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 486,
+            "name": "TRIETHYLPROPYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                30.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 487,
+            "name": "TRIFLUOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                42.7
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.6
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 488,
+            "name": "TRICHLOROACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                37.9
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0.635
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 489,
+            "name": "TRICHLOROACRYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                33.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 490,
+            "name": "TRICHLOROLACTIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                34.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.347
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 491,
+            "name": "TRIISOBUTYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                22.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.41
+            ]
+        },
+        {
+            "id": 492,
+            "name": "TRIMECAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                22.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                7.95
+            ]
+        },
+        {
+            "id": 493,
+            "name": "TRIMETAPHOSPHORIC ACID",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                83.7,
+                0,
+                0
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                2.05,
+                0,
+                0
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 494,
+            "name": "TRIMETHYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.8
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                5.037
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 495,
+            "name": "TRIMETHYLACRYLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                30.3
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.42
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 496,
+            "name": "TRIMETHYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                49.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.8
+            ]
+        },
+        {
+            "id": 497,
+            "name": "TRIMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                39.5,
+                75
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.62,
+                8.64
+            ]
+        },
+        {
+            "id": 498,
+            "name": "TRIMETHYLPHENYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                35.6
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 499,
+            "name": "TRIMETHYLPROPYLAMMONIUM",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                38.4
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 500,
+            "name": "TRIMETYLPYRUVIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                29.2
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                1.469
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 501,
+            "name": "TRIPROPYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                27.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.74
+            ]
+        },
+        {
+            "id": 502,
+            "name": "TRIS",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                29.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8.076
+            ]
+        },
+        {
+            "id": 503,
+            "name": "TROPACOCAINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                26
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.36
+            ]
+        },
+        {
+            "id": 504,
+            "name": "TRYPTOPHANE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                25.4
+            ],
+            "uPos": [
+                25.6
+            ],
+            "pKaNeg": [
+                9.594
+            ],
+            "pKaPos": [
+                2.31
+            ]
+        },
+        {
+            "id": 505,
+            "name": "TTAOH",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                14
+            ]
+        },
+        {
+            "id": 506,
+            "name": "TYROSINE",
+            "negCount": 2,
+            "posCount": 1,
+            "uNeg": [
+                40,
+                20
+            ],
+            "uPos": [
+                26.3
+            ],
+            "pKaNeg": [
+                10.189,
+                9.099
+            ],
+            "pKaPos": [
+                2.18
+            ]
+        },
+        {
+            "id": 507,
+            "name": "UMP",
+            "negCount": 3,
+            "posCount": 0,
+            "uNeg": [
+                56,
+                39.7,
+                23.4
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                9.5,
+                6.529,
+                2.499
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 508,
+            "name": "UNDECAMETHYLENEDIAMINE",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                25,
+                47.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                11,
+                10.6
+            ]
+        },
+        {
+            "id": 509,
+            "name": "UNDECYLAMINE",
+            "negCount": 0,
+            "posCount": 1,
+            "uNeg": [],
+            "uPos": [
+                25.1
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                10.63
+            ]
+        },
+        {
+            "id": 510,
+            "name": "URANYL(VI)",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                16.6,
+                33.2
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9,
+                8
+            ]
+        },
+        {
+            "id": 511,
+            "name": "VALERIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                31.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.842
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 512,
+            "name": "VALINE",
+            "negCount": 1,
+            "posCount": 1,
+            "uNeg": [
+                28.4
+            ],
+            "uPos": [
+                30.9
+            ],
+            "pKaNeg": [
+                9.71
+            ],
+            "pKaPos": [
+                2.21
+            ]
+        },
+        {
+            "id": 513,
+            "name": "VANILLIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                27.1
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.523
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 514,
+            "name": "VINYLACETIC ACID",
+            "negCount": 1,
+            "posCount": 0,
+            "uNeg": [
+                38.6
+            ],
+            "uPos": [],
+            "pKaNeg": [
+                4.342
+            ],
+            "pKaPos": []
+        },
+        {
+            "id": 515,
+            "name": "YTTERBIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                22.5,
+                45,
+                67.5
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 516,
+            "name": "YTTRIUM",
+            "negCount": 0,
+            "posCount": 3,
+            "uNeg": [],
+            "uPos": [
+                21.6,
+                43.3,
+                64.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                8,
+                7,
+                6
+            ]
+        },
+        {
+            "id": 517,
+            "name": "ZINC",
+            "negCount": 0,
+            "posCount": 2,
+            "uNeg": [],
+            "uPos": [
+                27.4,
+                54.7
+            ],
+            "pKaNeg": [],
+            "pKaPos": [
+                9.7,
+                9
+            ]
+        }
+    ]
+}

@@ -30,7 +30,7 @@ def _save_user_constituents(components: Dict[str, Constituent]) -> None:
 
 
 def _load_default_constituents() -> Dict[str, Constituent]:
-    data = pkgutil.get_data(__name__, "data/constituents.json")
+    data = pkgutil.get_data(__name__, "data/db1.json")
     if data is None:
         raise RuntimeError("failed to load default constituents")
 
@@ -42,12 +42,7 @@ def _load_default_constituents() -> Dict[str, Constituent]:
         if "Cl-" in c.name:
             c.name = c.name.replace("Cl-", "CHLORO")
 
-    ret = {c.name: c for c in constituents}
-
-    for omit in {"S1", "S2", "S3", "S4", "S5", "term"}:
-        del ret[omit]
-
-    return ret
+    return {c.name: c for c in constituents}
 
 
 class Properties:

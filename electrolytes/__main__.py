@@ -1,6 +1,7 @@
 from typing import Tuple, List
 
 import typer
+from click import Context, Parameter
 
 from . import _APP_NAME, database, Properties
 
@@ -8,10 +9,10 @@ from . import _APP_NAME, database, Properties
 app = typer.Typer()
 
 
-def complete_name(incomplete: str):
+def complete_name(ctx: Context, patam: Parameter, incomplete: str) -> List[str]:
     return [name for name in database if name.startswith(incomplete)]
 
-def complete_name_user_defined(incomplete: str):
+def complete_name_user_defined(ctx: Context, patam: Parameter, incomplete: str) -> List[str]:
     return [name for name in database.user_defined() if name.startswith(incomplete)]
 
 

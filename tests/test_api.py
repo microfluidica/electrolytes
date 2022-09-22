@@ -19,18 +19,20 @@ def test_list_components() -> None:
 
 
 def test_get_component() -> None:
-    props = database["LYSINE"]
-    assert isinstance(props, Properties)
-    assert len(props.mobilities()) == 6
-    assert len(props.pkas()) == 6
-    assert props.diffusivity() == pytest.approx(max(props.mobilities())*8.314*300/96485)
+    c = database["LYSINE"]
+    assert isinstance(c, Constituent)
+    assert len(c.mobilities()) == 6
+    assert len(c.pkas()) == 6
+    print(c.mobilities())
+    print(c.diffusivity())
+    assert c.diffusivity() == pytest.approx(28.60*1e-9*8.314*300/96485)
 
 
 def test_known_component_properties() -> None:
-    props = database["CYSTINE"]
-    props.mobilities() == pytest.approx([0.0, 5.39e-08, 2.7e-08, 2.7e-08, 5.39e-08, 0.0])
-    props.diffusivity() == pytest.approx(1.393350054412603e-09)
-    props.pkas() == pytest.approx([-3.0, 1.65, 2.26, 8.405, 9.845, 17])
+    c = database["CYSTINE"]
+    c.mobilities() == pytest.approx([0.0, 5.39e-08, 2.7e-08, 2.7e-08, 5.39e-08, 0.0])
+    c.diffusivity() == pytest.approx(1.393350054412603e-09)
+    c.pkas() == pytest.approx([-3.0, 1.65, 2.26, 8.405, 9.845, 17])
 
 
 def test_try_get_nonexistent() -> None:
@@ -48,5 +50,5 @@ def test_try_add_default() -> None:
     assert not database.is_user_defined("SILVER")
     assert "SILVER" not in database.user_defined()
     with pytest.raises(ValueError):
-        database["SILVER"] = Properties(mobilities=[0, 0, 64.50, 0, 0, 0],
-                                        pkas=[-3.00, -2.00, 11.70, 15.00, 16.00, 17.00])
+        database.add(Constituent(u_pos=[64.50],
+                                 pkas_pos=[11.70]))

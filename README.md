@@ -44,32 +44,36 @@ The Python API is provided for `electroMicroTransport` case setup scripts.
 from electrolytes import database, Properties
 ```
 
-You can directly use `database` as if it were a `dict` (technically, it is a [`MutableMapping`](https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping)), mapping component names to their properties (`Properties` class). Extra methods are also defined:
+You can look up components in the `database` as you would with `dict` (with component names as keys), and also add user-defined components with the `add` method (as if `database` were a set). Components are instances of the `Constituent` class. Extra methods are also defined for `database`:
 
 ```python
+
     def user_defined(self) -> Iterable[str]: ...
 
     def is_user_defined(self, name: str) -> bool: ...
 ```
 
-Component names are case insensitive and will be automatically converted to all uppercase. Any components added (or removed) will be saved for the current operating system user. Default components cannot be changed or removed (expect a `ValueError` if you try).
+`Constituent` names are case insensitive and will be automatically converted to all uppercase. Any instances added to (or removed from) the `database` will be saved for the current operating system user. Default components cannot be changed or removed (expect a `ValueError` if you try).
 
-The public stubs of the `Properties` class are:
+The public stubs of the `Constituent` class are:
 
 ```python
-class Properties:
+class Constituent:
     def __init__(self,
-                 mobilities: Sequence[Optional[float]],
-                 pkas: Sequence[Optional[float]]): ...
+                 *,
+                 name: str,
+                 u_neg: Sequence[float],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+                 u_pos: Sequence[float],  # [+1, +2, +3, ..., +pos_count]
+                 pkas_neg: Sequence[float],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+                 pkas_pos: Sequence[float],  # [+1, +2, +3, ..., +pos_count]
+                 neg_count: int = None,
+                 pos_count: int = None): ...
 
-    def mobilities(self) -> Sequence[float]: ...
-    
-    def pkas(self) -> Sequence[float]: ...
-
-    def diffusivity(self) -> float: ...
+    # Interface for electroMicroTransport
+    def mobilities(self) -> Sequence[float]: ...  # [+n, ..., +3, +2, +1, -1, -2, -3, ..., -n] (with n >= 3), SI units
+    def pkas(self) -> Sequence[float]: ...  # [+n, ..., +3, +2, +1, -1, -2, -3, ..., -n] (with n >= 3)
+    def diffusivity(self) -> float: ...  # SI units
 ```
-
-with all sequences of length 6 (for +3, +2, +1, -1, -2, -3 respectively). Mobilities and diffusivities are in SI units.
 
 # Data credits
 

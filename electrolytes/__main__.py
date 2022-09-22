@@ -16,7 +16,7 @@ def complete_name_user_defined(incomplete: str):
 
 
 @app.command()
-def add(name: str = typer.Argument(..., autocompletion=complete_name_user_defined),
+def add(name: str = typer.Argument(..., shell_complete=complete_name_user_defined),
         p1: Tuple[float, float] = typer.Option((None, Properties.DEFAULT_PKAS[2]), "+1", help="Mobility (*1e-9) and pKa for +1"),
         p2: Tuple[float, float] = typer.Option((None, Properties.DEFAULT_PKAS[1]), "+2", help="Mobility (*1e-9) and pKa for +2"),
         p3: Tuple[float, float] = typer.Option((None, Properties.DEFAULT_PKAS[0]), "+3", help="Mobility (*1e-9) and pKa for +3"),
@@ -45,7 +45,7 @@ def add(name: str = typer.Argument(..., autocompletion=complete_name_user_define
 
 
 @app.command()
-def info(name: str = typer.Argument(..., autocompletion=complete_name)) -> None:
+def info(name: str = typer.Argument(..., shell_complete=complete_name)) -> None:
     """Show the properties of a component"""
     try:
         props = database[name]
@@ -74,7 +74,7 @@ def ls(user_only: bool=typer.Option(False, "--user", help="Show only user-define
 
 
 @app.command()
-def rm(names: List[str] = typer.Argument(..., autocompletion=complete_name_user_defined)) -> None:
+def rm(names: List[str] = typer.Argument(..., shell_complete=complete_name_user_defined)) -> None:
     """Remove user-defined components"""
     errors_ocurred = False
     for name in names:

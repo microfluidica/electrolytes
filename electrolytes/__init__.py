@@ -11,7 +11,7 @@ from ._constituent import Constituent
 
 _APP_NAME = "electrolytes"
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 _USER_CONSTITUENTS_FILE = Path(get_app_dir(_APP_NAME), "user_constituents.json")

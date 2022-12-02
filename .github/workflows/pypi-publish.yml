@@ -1,11 +1,8 @@
-# This workflow will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
-
 name: Upload Python Package
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   deploy:
@@ -13,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get version number from release
+      id: get-version
+      uses: battila7/get-version-action@v2
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -21,11 +21,19 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine
-    - name: Build and publish
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        python -m pip install build
+    - name: Check version number
+      run: |
+        PACKAGE_VERSION=$(python setup.py --version)
+        RELEASE_VERSION=${{ steps.get-version.outputs.version-without-v }}
+        if [ $PACKAGE_VERSION != $RELEASE_VERSION ]; then
+          echo "Package version $PACKAGE_VERSION does not match release version $RELEASE_VERSION"
+          exit 1
+        fi
+    - name: Build
       run: |
         python -m build
-        twine upload dist/*
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.PYPI_API_TOKEN }}

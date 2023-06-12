@@ -18,8 +18,8 @@ class Constituent(BaseModel):
     u_pos: List[float] = Field([], alias="uPos") # [+1, +2, +3, ..., +pos_count]
     pkas_neg: List[float] = Field([], alias="pKaNeg") # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
     pkas_pos: List[float] = Field([], alias="pKaPos") # [+1, +2, +3, ..., +pos_count]
-    neg_count: int = Field(None, alias="negCount")
-    pos_count: int = Field(None, alias="posCount")
+    neg_count: int = Field(-1, alias="negCount")
+    pos_count: int = Field(-1, alias="posCount")
 
     @property
     def charges_neg(self) -> range:
@@ -73,7 +73,7 @@ class Constituent(BaseModel):
  
     @validator("neg_count", "pos_count", always=True)
     def counts(cls, v, values, field):
-        if v is None:
+        if v == -1:
             v = len(values[f"u_{field.name[:3]}"])
         elif v != len(values[f"u_{field.name[:3]}"]):
             raise ValueError(f"{field.name} != len(u_{field.name[:3]})")

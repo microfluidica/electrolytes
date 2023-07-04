@@ -12,7 +12,9 @@ jobs:
     steps:
     - name: Get version number from release
       id: get-version
-      uses: battila7/get-version-action@v2
+      run:
+        TAG=${GITHUB_REF#refs/tags/}
+        echo "VERSION_WITHOUT_V=${TAG#v}" >> "$GITHUB_OUTPUT"
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -25,7 +27,7 @@ jobs:
     - name: Check version number
       run: |
         PACKAGE_VERSION=$(python setup.py --version)
-        RELEASE_VERSION=${{ steps.get-version.outputs.version-without-v }}
+        RELEASE_VERSION=${{ steps.get-version.outputs.VERSION_WITHOUT_V }}
         if [ $PACKAGE_VERSION != $RELEASE_VERSION ]; then
           echo "Package version $PACKAGE_VERSION does not match release version $RELEASE_VERSION"
           exit 1

@@ -31,9 +31,6 @@ jobs:
     - name: Check types with mypy
       run: |
         mypy electrolytes tests
-    - name: Check MANIFEST.in file with check-manifest
-      run: |
-        check-manifest
     - name: Test with pytest
       run: |
         pytest --cov=electrolytes

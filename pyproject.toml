@@ -1,6 +1,53 @@
 [build-system]
-requires = [
-    "setuptools>=46.4.0",
-    "wheel"
-]
+requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "electrolytes"
+description = "Electrolyte database manager"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [{name = "Gabriel S. Gerlero", email = "ggerlero@cimec.unl.edu.ar"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "typer>=0.4.2,<0.8",
+    "pydantic>=1.8.2,<2",
+]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+lint = [
+    "mypy",
+]
+test = [
+    "pytest>=6.2.4,<8",
+    "pytest-cov",
+]
+
+[project.urls]
+Homepage = "https://github.com/microfluidica/electrolytes"
+Repository = "https://github.com/microfluidica/electrolytes"
+
+[project.scripts]
+electrolytes = "electrolytes.__main__:app"
+
+[tool.setuptools.dynamic]
+version = {attr = "electrolytes.__version__"}
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]

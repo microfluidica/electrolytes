@@ -1,9 +1,9 @@
 import pkgutil
-import json
 from pathlib import Path
-from typing import Iterable, Iterator, List, Sequence, Dict, Optional
+from typing import Iterable, Iterator, List, Sequence, Dict
+from warnings import warn
 
-from pydantic import BaseModel, Field, validator, root_validator, parse_file_as, parse_raw_as
+from pydantic import BaseModel, ConfigDict, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
 from typer import get_app_dir
 
 _APP_NAME = "electrolytes"
@@ -12,6 +12,8 @@ __version__ = "0.2.1"
 
 
 class Constituent(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, validate_default=True)
+
     id: int = -1
     name: str
     u_neg: List[float] = Field([], alias="uNeg") # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
@@ -62,46 +64,52 @@ class Constituent(BaseModel):
         else:
             return -charge
 
-    class Config:
-        allow_population_by_field_name = True
-
-    @validator("pkas_neg", "pkas_pos")
-    def pka_lengths(cls, v, values, field):
-        if len(v) != len(values[f"u_{field.name[5:]}"]):
-            raise ValueError(f"len({field.name}) != len(u_{field.name[5:]})")
+    @field_validator("pkas_neg", "pkas_pos")
+    def pka_lengths(cls, v: List[float], info: FieldValidationInfo) -> List[float]:
+        if len(v) != len(info.data[f"u_{info.field_name[5:]}"]):
+            raise ValueError(f"len({info.field_name}) != len(u_{info.field_name[5:]})")
         return v
  
-    @validator("neg_count", "pos_count", always=True)
-    def counts(cls, v, values, field):
+    @field_validator("neg_count", "pos_count")
+    def counts(cls, v: int, info: FieldValidationInfo) -> int:
         if v == -1:
-            v = len(values[f"u_{field.name[:3]}"])
-        elif v != len(values[f"u_{field.name[:3]}"]):
-            raise ValueError(f"{field.name} != len(u_{field.name[:3]})")
+            v = len(info.data[f"u_{info.field_name[:3]}"])
+        elif v != len(info.data[f"u_{info.field_name[:3]}"]):
+            raise ValueError(f"{info.field_name} != len(u_{info.field_name[:3]})")
         return v
 
-    @root_validator
-    def pkas_not_increasing(cls, values):
-        pkas = [*values["pkas_neg"], *values["pkas_pos"]]
+    @model_validator(mode="after")
+    def pkas_not_increasing(self):
+        pkas = [*self.pkas_neg, *self.pkas_pos]
 
         if not all(x>=y for x, y in zip(pkas, pkas[1:])):
             raise ValueError("pKa values must not increase with charge")
 
-        return values
+        return self
 
+
+_StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])
 
 _USER_CONSTITUENTS_FILE = Path(get_app_dir(_APP_NAME), "user_constituents.json")
 
 def _load_user_constituents() -> Dict[str, Constituent]:
     try:
-        constituents = parse_file_as(Dict[str, List[Constituent]], _USER_CONSTITUENTS_FILE)["constituents"]
-        return {c.name: c for c in constituents}
-    except (FileNotFoundError, json.decoder.JSONDecodeError):
+        with _USER_CONSTITUENTS_FILE.open("rb") as f:
+            data = f.read()
+    except FileNotFoundError:
         return {}
+    try:
+        constituents = _StoredConstituents.validate_json(data)["constituents"]
+    except Exception as e:
+        warn(f"failed to load user constituents from {_USER_CONSTITUENTS_FILE}: {type(e).__name__}", RuntimeWarning)
+        return {}
+    return {c.name: c for c in constituents}
 
 def _save_user_constituents(components: Dict[str, Constituent]) -> None:
+    data = _StoredConstituents.dump_json({"constituents": list(components.values())})
     _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with _USER_CONSTITUENTS_FILE.open("w") as f:
-        json.dump({"constituents": [c.dict() for c in components.values()]}, f)
+    with _USER_CONSTITUENTS_FILE.open("wb") as f:
+        f.write(data)
 
 
 def _load_default_constituents() -> Dict[str, Constituent]:
@@ -109,7 +117,7 @@ def _load_default_constituents() -> Dict[str, Constituent]:
     if data is None:
         raise RuntimeError("failed to load default constituents")
 
-    constituents = parse_raw_as(Dict[str, List[Constituent]], data)["constituents"]
+    constituents = _StoredConstituents.validate_json(data)["constituents"]
 
     for c in constituents:
         if " " in c.name:

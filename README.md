@@ -3,12 +3,16 @@
 [![CI](https://github.com/microfluidica/electrolytes/actions/workflows/ci.yml/badge.svg)](https://github.com/microfluidica/electrolytes/actions/workflows/ci.yml)
 [![Codecov](https://codecov.io/gh/microfluidica/electrolytes/branch/main/graph/badge.svg)](https://codecov.io/gh/microfluidica/electrolytes)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/5697b1e4c4a9790ece607654e6c02a160620c7e1/docs/badge/v2.json)](https://pydantic.dev)
 [![PyPI](https://img.shields.io/pypi/v/electrolytes)](https://pypi.org/project/electrolytes/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/electrolytes)](https://pypi.org/project/electrolytes/)
 
 
 **electrolytes** provides command-line and programatic access to a database of electrolytes and their properties. It includes 518 components by default (see [credits](#data-credits)). The package covers basic management of the database, including support for storing user-defined electrolytes.
 
-Developed for use with the [`electroMicroTransport`](https://gitlab.com/santiagomarquezd/electroMicroTransport) toolbox for simulation of electromigrative separations.
+## [_electroMicroTransport_](https://gitlab.com/santiagomarquezd/electroMicroTransport)
+
+**electrolytes** is primarily developed as a utility to assist in preparing simulation cases for the [_electroMicroTransport_](https://gitlab.com/santiagomarquezd/electroMicroTransport) toolbox for electromigrative separations. However, it is an independent package and can be installed and used separately.
 
 # Installation
 
@@ -18,7 +22,7 @@ Install with [pip](https://pip.pypa.io/en/stable/):
 $ python3 -m pip install electrolytes
 ```
 
-**electrolytes** requires Python 3.6 or later, and a relatively recent version of pip (pip may be upgraded with ```python3 -m pip install --upgrade pip```).
+**electrolytes** currently requires Python 3.7 or later, and a relatively recent version of pip (pip may be upgraded with ```python3 -m pip install --upgrade pip```).
 
 # Command-line usage
 
@@ -38,7 +42,7 @@ Add the `--help` flag to learn what options are available.
 
 # Python API
 
-The Python API is provided for `electroMicroTransport` case setup scripts.
+The Python API is provided for _electroMicroTransport_ case initialization scripts.
 
 ```python
 from electrolytes import database, Properties
@@ -79,6 +83,6 @@ class Constituent:
 
 Electrolyte data taken from the Simul 6 application[^simul6] ([homepage](https://simul6.app), [GitHub](https://github.com/hobrasoft/simul6)). The dataset of different electrolytes was originally compiled by Prof. Hirokawa[^Hirokawa].
 
-[^simul6]: GAŠ, Bohuslav; BRAVENEC, Petr. Simul 6: A fast dynamic simulator of electromigration. Electrophoresis, 2021. DOI: [10.1002/elps.202100048](https://doi.org/10.1002/elps.202100048)
+[^simul6]: GAŠ, Bohuslav; BRAVENEC, Petr. Simul 6: A fast dynamic simulator of electromigration. Electrophoresis, 2021, vol. 42, no. 12-13, pp. 1291-1299. DOI: [10.1002/elps.202100048](https://doi.org/10.1002/elps.202100048)
 
-[^Hirokawa]: HIROKAWA, Takeshi, et al. Table of isotachophoretic indices: I. Simulated qualitative and quantitative indices of 287 anionic substances in the range ph 3–10. Journal of Chromatography A, 1983, vol. 271, no 2, p. D1-D106. DOI: [10.1016/S0021-9673(00)80225-3](https://doi.org/10.1016/S0021-9673(00)80225-3)
+[^Hirokawa]: HIROKAWA, Takeshi, et al. Table of isotachophoretic indices: I. Simulated qualitative and quantitative indices of 287 anionic substances in the range ph 3–10. Journal of Chromatography A, 1983, vol. 271, no. 2, pp. D1-D106. DOI: [10.1016/S0021-9673(00)80225-3](https://doi.org/10.1016/S0021-9673(00)80225-3)

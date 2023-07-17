@@ -52,8 +52,14 @@ Repository = "https://github.com/microfluidica/electrolytes"
 [project.scripts]
 electrolytes = "electrolytes.__main__:app"
 
+[tool.setuptools]
+packages = ["electrolytes"]
+
 [tool.setuptools.dynamic]
 version = {attr = "electrolytes.__version__"}
+
+[tool.setuptools.package-data]
+electrolytes = ["*.json"]
 
 [tool.mypy]
 plugins = ["pydantic.mypy"]

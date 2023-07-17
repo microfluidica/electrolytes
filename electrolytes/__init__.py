@@ -113,7 +113,7 @@ def _save_user_constituents(components: Dict[str, Constituent]) -> None:
 
 
 def _load_default_constituents() -> Dict[str, Constituent]:
-    data = pkgutil.get_data(__name__, "data/db1.json")
+    data = pkgutil.get_data(__name__, "db1.json")
     if data is None:
         raise RuntimeError("failed to load default constituents")
 

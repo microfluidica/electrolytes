@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "typer>=0.4.2,<0.8",
+    "typer>=0.4.2,<0.10",
     "pydantic>=2.0.3,<3",
 ]
 
@@ -32,10 +32,10 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 lint = [
-    "mypy",
+    "mypy==1.*",
 ]
 test = [
-    "pytest>=6.2.4,<8",
+    "pytest==7.*",
     "pytest-cov",
 ]
 

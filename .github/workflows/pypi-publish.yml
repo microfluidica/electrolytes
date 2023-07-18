@@ -6,15 +6,9 @@ on:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get version number from release
-      id: get-version
-      run:
-        TAG=${GITHUB_REF#refs/tags/}
-        echo "VERSION_WITHOUT_V=${TAG#v}" >> "$GITHUB_OUTPUT"
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -22,15 +16,15 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install build
+        python -m pip install --upgrade pip setuptools build
     - name: Check version number
       run: |
-        PACKAGE_VERSION=$(python setup.py --version)
-        RELEASE_VERSION=${{ steps.get-version.outputs.VERSION_WITHOUT_V }}
-        if [ $PACKAGE_VERSION != $RELEASE_VERSION ]; then
-          echo "Package version $PACKAGE_VERSION does not match release version $RELEASE_VERSION"
-          exit 1
+        TAG="${GITHUB_REF#refs/tags/}"
+        VERSION_FROM_TAG="${TAG#v}"
+        PACKAGE_VERSION=$(python -c 'import setuptools; setuptools.setup()' --version)
+        if [ "$PACKAGE_VERSION" != "$VERSION_FROM_TAG" ]; then
+          echo "::error title=Version mismatch::$PACKAGE_VERSION (package version) != $VERSION_FROM_TAG (version from tag)"
+          exit
         fi
     - name: Build
       run: |

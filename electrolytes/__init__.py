@@ -8,7 +8,7 @@ from typer import get_app_dir
 
 _APP_NAME = "electrolytes"
 
-__version__ = "0.2.3"
+__version__ = "0.2.4"
 
 
 class Constituent(BaseModel):

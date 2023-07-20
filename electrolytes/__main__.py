@@ -9,10 +9,10 @@ from . import _APP_NAME, database, Constituent
 app = typer.Typer()
 
 
-def complete_name(ctx: Context, patam: Parameter, incomplete: str) -> List[str]:
+def complete_name(ctx: Context, param: Parameter, incomplete: str) -> List[str]:
     return [name for name in database if name.startswith(incomplete)]
 
-def complete_name_user_defined(ctx: Context, patam: Parameter, incomplete: str) -> List[str]:
+def complete_name_user_defined(ctx: Context, param: Parameter, incomplete: str) -> List[str]:
     return [name for name in database.user_defined() if name.startswith(incomplete)]
 
 

@@ -88,6 +88,8 @@ def add(name: str = typer.Argument(..., shell_complete=complete_name_user_define
 @app.command()
 def info(name: str = typer.Argument(..., shell_complete=complete_name)) -> None:
     """Show the properties of a component"""
+    name = name.upper()
+
     try:
         constituent = database[name]
     except KeyError:

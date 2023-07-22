@@ -1,6 +1,11 @@
+import sys
 import pkgutil
 from pathlib import Path
 from typing import Iterable, Iterator, List, Sequence, Dict
+if sys.version_info >= (3, 9):
+    from typing import Annotated
+else:
+    from typing_extensions import Annotated
 from warnings import warn
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
@@ -16,12 +21,12 @@ class Constituent(BaseModel):
 
     id: int = -1
     name: str
-    u_neg: List[float] = Field([], alias="uNeg") # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    u_pos: List[float] = Field([], alias="uPos") # [+1, +2, +3, ..., +pos_count]
-    pkas_neg: List[float] = Field([], alias="pKaNeg") # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    pkas_pos: List[float] = Field([], alias="pKaPos") # [+1, +2, +3, ..., +pos_count]
-    neg_count: int = Field(-1, alias="negCount")
-    pos_count: int = Field(-1, alias="posCount")
+    u_neg: Annotated[List[float], Field(alias="uNeg")] = [] # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+    u_pos: Annotated[List[float], Field(alias="uPos")] = [] # [+1, +2, +3, ..., +pos_count]
+    pkas_neg: Annotated[List[float], Field(alias="pKaNeg")] = [] # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+    pkas_pos: Annotated[List[float], Field(alias="pKaPos")] = [] # [+1, +2, +3, ..., +pos_count]
+    neg_count: Annotated[int, Field(alias="negCount")] = -1
+    pos_count: Annotated[int, Field(alias="posCount")] = -1
 
     @property
     def charges_neg(self) -> range:

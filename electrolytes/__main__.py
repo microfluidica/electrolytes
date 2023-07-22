@@ -1,4 +1,9 @@
+import sys
 from typing import Tuple, List
+if sys.version_info >= (3, 9):
+    from typing import Annotated
+else:
+    from typing_extensions import Annotated
 
 import typer
 from click import Context, Parameter
@@ -17,20 +22,20 @@ def complete_name_user_defined(ctx: Context, param: Parameter, incomplete: str) 
 
 
 @app.command()
-def add(name: str = typer.Argument(..., shell_complete=complete_name_user_defined),
-        p1: Tuple[float, float] = typer.Option((None, None), "+1", help="Mobility (*1e-9) and pKa for +1"),
-        p2: Tuple[float, float] = typer.Option((None, None), "+2", help="Mobility (*1e-9) and pKa for +2"),
-        p3: Tuple[float, float] = typer.Option((None, None), "+3", help="Mobility (*1e-9) and pKa for +3"),
-        p4: Tuple[float, float] = typer.Option((None, None), "+4", help="Mobility (*1e-9) and pKa for +4"),
-        p5: Tuple[float, float] = typer.Option((None, None), "+5", help="Mobility (*1e-9) and pKa for +5"),
-        p6: Tuple[float, float] = typer.Option((None, None), "+6", help="Mobility (*1e-9) and pKa for +6"),
-        m1: Tuple[float, float] = typer.Option((None, None), "-1", help="Mobility (*1e-9) and pKa for -1"),
-        m2: Tuple[float, float] = typer.Option((None, None), "-2", help="Mobility (*1e-9) and pKa for -2"),
-        m3: Tuple[float, float] = typer.Option((None, None), "-3", help="Mobility (*1e-9) and pKa for -3"),
-        m4: Tuple[float, float] = typer.Option((None, None), "-4", help="Mobility (*1e-9) and pKa for -4"),
-        m5: Tuple[float, float] = typer.Option((None, None), "-5", help="Mobility (*1e-9) and pKa for -5"),
-        m6: Tuple[float, float] = typer.Option((None, None), "-6", help="Mobility (*1e-9) and pKa for -6"),
-        force: bool = typer.Option(False, "-f", help="Replace any existing user-defined component with the same name")) -> None:
+def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_defined)],
+        p1: Annotated[Tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1")] = (None, None), # type: ignore
+        p2: Annotated[Tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2")] = (None, None), # type: ignore
+        p3: Annotated[Tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3")] = (None, None), # type: ignore
+        p4: Annotated[Tuple[float, float], typer.Option("+4", help="Mobility (*1e-9) and pKa for +4")] = (None, None), # type: ignore
+        p5: Annotated[Tuple[float, float], typer.Option("+5", help="Mobility (*1e-9) and pKa for +5")] = (None, None), # type: ignore
+        p6: Annotated[Tuple[float, float], typer.Option("+6", help="Mobility (*1e-9) and pKa for +6")] = (None, None), # type: ignore
+        m1: Annotated[Tuple[float, float], typer.Option("-1", help="Mobility (*1e-9) and pKa for -1")] = (None, None), # type: ignore
+        m2: Annotated[Tuple[float, float], typer.Option("-2", help="Mobility (*1e-9) and pKa for -2")] = (None, None), # type: ignore
+        m3: Annotated[Tuple[float, float], typer.Option("-3", help="Mobility (*1e-9) and pKa for -3")] = (None, None), # type: ignore
+        m4: Annotated[Tuple[float, float], typer.Option("-4", help="Mobility (*1e-9) and pKa for -4")] = (None, None), # type: ignore
+        m5: Annotated[Tuple[float, float], typer.Option("-5", help="Mobility (*1e-9) and pKa for -5")] = (None, None), # type: ignore
+        m6: Annotated[Tuple[float, float], typer.Option("-6", help="Mobility (*1e-9) and pKa for -6")] = (None, None), # type: ignore
+        force: Annotated[bool, typer.Option("-f", help="Replace any existing user-defined component with the same name")] = False) -> None:
     """Save a user-defined component"""
     name = name.upper()
 
@@ -86,7 +91,7 @@ def add(name: str = typer.Argument(..., shell_complete=complete_name_user_define
 
 
 @app.command()
-def info(name: str = typer.Argument(..., shell_complete=complete_name)) -> None:
+def info(name: Annotated[str, typer.Argument(shell_complete=complete_name)]) -> None:
     """Show the properties of a component"""
     name = name.upper()
 
@@ -112,7 +117,7 @@ def info(name: str = typer.Argument(..., shell_complete=complete_name)) -> None:
 
 
 @app.command()
-def ls(user_only: bool=typer.Option(False, "--user", help="Show only user-defined components")) -> None:
+def ls(user_only: Annotated[bool, typer.Option("--user", help="Show only user-defined components")] = False) -> None:
     """List available components"""
     if user_only:
         names = database.user_defined()
@@ -124,7 +129,7 @@ def ls(user_only: bool=typer.Option(False, "--user", help="Show only user-define
 
 
 @app.command()
-def rm(names: List[str] = typer.Argument(..., shell_complete=complete_name_user_defined)) -> None:
+def rm(names: Annotated[List[str], typer.Argument(shell_complete=complete_name_user_defined)]) -> None:
     """Remove user-defined components"""
     errors_ocurred = False
     for name in names:
@@ -144,7 +149,7 @@ def rm(names: List[str] = typer.Argument(..., shell_complete=complete_name_user_
 
 @app.command()
 def search(text: str,
-           user_only: bool=typer.Option(False, "--user", help="Search only user-defined components")) -> None:
+           user_only: Annotated[bool, typer.Option("--user", help="Search only user-defined components")] = False) -> None:
     """Search the list of components"""
     text = text.upper()
 

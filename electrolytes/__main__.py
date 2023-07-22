@@ -39,7 +39,8 @@ def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_de
     """Save a user-defined component"""
     name = name.upper()
 
-    if not p1 and not m1:
+    if p1[0] is None and m1[0] is None:
+        assert p1[1] is None and m1[1] is None
         typer.echo("Error: at least one of the +1 or -1 options is required", err=True)
         raise typer.Exit(code=1)
 

@@ -67,12 +67,13 @@ class Constituent:
     def __init__(self,
                  *,
                  name: str,
-                 u_neg: Sequence[float],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-                 u_pos: Sequence[float],  # [+1, +2, +3, ..., +pos_count]
-                 pkas_neg: Sequence[float],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-                 pkas_pos: Sequence[float],  # [+1, +2, +3, ..., +pos_count]
-                 neg_count: int = -1,
-                 pos_count: int = -1): ...
+                 u_neg: Sequence[float] = [],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+                 u_pos: Sequence[float] = [],  # [+1, +2, +3, ..., +pos_count]
+                 pkas_neg: Sequence[float] = [],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+                 pkas_pos: Sequence[float] = [],  # [+1, +2, +3, ..., +pos_count]
+                 neg_count: int = None, # == len(u_neg) == len(pkas_neg)
+                 pos_count: int = None): # == len(u_pos) == len(pkas_pos)
+        ...
 
     # Interface for electroMicroTransport
     def mobilities(self) -> Sequence[float]: ...  # [+n, ..., +3, +2, +1, -1, -2, -3, ..., -n] (with n >= 3), SI units

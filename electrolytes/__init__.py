@@ -1,14 +1,14 @@
 import sys
 import pkgutil
 from pathlib import Path
-from typing import Iterable, Iterator, List, Sequence, Dict
+from typing import Iterable, Iterator, List, Sequence, Dict, Optional
 if sys.version_info >= (3, 9):
     from typing import Annotated
 else:
     from typing_extensions import Annotated
 from warnings import warn
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
+from pydantic import BaseModel, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
 from typer import get_app_dir
 
 _APP_NAME = "electrolytes"
@@ -16,35 +16,31 @@ _APP_NAME = "electrolytes"
 __version__ = "0.2.4"
 
 
-class Constituent(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, validate_default=True)
-
-    id: int = -1
+class Constituent(BaseModel, populate_by_name=True, frozen=True):
+    id: Optional[int] = None
     name: str
     u_neg: Annotated[List[float], Field(alias="uNeg")] = [] # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
     u_pos: Annotated[List[float], Field(alias="uPos")] = [] # [+1, +2, +3, ..., +pos_count]
     pkas_neg: Annotated[List[float], Field(alias="pKaNeg")] = [] # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
     pkas_pos: Annotated[List[float], Field(alias="pKaPos")] = [] # [+1, +2, +3, ..., +pos_count]
-    neg_count: Annotated[int, Field(alias="negCount")] = -1
-    pos_count: Annotated[int, Field(alias="posCount")] = -1
-
-    @property
-    def charges_neg(self) -> range:
-        return range(-self.neg_count, 0)
-
-    @property
-    def charges_pos(self) -> range:
-        return range(1, self.pos_count + 1)
+    neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None # type: ignore
+    pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None # type: ignore
     
     def mobilities(self) -> Sequence[float]:
         n = max(self.neg_count, self.pos_count, 3)
-        ret = [0.0]*(n - self.pos_count) + [u*1e-9 for u in self.u_pos[::-1]] + [u*1e-9 for u in self.u_neg[::-1]] + [0.0]*(n - self.neg_count)
+        ret = [0.0]*(n - self.pos_count) \
+            + [u*1e-9 for u in self.u_pos[::-1]] \
+            + [u*1e-9 for u in self.u_neg[::-1]] \
+            + [0.0]*(n - self.neg_count)
         assert len(ret) == 2*n
         return ret
 
     def pkas(self) -> Sequence[float]:
         n = max(self.neg_count, self.pos_count, 3)
-        ret = [self._default_pka(c) for c in range(n, self.pos_count, -1)] + self.pkas_pos[::-1] + self.pkas_neg[::-1] + [self._default_pka(-c) for c in range(self.neg_count+1, n+1)]
+        ret = [self._default_pka(c) for c in range(n, self.pos_count, -1)] \
+            + self.pkas_pos[::-1] \
+            + self.pkas_neg[::-1] \
+            + [self._default_pka(-c) for c in range(self.neg_count+1, n+1)]
         assert len(ret) == 2*n
         return ret
 
@@ -69,28 +65,48 @@ class Constituent(BaseModel):
         else:
             return -charge
 
+
+    @field_validator("name")
+    def _normalize_db1_names(cls, v: str, info: FieldValidationInfo) -> str:
+        if info.context and info.context.get("fix", None) == "db1":
+            v = v.replace(" ", "_").replace("Cl-", "CHLORO")
+        return v
+    
+    @field_validator("name")
+    def _no_whitespace(cls, v: str, info: FieldValidationInfo) -> str:
+        parts = v.split()
+        if len(parts) > 1 or len(parts[0]) != len(v):
+            raise ValueError("name cannot contain any whitespace")
+        return parts[0]
+
+    @field_validator("name")
+    def _all_uppercase(cls, v: str, info: FieldValidationInfo) -> str:
+        if not v.isupper():
+            raise ValueError("name must be all uppercase")
+        return v
+
     @field_validator("pkas_neg", "pkas_pos")
-    def pka_lengths(cls, v: List[float], info: FieldValidationInfo) -> List[float]:
+    def _pka_lengths(cls, v: List[float], info: FieldValidationInfo) -> List[float]:
         if len(v) != len(info.data[f"u_{info.field_name[5:]}"]):
             raise ValueError(f"len({info.field_name}) != len(u_{info.field_name[5:]})")
         return v
  
-    @field_validator("neg_count", "pos_count")
-    def counts(cls, v: int, info: FieldValidationInfo) -> int:
-        if v == -1:
+    @field_validator("neg_count", "pos_count", mode="before")
+    def _counts(cls, v: Optional[int], info: FieldValidationInfo) -> int:
+        if v is None:
             v = len(info.data[f"u_{info.field_name[:3]}"])
         elif v != len(info.data[f"u_{info.field_name[:3]}"]):
             raise ValueError(f"{info.field_name} != len(u_{info.field_name[:3]})")
         return v
 
-    @model_validator(mode="after")
-    def pkas_not_increasing(self):
+    @model_validator(mode="after") # type: ignore # https://github.com/pydantic/pydantic/issues/6709
+    def _pkas_not_increasing(self) -> "Constituent":
         pkas = [*self.pkas_neg, *self.pkas_pos]
 
         if not all(x>=y for x, y in zip(pkas, pkas[1:])):
             raise ValueError("pKa values must not increase with charge")
 
-        return self
+        return self # type: ignore # https://github.com/pydantic/pydantic/issues/6709
 
 
 _StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])
@@ -122,13 +138,7 @@ def _load_default_constituents() -> Dict[str, Constituent]:
     if data is None:
         raise RuntimeError("failed to load default constituents")
 
-    constituents = _StoredConstituents.validate_json(data)["constituents"]
-
-    for c in constituents:
-        if " " in c.name:
-            c.name = c.name.replace(" ", "_")
-        if "Cl-" in c.name:
-            c.name = c.name.replace("Cl-", "CHLORO")
+    constituents = _StoredConstituents.validate_json(data, context={"fix": "db1"})["constituents"]
 
     return {c.name: c for c in constituents}
 

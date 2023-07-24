@@ -102,7 +102,7 @@ def info(name: Annotated[str, typer.Argument(shell_complete=complete_name)]) -> 
         typer.echo(f"Error: {name}: no such component", err=True)
         raise typer.Exit(code=1)
 
-    charges = list(constituent.charges_pos[::-1]) + list(constituent.charges_neg[::-1])
+    charges = list(range(constituent.pos_count, 0, -1)) + list(range(-1, -constituent.neg_count - 1, -1))
     uu = constituent.u_pos[::-1] + constituent.u_neg[::-1]
     pkas = constituent.pkas_pos[::-1] + constituent.pkas_neg[::-1]
 

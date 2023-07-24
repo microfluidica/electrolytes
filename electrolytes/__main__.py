@@ -68,27 +68,28 @@ def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_de
         else:
             pos.append(p)
 
-    if not force and database.is_user_defined(name):
-        typer.echo(f"Error: user-defined component {name} already exists (use -f to replace)", err=True)
-        raise typer.Exit(code=1)
+    with database._user_constituents_lock:
+        if not force and database.is_user_defined(name):
+            typer.echo(f"Error: user-defined component {name} already exists (use -f to replace)", err=True)
+            raise typer.Exit(code=1)
 
-    try:
-        constituent = Constituent(name=name,
-                                  u_neg=[x[0] for x in neg],
-                                  u_pos=[x[0] for x in pos],
-                                  pkas_neg=[x[1] for x in neg],
-                                  pkas_pos=[x[1] for x in pos])
-        
         try:
-            del database[name]
-        except KeyError:
-            pass
+            constituent = Constituent(name=name,
+                                    u_neg=[x[0] for x in neg],
+                                    u_pos=[x[0] for x in pos],
+                                    pkas_neg=[x[1] for x in neg],
+                                    pkas_pos=[x[1] for x in pos])
+            
+            try:
+                del database[name]
+            except KeyError:
+                pass
 
-        database.add(constituent)
+            database.add(constituent)
 
-    except Exception as e:
-        typer.echo(f"Error: {e}", err=True)
-        raise typer.Exit(code=1)
+        except Exception as e:
+            typer.echo(f"Error: {e}", err=True)
+            raise typer.Exit(code=1)
 
 
 @app.command()

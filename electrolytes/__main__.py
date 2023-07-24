@@ -8,7 +8,7 @@ else:
 import typer
 from click import Context, Parameter
 
-from . import _APP_NAME, database, Constituent
+from . import database, Constituent
 
 
 app = typer.Typer()
@@ -167,4 +167,4 @@ def search(text: str,
 
 
 if __name__ == "__main__":
-    app(prog_name=_APP_NAME)
+    app(prog_name=__package__)

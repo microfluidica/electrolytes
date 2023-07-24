@@ -11,8 +11,6 @@ from warnings import warn
 from pydantic import BaseModel, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
 from typer import get_app_dir
 
-_APP_NAME = "electrolytes"
-
 __version__ = "0.2.4"
 
 
@@ -111,7 +109,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
 _StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])
 
-_USER_CONSTITUENTS_FILE = Path(get_app_dir(_APP_NAME), "user_constituents.json")
+_USER_CONSTITUENTS_FILE = Path(get_app_dir(__package__), "user_constituents.json")
 
 def _load_user_constituents() -> Dict[str, Constituent]:
     try:
@@ -134,7 +132,7 @@ def _save_user_constituents(components: Dict[str, Constituent]) -> None:
 
 
 def _load_default_constituents() -> Dict[str, Constituent]:
-    data = pkgutil.get_data(__name__, "db1.json")
+    data = pkgutil.get_data(__package__, "db1.json")
     if data is None:
         raise RuntimeError("failed to load default constituents")
 

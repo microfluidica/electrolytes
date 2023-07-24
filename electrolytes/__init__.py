@@ -9,6 +9,7 @@ else:
 from warnings import warn
 
 from pydantic import BaseModel, Field, field_validator, FieldValidationInfo, model_validator, TypeAdapter
+from filelock import FileLock
 from typer import get_app_dir
 
 __version__ = "0.2.4"
@@ -142,30 +143,33 @@ def _load_default_constituents() -> Dict[str, Constituent]:
 
 
 class _Database:
+    _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    _user_constituents_lock = FileLock(_USER_CONSTITUENTS_FILE.with_suffix(".lock"))
 
     def __init__(self) -> None:
-        super().__init__()
-        self._loaded_user_constituents: Optional[Dict[str, Constituent]] = None
         self._loaded_default_constituents: Optional[Dict[str, Constituent]] = None
-
-    @property
-    def _user_constituents(self) -> Dict[str, Constituent]:
-        if self._loaded_user_constituents is None:
-            self._loaded_user_constituents = _load_user_constituents()
-        
-        return self._loaded_user_constituents
+        self._loaded_user_constituents: Optional[Dict[str, Constituent]] = None
 
     @property
     def _default_constituents(self) -> Dict[str, Constituent]:
         if self._loaded_default_constituents is None:
             self._loaded_default_constituents = _load_default_constituents()
-        
         return self._loaded_default_constituents
+
+    @_user_constituents_lock
+    def _reload_user_constituents(self) -> None:
+        self._loaded_user_constituents = _load_user_constituents()
+
+    @property
+    def _user_constituents(self) -> Dict[str, Constituent]:
+        if self._loaded_user_constituents is None:
+            self._reload_user_constituents()
+        assert self._loaded_user_constituents is not None
+        return self._loaded_user_constituents
 
 
     def __iter__(self) -> Iterator[str]:
         yield from sorted([*self._default_constituents, *self._user_constituents])
-
 
     def __getitem__(self, name: str) -> Constituent:
         name = name.upper()
@@ -174,37 +178,42 @@ class _Database:
         except KeyError:
             return self._default_constituents[name]
 
-
+    @_user_constituents_lock
     def add(self, constituent: Constituent) -> None:
+        self._reload_user_constituents()
         if constituent.name not in self:
             self._user_constituents[constituent.name] = constituent
             _save_user_constituents(self._user_constituents)
+        else:
+            warn(f"{constituent.name}: not added (name already exists)")
 
-
+    @_user_constituents_lock
     def __delitem__(self, name: str) -> None:
         name = name.upper()
-        if not name in self._user_constituents:
+        try:
+            self._reload_user_constituents()
+            del self._user_constituents[name]
+            _save_user_constituents(self._user_constituents)
+        except KeyError:
             if name in self._default_constituents:
                 raise ValueError(f"{name}: cannot remove default component")
-
-        del self._user_constituents[name]
-        _save_user_constituents(self._user_constituents)
-
+            else:
+                raise
 
     def __len__(self) -> int:
         return len(self._default_constituents) + len(self._user_constituents)
 
-
     def user_defined(self) -> Iterable[str]:
         return sorted(self._user_constituents)
 
-    
-    def __contains__(self, name: Any) -> bool:
-        if not isinstance(name, str):
+    def __contains__(self, obj: Any) -> bool:
+        if isinstance(obj, str):
+            obj = obj.upper()
+            return obj in self._default_constituents or obj in self._user_constituents
+        elif isinstance(obj, Constituent):
+            return obj == self[obj.name]
+        else:
             return False
-        name = name.upper()
-        return name in self._default_constituents or name in self._user_constituents
-
 
     def is_user_defined(self, name: str) -> bool:
         name = name.upper()

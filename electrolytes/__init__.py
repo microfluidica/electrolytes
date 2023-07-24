@@ -126,7 +126,7 @@ def _load_user_constituents() -> Dict[str, Constituent]:
     return {c.name: c for c in constituents}
 
 def _save_user_constituents(components: Dict[str, Constituent]) -> None:
-    data = _StoredConstituents.dump_json({"constituents": list(components.values())})
+    data = _StoredConstituents.dump_json({"constituents": list(components.values())}, by_alias=True, indent=4)
     _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
     with _USER_CONSTITUENTS_FILE.open("wb") as f:
         f.write(data)

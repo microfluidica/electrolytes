@@ -110,42 +110,14 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
 _StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])
 
-_USER_CONSTITUENTS_FILE = Path(get_app_dir(__package__), "user_constituents.json")
+def _load_constituents(data: bytes, context: Optional[Dict[str,str]]=None) -> List[Constituent]:
+    return _StoredConstituents.validate_json(data, context=context)["constituents"]
 
-def _load_user_constituents() -> Dict[str, Constituent]:
-    try:
-        with _USER_CONSTITUENTS_FILE.open("rb") as f:
-            data = f.read()
-    except FileNotFoundError:
-        return {}
-    try:
-        constituents = _StoredConstituents.validate_json(data)["constituents"]
-    except Exception as e:
-        warn(f"failed to load user constituents from {_USER_CONSTITUENTS_FILE}: {type(e).__name__}", RuntimeWarning)
-        return {}
-    return {c.name: c for c in constituents}
-
-def _save_user_constituents(components: Dict[str, Constituent]) -> None:
-    data = _StoredConstituents.dump_json({"constituents": list(components.values())}, by_alias=True, indent=4)
-    _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with _USER_CONSTITUENTS_FILE.open("wb") as f:
-        f.write(data)
-
-
-def _load_default_constituents() -> Dict[str, Constituent]:
-    data = pkgutil.get_data(__package__, "db1.json")
-    if data is None:
-        raise RuntimeError("failed to load default constituents")
-
-    constituents = _StoredConstituents.validate_json(data, context={"fix": "db1"})["constituents"]
-
-    return {c.name: c for c in constituents}
+def _dump_constituents(constituents: List[Constituent]) -> bytes:
+    return  _StoredConstituents.dump_json({"constituents": constituents}, by_alias=True, indent=4)
 
 
 class _Database:
-    _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    _user_constituents_lock = FileLock(_USER_CONSTITUENTS_FILE.with_suffix(".lock"))
-
     def __init__(self) -> None:
         self._loaded_default_constituents: Optional[Dict[str, Constituent]] = None
         self._loaded_user_constituents: Optional[Dict[str, Constituent]] = None
@@ -153,12 +125,33 @@ class _Database:
     @property
     def _default_constituents(self) -> Dict[str, Constituent]:
         if self._loaded_default_constituents is None:
-            self._loaded_default_constituents = _load_default_constituents()
+            data = pkgutil.get_data(__package__, "db1.json")
+            if data is None:
+                raise RuntimeError("failed to load default constituents")
+            constituents = _load_constituents(data, context={"fix": "db1"})
+            self._loaded_default_constituents = {c.name: c for c in constituents}
         return self._loaded_default_constituents
+    
+    _USER_CONSTITUENTS_FILE = Path(get_app_dir(__package__), "user_constituents.json")
+
+    _USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True) # https://github.com/tox-dev/py-filelock/issues/176
+    _user_constituents_lock = FileLock(_USER_CONSTITUENTS_FILE.with_suffix(".lock"))
 
     @_user_constituents_lock
     def _reload_user_constituents(self) -> None:
-        self._loaded_user_constituents = _load_user_constituents()
+        try:
+            with self._USER_CONSTITUENTS_FILE.open("rb") as f:
+                data = f.read()
+        except FileNotFoundError:
+            self._loaded_user_constituents = {}
+            return
+        try:
+            constituents = _load_constituents(data)
+        except Exception as e:
+            warn(f"failed to load user constituents from {self._USER_CONSTITUENTS_FILE}: {type(e).__name__}", RuntimeWarning)
+            self._loaded_user_constituents = {}
+            return
+        self._loaded_user_constituents = {c.name: c for c in constituents}
 
     @property
     def _user_constituents(self) -> Dict[str, Constituent]:
@@ -166,6 +159,14 @@ class _Database:
             self._reload_user_constituents()
         assert self._loaded_user_constituents is not None
         return self._loaded_user_constituents
+    
+    @_user_constituents_lock
+    def _save_user_constituents(self) -> None:
+        assert self._loaded_user_constituents is not None
+        data = _dump_constituents(list(self._loaded_user_constituents.values()))
+        self._USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with self._USER_CONSTITUENTS_FILE.open("wb") as f:
+            f.write(data)
 
 
     def __iter__(self) -> Iterator[str]:
@@ -183,9 +184,9 @@ class _Database:
         self._reload_user_constituents()
         if constituent.name not in self:
             self._user_constituents[constituent.name] = constituent
-            _save_user_constituents(self._user_constituents)
+            self._save_user_constituents()
         else:
-            warn(f"{constituent.name}: not added (name already exists)")
+            warn(f"{constituent.name}: component was not added (name already exists in database)")
 
     @_user_constituents_lock
     def __delitem__(self, name: str) -> None:
@@ -193,7 +194,7 @@ class _Database:
         try:
             self._reload_user_constituents()
             del self._user_constituents[name]
-            _save_user_constituents(self._user_constituents)
+            self._save_user_constituents()
         except KeyError:
             if name in self._default_constituents:
                 raise ValueError(f"{name}: cannot remove default component")

@@ -64,3 +64,8 @@ electrolytes = ["*.json"]
 
 [tool.mypy]
 plugins = ["pydantic.mypy"]
+packages = [
+    "electrolytes",
+    "tests",
+]
+strict = true

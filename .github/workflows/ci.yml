@@ -31,7 +31,7 @@ jobs:
         python -m pip install .[lint,test]
     - name: Check types with mypy
       run: |
-        mypy electrolytes tests
+        mypy
     - name: Test with pytest
       run: |
         pytest --cov=electrolytes

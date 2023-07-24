@@ -1,7 +1,7 @@
 import sys
 import pkgutil
 from pathlib import Path
-from typing import Iterable, Iterator, List, Sequence, Dict, Optional
+from typing import Iterable, Iterator, List, Sequence, Dict, Optional, Any
 if sys.version_info >= (3, 9):
     from typing import Annotated
 else:
@@ -145,10 +145,10 @@ def _load_default_constituents() -> Dict[str, Constituent]:
 
 class _Database:
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
-        self._loaded_user_constituents = None
-        self._loaded_default_constituents = None
+        self._loaded_user_constituents: Optional[Dict[str, Constituent]] = None
+        self._loaded_default_constituents: Optional[Dict[str, Constituent]] = None
 
     @property
     def _user_constituents(self) -> Dict[str, Constituent]:
@@ -201,7 +201,7 @@ class _Database:
         return sorted(self._user_constituents)
 
     
-    def __contains__(self, name) -> bool:
+    def __contains__(self, name: Any) -> bool:
         if not isinstance(name, str):
             return False
         name = name.upper()

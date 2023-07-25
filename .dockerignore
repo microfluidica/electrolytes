@@ -154,3 +154,7 @@
 
 # GitHub
 **/.github
+
+# Dev Containers
+**/.devcontainer
+**/.devcontainer.json

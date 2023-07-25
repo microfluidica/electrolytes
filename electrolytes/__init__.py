@@ -98,14 +98,14 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
             raise ValueError(f"{info.field_name} != len(u_{info.field_name[:3]})")
         return v
 
-    @model_validator(mode="after") # type: ignore # https://github.com/pydantic/pydantic/issues/6709
+    @model_validator(mode="after")
     def _pkas_not_increasing(self) -> "Constituent":
         pkas = [*self.pkas_neg, *self.pkas_pos]
 
         if not all(x>=y for x, y in zip(pkas, pkas[1:])):
             raise ValueError("pKa values must not increase with charge")
 
-        return self # type: ignore # https://github.com/pydantic/pydantic/issues/6709
+        return self
 
 
 _StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])

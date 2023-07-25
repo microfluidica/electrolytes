@@ -68,7 +68,7 @@ def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_de
         else:
             pos.append(p)
 
-    with database._user_constituents_lock:
+    with database._user_constituents_file_lock:
         if not force and database.is_user_defined(name):
             typer.echo(f"Error: user-defined component {name} already exists (use -f to replace)", err=True)
             raise typer.Exit(code=1)

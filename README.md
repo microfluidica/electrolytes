@@ -60,24 +60,20 @@ You can look up components in the `database` as you would with `dict` (with comp
 
 `Constituent` names are case insensitive and will be automatically converted to all uppercase. Any instances added to (or removed from) the `database` will be saved for the current operating system user. Default components cannot be changed or removed (expect a `ValueError` if you try).
 
-The public stubs of the `Constituent` class are:
+The public interface of the `Constituent` class is:
 
 ```python
 class Constituent:
-    def __init__(self,
-                 *,
-                 name: str,
-                 u_neg: Sequence[float] = [],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-                 u_pos: Sequence[float] = [],  # [+1, +2, +3, ..., +pos_count]
-                 pkas_neg: Sequence[float] = [],  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-                 pkas_pos: Sequence[float] = [],  # [+1, +2, +3, ..., +pos_count]
-                 neg_count: int = None, # == len(u_neg) == len(pkas_neg)
-                 pos_count: int = None): # == len(u_pos) == len(pkas_pos)
-        ...
+    name: str
+    u_neg: Sequence[float] = []  # mobilities for [..., -3, -2, -1], SI units*1e-9
+    u_pos: Sequence[float] = []  # mobilities for [+1, +2, +3, ...], SI units*1e-9
+    pkas_neg: Sequence[float] = []  # pKas for [..., -3, -2, -1]
+    pkas_pos: Sequence[float] = []  # pKas for [+1, +2, +3, ...]
 
     # Interface for electroMicroTransport
-    def mobilities(self) -> Sequence[float]: ...  # [+n, ..., +3, +2, +1, -1, -2, -3, ..., -n] (with n >= 3), SI units
-    def pkas(self) -> Sequence[float]: ...  # [+n, ..., +3, +2, +1, -1, -2, -3, ..., -n] (with n >= 3)
+    def mobilities(self) -> Sequence[float]: ...  # for [..., +3, +2, +1, -1, -2, -3, ...], SI units
+    def pkas(self) -> Sequence[float]: ...  # for [..., +3, +2, +1, -1, -2, -3, ...]
+    # NOTE: the above are padded if needed so that +3 and -3 are always present (len >= 6)
     def diffusivity(self) -> float: ...  # SI units
 ```
 

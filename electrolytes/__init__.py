@@ -142,8 +142,8 @@ class _Database:
     @cached_property
     def _user_constituents(self) -> Dict[str, Constituent]:
         try:
-            with self._user_constituents_file_lock, self._USER_CONSTITUENTS_FILE.open("rb") as f:
-                data = f.read()
+            with self._user_constituents_file_lock:
+                data = self._USER_CONSTITUENTS_FILE.read_bytes()
         except OSError:
             return {}
         try:
@@ -163,8 +163,7 @@ class _Database:
     def _save_user_constituents(self) -> None:
         data = _dump_constituents(list(self._user_constituents.values()))
         self._USER_CONSTITUENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-        with self._USER_CONSTITUENTS_FILE.open("wb") as f:
-            f.write(data)
+        self._USER_CONSTITUENTS_FILE.write_bytes(data)
 
 
     def __iter__(self) -> Iterator[str]:

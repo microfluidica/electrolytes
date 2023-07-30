@@ -105,6 +105,7 @@ def info(names: Annotated[Optional[List[str]], typer.Argument(help="Component na
             except KeyError:
                 typer.echo(f"Error: {name}: no such component", err=True)
                 errors_ocurred = True
+                continue
 
             charges = list(range(constituent.pos_count, 0, -1)) + list(range(-1, -constituent.neg_count - 1, -1))
             uu = constituent.u_pos[::-1] + constituent.u_neg[::-1]

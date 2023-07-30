@@ -58,6 +58,8 @@ You can look up components in the `database` as you would with `dict` (with comp
     def is_user_defined(self, name: str) -> bool: ...
 ```
 
+The `database` object is also usable as a context manager (i.e. `with database:`), which allows multiple operations to be performed with exclusive access to the database (locking out any other processes for the duration).
+
 `Constituent` names are case insensitive and will be automatically converted to all uppercase. Any instances added to (or removed from) the `database` will be saved for the current operating system user. Default components cannot be changed or removed (expect a `ValueError` if you try).
 
 The public interface of the `Constituent` class is:

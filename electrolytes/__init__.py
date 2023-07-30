@@ -1,7 +1,7 @@
 import sys
 import pkgutil
 from pathlib import Path
-from typing import Collection, Iterable, Iterator, List, Sequence, Dict, Optional, Any
+from typing import Collection, Iterator, List, Sequence, Dict, Optional, Any
 if sys.version_info >= (3, 9):
     from typing import Annotated
 else:

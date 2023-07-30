@@ -1,5 +1,5 @@
 import sys
-from typing import Tuple, List
+from typing import Tuple, List, Optional
 if sys.version_info >= (3, 9):
     from typing import Annotated
 else:
@@ -7,7 +7,7 @@ else:
 
 import typer
 
-from . import database, Constituent
+from . import database, Constituent, __version__
 
 
 app = typer.Typer()
@@ -22,20 +22,20 @@ def complete_name_user_defined(incomplete: str) -> List[str]:
 
 @app.command()
 def add(name: Annotated[str, typer.Argument(autocompletion=complete_name_user_defined)],
-        p1: Annotated[Tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1")] = (None, None), # type: ignore
-        p2: Annotated[Tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2")] = (None, None), # type: ignore
-        p3: Annotated[Tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3")] = (None, None), # type: ignore
-        p4: Annotated[Tuple[float, float], typer.Option("+4", help="Mobility (*1e-9) and pKa for +4")] = (None, None), # type: ignore
-        p5: Annotated[Tuple[float, float], typer.Option("+5", help="Mobility (*1e-9) and pKa for +5")] = (None, None), # type: ignore
-        p6: Annotated[Tuple[float, float], typer.Option("+6", help="Mobility (*1e-9) and pKa for +6")] = (None, None), # type: ignore
-        m1: Annotated[Tuple[float, float], typer.Option("-1", help="Mobility (*1e-9) and pKa for -1")] = (None, None), # type: ignore
-        m2: Annotated[Tuple[float, float], typer.Option("-2", help="Mobility (*1e-9) and pKa for -2")] = (None, None), # type: ignore
-        m3: Annotated[Tuple[float, float], typer.Option("-3", help="Mobility (*1e-9) and pKa for -3")] = (None, None), # type: ignore
-        m4: Annotated[Tuple[float, float], typer.Option("-4", help="Mobility (*1e-9) and pKa for -4")] = (None, None), # type: ignore
-        m5: Annotated[Tuple[float, float], typer.Option("-5", help="Mobility (*1e-9) and pKa for -5")] = (None, None), # type: ignore
-        m6: Annotated[Tuple[float, float], typer.Option("-6", help="Mobility (*1e-9) and pKa for -6")] = (None, None), # type: ignore
-        force: Annotated[bool, typer.Option("-f", help="Replace any existing user-defined component with the same name")] = False) -> None:
-    """Save a user-defined component"""
+        p1: Annotated[Tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1", show_default=False)] = (None, None), # type: ignore
+        p2: Annotated[Tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2", show_default=False)] = (None, None), # type: ignore
+        p3: Annotated[Tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3", show_default=False)] = (None, None), # type: ignore
+        p4: Annotated[Tuple[float, float], typer.Option("+4", help="Mobility (*1e-9) and pKa for +4", show_default=False)] = (None, None), # type: ignore
+        p5: Annotated[Tuple[float, float], typer.Option("+5", help="Mobility (*1e-9) and pKa for +5", show_default=False)] = (None, None), # type: ignore
+        p6: Annotated[Tuple[float, float], typer.Option("+6", help="Mobility (*1e-9) and pKa for +6", show_default=False)] = (None, None), # type: ignore
+        m1: Annotated[Tuple[float, float], typer.Option("-1", help="Mobility (*1e-9) and pKa for -1", show_default=False)] = (None, None), # type: ignore
+        m2: Annotated[Tuple[float, float], typer.Option("-2", help="Mobility (*1e-9) and pKa for -2", show_default=False)] = (None, None), # type: ignore
+        m3: Annotated[Tuple[float, float], typer.Option("-3", help="Mobility (*1e-9) and pKa for -3", show_default=False)] = (None, None), # type: ignore
+        m4: Annotated[Tuple[float, float], typer.Option("-4", help="Mobility (*1e-9) and pKa for -4", show_default=False)] = (None, None), # type: ignore
+        m5: Annotated[Tuple[float, float], typer.Option("-5", help="Mobility (*1e-9) and pKa for -5", show_default=False)] = (None, None), # type: ignore
+        m6: Annotated[Tuple[float, float], typer.Option("-6", help="Mobility (*1e-9) and pKa for -6", show_default=False)] = (None, None), # type: ignore
+        force: Annotated[bool, typer.Option("-f", help="Do not prompt before replacing a user-defined component with the same name")] = False) -> None:
+    """Store a user-defined component in the database."""
     name = name.upper()
 
     if p1[0] is None and m1[0] is None:
@@ -50,7 +50,7 @@ def add(name: Annotated[str, typer.Argument(autocompletion=complete_name_user_de
             assert m[1] is None
             any_omitted = True
         elif any_omitted:
-            typer.echo(f"Error: missing charge +{i}", err=True)
+            typer.echo(f"Error: missing charge -{i}", err=True)
             raise typer.Exit(code=1)
         else:
             neg.insert(0, m)
@@ -62,66 +62,84 @@ def add(name: Annotated[str, typer.Argument(autocompletion=complete_name_user_de
             assert p[1] is None
             any_omitted = True
         elif any_omitted:
-            typer.echo(f"Error: missing charge -{i}", err=True)
+            typer.echo(f"Error: missing charge +{i}", err=True)
             raise typer.Exit(code=1)
         else:
             pos.append(p)
 
+    constituent = Constituent(name=name,
+                              u_neg=[x[0] for x in neg],
+                              u_pos=[x[0] for x in pos],
+                              pkas_neg=[x[1] for x in neg],
+                              pkas_pos=[x[1] for x in pos])
+
     with database._user_constituents_file_lock:
-        if not force and database.is_user_defined(name):
-            typer.echo(f"Error: user-defined component {name} already exists (use -f to replace)", err=True)
-            raise typer.Exit(code=1)
+        if name in database:
+            if not database.is_user_defined(name):
+                typer.echo(f"Error: {name}: is a default component", err=True)
+                raise typer.Exit(code=1)
 
-        try:
-            constituent = Constituent(name=name,
-                                    u_neg=[x[0] for x in neg],
-                                    u_pos=[x[0] for x in pos],
-                                    pkas_neg=[x[1] for x in neg],
-                                    pkas_pos=[x[1] for x in pos])
-            
-            try:
-                del database[name]
-            except KeyError:
-                pass
+            if not force:
+                typer.confirm(f"Replace existing {name}?", abort=True)
 
-            database.add(constituent)
+            del database[name]
 
-        except Exception as e:
-            typer.echo(f"Error: {e}", err=True)
-            raise typer.Exit(code=1)
+        database.add(constituent)
 
 
 @app.command()
-def info(name: Annotated[str, typer.Argument(autocompletion=complete_name)]) -> None:
-    """Show the properties of a component"""
-    name = name.upper()
-
-    try:
-        constituent = database[name]
-    except KeyError:
-        typer.echo(f"Error: {name}: no such component", err=True)
-        raise typer.Exit(code=1)
-
-    charges = list(range(constituent.pos_count, 0, -1)) + list(range(-1, -constituent.neg_count - 1, -1))
-    uu = constituent.u_pos[::-1] + constituent.u_neg[::-1]
-    pkas = constituent.pkas_pos[::-1] + constituent.pkas_neg[::-1]
-
-    assert len(charges) == len(uu) == len(pkas)
+def info(names: Annotated[Optional[List[str]], typer.Argument(help="Component names", autocompletion=complete_name)] = None) -> None:
+    """
+    Show the properties of components.
     
-    typer.echo(f"Component: {name}")
-    if database.is_user_defined(name):
-        typer.echo("[user-defined]")
-    typer.echo( "                 " + " ".join(f"{c:^+8d}" for c in charges))
-    typer.echo( "Mobilities *1e-9:" + " ".join(f"{u:^8.2f}" for u in uu))
-    typer.echo( "pKas:            " + " ".join(f"{p:^8.2f}" for p in pkas))
-    typer.echo(f"Diffusivity: {constituent.diffusivity():.4e}")
+    If no names are given, print the number of components in the database.
+    """
+    if names:
+        first = True
+        errors_ocurred = False
+        for name in names:
+            name = name.upper()
 
+            try:
+                constituent = database[name]
+            except KeyError:
+                typer.echo(f"Error: {name}: no such component", err=True)
+                errors_ocurred = True
+
+            charges = list(range(constituent.pos_count, 0, -1)) + list(range(-1, -constituent.neg_count - 1, -1))
+            uu = constituent.u_pos[::-1] + constituent.u_neg[::-1]
+            pkas = constituent.pkas_pos[::-1] + constituent.pkas_neg[::-1]
+
+            assert len(charges) == len(uu) == len(pkas)
+
+            if not first:
+                typer.echo()
+            typer.echo(f"Component: {name}")
+            if database.is_user_defined(name):
+                typer.echo("[user-defined]")
+            typer.echo( "                 " + " ".join(f"{c:^+8d}" for c in charges))
+            typer.echo( "Mobilities *1e-9:" + " ".join(f"{u:^8.2f}" for u in uu))
+            typer.echo( "pKas:            " + " ".join(f"{p:^8.2f}" for p in pkas))
+            typer.echo(f"Diffusivity: {constituent.diffusivity():.4e}")
+
+            first = False
+
+        if errors_ocurred:
+            raise typer.Exit(code=1)
+    
+    else:
+        total = len(database)
+        user = len(database.user_defined())
+        typer.echo(f"{total} components stored in the database ({total - user} default, {user} user-defined)")
 
 @app.command()
-def ls(user_only: Annotated[bool, typer.Option("--user", help="Show only user-defined components")] = False) -> None:
-    """List available components"""
-    if user_only:
+def ls(user: Annotated[Optional[bool], typer.Option("--user/--default", help="List only user-defined/default components")] = None) -> None:
+    """List components in the database."""
+
+    if user:
         names = database.user_defined()
+    elif user is not None:
+        names = [name for name in database if not database.is_user_defined(name)]
     else:
         names = database
 
@@ -130,32 +148,36 @@ def ls(user_only: Annotated[bool, typer.Option("--user", help="Show only user-de
 
 
 @app.command()
-def rm(names: Annotated[List[str], typer.Argument(autocompletion=complete_name_user_defined)]) -> None:
-    """Remove user-defined components"""
+def rm(names: Annotated[List[str], typer.Argument(autocompletion=complete_name_user_defined)],
+       force: Annotated[Optional[bool], typer.Option("-f", help="Ignore non-existent components")] = False) -> None:
+    """Remove user-defined components from the database."""
     errors_ocurred = False
     for name in names:
         name = name.upper()
         try:
             del database[name]
         except KeyError:
-            typer.echo(f"Error: {name}: no such component", err=True)
-            errors_ocurred = True
+            if not force:
+                typer.echo(f"Error: {name}: no such component", err=True)
+                errors_ocurred = True
         except ValueError as e:
             typer.echo(f"Error: {e}", err=True)
             errors_ocurred = True
-    
+
     if errors_ocurred:
-        raise typer.Exit(code=-1)
+        raise typer.Exit(code=1)
 
 
 @app.command()
 def search(text: str,
-           user_only: Annotated[bool, typer.Option("--user", help="Search only user-defined components")] = False) -> None:
-    """Search the list of components"""
+           user: Annotated[Optional[bool], typer.Option("--user/--default", help="Search only user-defined/default components")] = None) -> None:
+    """Search for a name in the database."""
     text = text.upper()
 
-    if user_only:
+    if user:
         names = list(database.user_defined())
+    elif user is not None:
+        names = [name for name in database if not database.is_user_defined(name)]
     else:
         names = list(database)
 
@@ -164,6 +186,17 @@ def search(text: str,
     for name, index in zip(names, match_indices):
         if index != -1:
             typer.echo(name[0:index] + typer.style(name[index:index+len(text)], bold=True) + name[index+len(text):])
+
+
+def version_callback(show: bool) -> None:
+    if show:
+        typer.echo(f"{__package__} {__version__}")
+        raise typer.Exit()
+
+@app.callback()
+def common(version: Annotated[bool, typer.Option("--version", help="Show version and exit.", callback=version_callback)] = False) -> None:
+    """Database of electrolytes and their properties."""
+    pass
 
 
 if __name__ == "__main__":

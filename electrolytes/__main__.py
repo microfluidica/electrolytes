@@ -6,7 +6,6 @@ else:
     from typing_extensions import Annotated
 
 import typer
-from click import Context, Parameter
 
 from . import database, Constituent
 
@@ -14,15 +13,15 @@ from . import database, Constituent
 app = typer.Typer()
 
 
-def complete_name(ctx: Context, param: Parameter, incomplete: str) -> List[str]:
-    return [name for name in database if name.startswith(incomplete)]
+def complete_name(incomplete: str) -> List[str]:
+    return [name for name in database if name.startswith(incomplete.upper())]
 
-def complete_name_user_defined(ctx: Context, param: Parameter, incomplete: str) -> List[str]:
-    return [name for name in database.user_defined() if name.startswith(incomplete)]
+def complete_name_user_defined(incomplete: str) -> List[str]:
+    return [name for name in database.user_defined() if name.startswith(incomplete.upper())]
 
 
 @app.command()
-def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_defined)],
+def add(name: Annotated[str, typer.Argument(autocompletion=complete_name_user_defined)],
         p1: Annotated[Tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1")] = (None, None), # type: ignore
         p2: Annotated[Tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2")] = (None, None), # type: ignore
         p3: Annotated[Tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3")] = (None, None), # type: ignore
@@ -93,7 +92,7 @@ def add(name: Annotated[str, typer.Argument(shell_complete=complete_name_user_de
 
 
 @app.command()
-def info(name: Annotated[str, typer.Argument(shell_complete=complete_name)]) -> None:
+def info(name: Annotated[str, typer.Argument(autocompletion=complete_name)]) -> None:
     """Show the properties of a component"""
     name = name.upper()
 
@@ -131,7 +130,7 @@ def ls(user_only: Annotated[bool, typer.Option("--user", help="Show only user-de
 
 
 @app.command()
-def rm(names: Annotated[List[str], typer.Argument(shell_complete=complete_name_user_defined)]) -> None:
+def rm(names: Annotated[List[str], typer.Argument(autocompletion=complete_name_user_defined)]) -> None:
     """Remove user-defined components"""
     errors_ocurred = False
     for name in names:

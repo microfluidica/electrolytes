@@ -73,7 +73,7 @@ def add(name: Annotated[str, typer.Argument(autocompletion=complete_name_user_de
                               pkas_neg=[x[1] for x in neg],
                               pkas_pos=[x[1] for x in pos])
 
-    with database._user_constituents_file_lock:
+    with database:
         if name in database:
             if not database.is_user_defined(name):
                 typer.echo(f"Error: {name}: is a default component", err=True)

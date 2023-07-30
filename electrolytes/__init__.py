@@ -1,7 +1,7 @@
 import sys
 import pkgutil
 from pathlib import Path
-from typing import Iterable, Iterator, List, Sequence, Dict, Optional, Any
+from typing import Collection, Iterable, Iterator, List, Sequence, Dict, Optional, Any
 if sys.version_info >= (3, 9):
     from typing import Annotated
 else:
@@ -201,7 +201,7 @@ class _Database:
     def __len__(self) -> int:
         return len(self._default_constituents) + len(self._user_constituents)
 
-    def user_defined(self) -> Iterable[str]:
+    def user_defined(self) -> Collection[str]:
         return sorted(self._user_constituents)
 
     def __contains__(self, obj: Any) -> bool:

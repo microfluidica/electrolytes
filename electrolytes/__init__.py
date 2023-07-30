@@ -17,7 +17,7 @@ from pydantic import BaseModel, Field, field_validator, FieldValidationInfo, mod
 from filelock import FileLock
 from typer import get_app_dir
 
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):

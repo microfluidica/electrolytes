@@ -206,10 +206,13 @@ class _Database:
 
     def __contains__(self, obj: Any) -> bool:
         if isinstance(obj, str):
-            obj = obj.upper()
-            return obj in self._default_constituents or obj in self._user_constituents
+            name = obj.upper()
+            return name in self._default_constituents or name in self._user_constituents
         elif isinstance(obj, Constituent):
-            return obj == self[obj.name]
+            try:
+                return obj == self[obj.name]
+            except KeyError:
+                return False
         else:
             return False
 

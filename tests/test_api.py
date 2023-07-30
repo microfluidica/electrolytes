@@ -21,6 +21,11 @@ def test_list_components() -> None:
 def test_get_component() -> None:
     c = database["LYSINE"]
     assert isinstance(c, Constituent)
+    assert c.name == "LYSINE"
+    assert c.name in database
+    assert c in database
+    assert c.name not in database.user_defined()
+    assert c not in database.user_defined()
     assert len(c.mobilities()) == 6
     assert len(c.pkas()) == 6
     print(c.mobilities())

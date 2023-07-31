@@ -118,9 +118,9 @@ def info(names: Annotated[Optional[List[str]], typer.Argument(help="Component na
             typer.echo(f"Component: {name}")
             if database.is_user_defined(name):
                 typer.echo("[user-defined]")
-            typer.echo( "                 " + " ".join(f"{c:^+8d}" for c in charges))
-            typer.echo( "Mobilities *1e-9:" + " ".join(f"{u:^8.2f}" for u in uu))
-            typer.echo( "pKas:            " + " ".join(f"{p:^8.2f}" for p in pkas))
+            typer.echo( "                    " + " ".join(f"{c:^+8d}" for c in charges))
+            typer.echo( "Mobilities (*1e-9): " + " ".join(f"{u:^8.2f}" for u in uu))
+            typer.echo( "pKas:               " + " ".join(f"{p:^8.2f}" for p in pkas))
             typer.echo(f"Diffusivity: {constituent.diffusivity():.4e}")
 
             first = False

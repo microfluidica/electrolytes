@@ -15,7 +15,7 @@
 
 **electrolytes** is primarily developed as a utility to assist in preparing simulation cases for the [_electroMicroTransport_](https://gitlab.com/santiagomarquezd/electroMicroTransport) toolbox for electromigrative separations. However, it is an independent package and can be installed and used separately.
 
-# Installation
+## Installation
 
 Install with [pip](https://pip.pypa.io/en/stable/):
 
@@ -25,7 +25,7 @@ $ python3 -m pip install electrolytes
 
 **electrolytes** currently requires Python 3.7 or later, and a relatively recent version of pip (pip may be upgraded with ```python3 -m pip install --upgrade pip```).
 
-# Command-line usage
+## Command-line usage
 
 Invoke the `electrolytes` command-line application to search the database, find the details of a particular component, or to add/remove user-defined components. In your terminal, run:
 
@@ -41,7 +41,7 @@ $ python3 -m electrolytes
 
 Add the `--help` flag to learn what options are available.
 
-# Python API
+## Python API
 
 The Python API is provided for _electroMicroTransport_ case initialization scripts.
 
@@ -79,7 +79,7 @@ class Constituent:
     def diffusivity(self) -> float: ...  # SI units
 ```
 
-# Data credits
+## Data credits
 
 Electrolyte data taken from the Simul 6 application[^simul6] ([homepage](https://simul6.app), [GitHub](https://github.com/hobrasoft/simul6)). The dataset of different electrolytes was originally compiled by Prof. Hirokawa[^Hirokawa].
 

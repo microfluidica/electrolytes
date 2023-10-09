@@ -42,6 +42,7 @@ dynamic = ["version"]
 [project.optional-dependencies]
 lint = [
     "mypy==1.*",
+    "pytest==7.*",
 ]
 test = [
     "pytest==7.*",

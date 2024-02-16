@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+preferred-citation:
+  type: article
+  authors:
+  - given-names: Gabriel S.
+    family-names: Gerlero
+  - given-names: Santiago
+    family-names: Márquez Damián
+  - given-names: Pablo A.
+    family-names: Kler
+  title: "electroMicroTransport v2107: Open-source toolbox for paper-based electromigrative separations"
+  journal: Computer Physics Communications
+  year: 2021
+  volume: 269
+  start: 108143
+  end: 108143
+  doi: 10.1016/j.cpc.2021.108143

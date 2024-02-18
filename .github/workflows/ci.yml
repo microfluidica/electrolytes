@@ -10,6 +10,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Format code with Black
+      uses: psf/black@stable
+
   typing:
     runs-on: ubuntu-latest
     steps:

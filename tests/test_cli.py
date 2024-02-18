@@ -9,6 +9,7 @@ from electrolytes.__main__ import app
 
 runner = CliRunner()
 
+
 def test_version() -> None:
     result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
@@ -77,14 +78,12 @@ def test_add_and_rm() -> None:
     result = runner.invoke(app, ["info", "SILVER", name])
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["add", name.lower(),
-                                 "-2", "4", "5"])
+    result = runner.invoke(app, ["add", name.lower(), "-2", "4", "5"])
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["add", name.lower(),
-                                 "-1", "2", "3",
-                                 "-2", "4", "5",
-                                 "+1", "6", "-1.5"])
+    result = runner.invoke(
+        app, ["add", name.lower(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
+    )
 
     assert result.exit_code == 0
     assert name in database
@@ -97,15 +96,12 @@ def test_add_and_rm() -> None:
     assert c.pkas()[2:-1] == pytest.approx([-1.5, 3, 5])
     assert c.pkas()[-1] == Constituent._default_pka(-3)
 
-    result = runner.invoke(app, ["add", name.upper(),
-                                 "-1", "2", "3",
-                                 "-2", "4", "5",
-                                 "+1", "6", "-1.5"])
+    result = runner.invoke(
+        app, ["add", name.upper(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
+    )
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["add", "-f", name,
-                                 "+1", "2", "7",
-                                 "+2", "4", "5"])
+    result = runner.invoke(app, ["add", "-f", name, "+1", "2", "7", "+2", "4", "5"])
     assert result.exit_code == 0
     assert database[name].pos_count == 2
 
@@ -147,19 +143,36 @@ def test_extra_charges() -> None:
         del database[name]
     except KeyError:
         pass
-    
+
     assert name not in database
     with pytest.raises(KeyError):
         database[name]
-    
-    result = runner.invoke(app, ["add", name,
-                                 "+1", "5", "8",
-                                 "+2", "7", "6",
-                                 "+3", "9", "4",
-                                 "+4", "11", "2",
-                                 "-1", "1", "10",
-                                 "-2", "3", "12"])
 
+    result = runner.invoke(
+        app,
+        [
+            "add",
+            name,
+            "+1",
+            "5",
+            "8",
+            "+2",
+            "7",
+            "6",
+            "+3",
+            "9",
+            "4",
+            "+4",
+            "11",
+            "2",
+            "-1",
+            "1",
+            "10",
+            "-2",
+            "3",
+            "12",
+        ],
+    )
 
     assert result.exit_code == 0
     assert name in database
@@ -167,7 +180,9 @@ def test_extra_charges() -> None:
     assert len(c.mobilities()) == 8
     assert len(c.pkas()) == 8
     assert c.mobilities() == pytest.approx([11e-9, 9e-9, 7e-9, 5e-9, 1e-9, 3e-9, 0, 0])
-    assert c.pkas() == pytest.approx([2, 4, 6, 8, 10, 12, Constituent._default_pka(-3), Constituent._default_pka(-4)])
+    assert c.pkas() == pytest.approx(
+        [2, 4, 6, 8, 10, 12, Constituent._default_pka(-3), Constituent._default_pka(-4)]
+    )
 
     result = runner.invoke(app, ["info", name])
     assert result.exit_code == 0

@@ -189,9 +189,6 @@ class _Database(ContextDecorator):
 
     def __enter__(self) -> None:
         if not self._user_constituents_lock.is_locked:
-            Path(self._user_constituents_lock.lock_file).parent.mkdir(
-                parents=True, exist_ok=True
-            )  # https://github.com/tox-dev/py-filelock/issues/176
             self._invalidate_user_constituents()
         self._user_constituents_lock.acquire()
 

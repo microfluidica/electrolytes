@@ -1,16 +1,7 @@
-import sys
 import pkgutil
 from pathlib import Path
-from typing import Collection, Iterator, List, Sequence, Dict, Optional, Any
-
-if sys.version_info >= (3, 9):
-    from typing import Annotated
-else:
-    from typing_extensions import Annotated
-if sys.version_info >= (3, 8):
-    from functools import cached_property
-else:
-    from backports.cached_property import cached_property
+from typing import Collection, Iterator, Sequence, Optional, Any, Annotated
+from functools import cached_property
 from contextlib import ContextDecorator
 from warnings import warn
 
@@ -31,16 +22,16 @@ __version__ = "0.3.5"
 class Constituent(BaseModel, populate_by_name=True, frozen=True):
     id: Optional[int] = None
     name: str
-    u_neg: Annotated[List[float], Field(alias="uNeg")] = (
+    u_neg: Annotated[list[float], Field(alias="uNeg")] = (
         []
     )  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    u_pos: Annotated[List[float], Field(alias="uPos")] = (
+    u_pos: Annotated[list[float], Field(alias="uPos")] = (
         []
     )  # [+1, +2, +3, ..., +pos_count]
-    pkas_neg: Annotated[List[float], Field(alias="pKaNeg")] = (
+    pkas_neg: Annotated[list[float], Field(alias="pKaNeg")] = (
         []
     )  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    pkas_pos: Annotated[List[float], Field(alias="pKaPos")] = (
+    pkas_pos: Annotated[list[float], Field(alias="pKaPos")] = (
         []
     )  # [+1, +2, +3, ..., +pos_count]
     neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # type: ignore
@@ -109,7 +100,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return v
 
     @field_validator("pkas_neg", "pkas_pos")
-    def _pka_lengths(cls, v: List[float], info: ValidationInfo) -> List[float]:
+    def _pka_lengths(cls, v: list[float], info: ValidationInfo) -> list[float]:
         assert isinstance(info.field_name, str)
         if len(v) != len(info.data[f"u_{info.field_name[5:]}"]):
             raise ValueError(f"len({info.field_name}) != len(u_{info.field_name[5:]})")
@@ -134,16 +125,16 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return self
 
 
-_StoredConstituents = TypeAdapter(Dict[str, List[Constituent]])
+_StoredConstituents = TypeAdapter(dict[str, list[Constituent]])
 
 
 def _load_constituents(
-    data: bytes, context: Optional[Dict[str, str]] = None
-) -> List[Constituent]:
+    data: bytes, context: Optional[dict[str, str]] = None
+) -> list[Constituent]:
     return _StoredConstituents.validate_json(data, context=context)["constituents"]
 
 
-def _dump_constituents(constituents: List[Constituent]) -> bytes:
+def _dump_constituents(constituents: list[Constituent]) -> bytes:
     return _StoredConstituents.dump_json(
         {"constituents": constituents}, by_alias=True, indent=4
     )
@@ -158,7 +149,7 @@ class _Database(ContextDecorator):
         self._user_constituents_dirty = False
 
     @cached_property
-    def _default_constituents(self) -> Dict[str, Constituent]:
+    def _default_constituents(self) -> dict[str, Constituent]:
         data = pkgutil.get_data(__package__, "db1.json")
         if data is None:
             raise RuntimeError("failed to load default constituents")
@@ -166,7 +157,7 @@ class _Database(ContextDecorator):
         return {c.name: c for c in constituents}
 
     @cached_property
-    def _user_constituents(self) -> Dict[str, Constituent]:
+    def _user_constituents(self) -> dict[str, Constituent]:
         try:
             with self:
                 user_data = self._user_constituents_file.read_bytes()

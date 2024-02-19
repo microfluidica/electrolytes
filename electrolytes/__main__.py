@@ -1,10 +1,4 @@
-import sys
-from typing import Tuple, List, Optional
-
-if sys.version_info >= (3, 9):
-    from typing import Annotated
-else:
-    from typing_extensions import Annotated
+from typing import Optional, Annotated
 
 import typer
 
@@ -14,11 +8,11 @@ from . import database, Constituent, __version__
 app = typer.Typer()
 
 
-def complete_name(incomplete: str) -> List[str]:
+def complete_name(incomplete: str) -> list[str]:
     return [name for name in database if name.startswith(incomplete.upper())]
 
 
-def complete_name_user_defined(incomplete: str) -> List[str]:
+def complete_name_user_defined(incomplete: str) -> list[str]:
     return [
         name for name in database.user_defined() if name.startswith(incomplete.upper())
     ]
@@ -27,18 +21,18 @@ def complete_name_user_defined(incomplete: str) -> List[str]:
 @app.command()
 def add(
     name: Annotated[str, typer.Argument(autocompletion=complete_name_user_defined)],
-    p1: Annotated[Tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1", show_default=False)] = (None, None),  # type: ignore
-    p2: Annotated[Tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2", show_default=False)] = (None, None),  # type: ignore
-    p3: Annotated[Tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3", show_default=False)] = (None, None),  # type: ignore
-    p4: Annotated[Tuple[float, float], typer.Option("+4", help="Mobility (*1e-9) and pKa for +4", show_default=False)] = (None, None),  # type: ignore
-    p5: Annotated[Tuple[float, float], typer.Option("+5", help="Mobility (*1e-9) and pKa for +5", show_default=False)] = (None, None),  # type: ignore
-    p6: Annotated[Tuple[float, float], typer.Option("+6", help="Mobility (*1e-9) and pKa for +6", show_default=False)] = (None, None),  # type: ignore
-    m1: Annotated[Tuple[float, float], typer.Option("-1", help="Mobility (*1e-9) and pKa for -1", show_default=False)] = (None, None),  # type: ignore
-    m2: Annotated[Tuple[float, float], typer.Option("-2", help="Mobility (*1e-9) and pKa for -2", show_default=False)] = (None, None),  # type: ignore
-    m3: Annotated[Tuple[float, float], typer.Option("-3", help="Mobility (*1e-9) and pKa for -3", show_default=False)] = (None, None),  # type: ignore
-    m4: Annotated[Tuple[float, float], typer.Option("-4", help="Mobility (*1e-9) and pKa for -4", show_default=False)] = (None, None),  # type: ignore
-    m5: Annotated[Tuple[float, float], typer.Option("-5", help="Mobility (*1e-9) and pKa for -5", show_default=False)] = (None, None),  # type: ignore
-    m6: Annotated[Tuple[float, float], typer.Option("-6", help="Mobility (*1e-9) and pKa for -6", show_default=False)] = (None, None),  # type: ignore
+    p1: Annotated[tuple[float, float], typer.Option("+1", help="Mobility (*1e-9) and pKa for +1", show_default=False)] = (None, None),  # type: ignore
+    p2: Annotated[tuple[float, float], typer.Option("+2", help="Mobility (*1e-9) and pKa for +2", show_default=False)] = (None, None),  # type: ignore
+    p3: Annotated[tuple[float, float], typer.Option("+3", help="Mobility (*1e-9) and pKa for +3", show_default=False)] = (None, None),  # type: ignore
+    p4: Annotated[tuple[float, float], typer.Option("+4", help="Mobility (*1e-9) and pKa for +4", show_default=False)] = (None, None),  # type: ignore
+    p5: Annotated[tuple[float, float], typer.Option("+5", help="Mobility (*1e-9) and pKa for +5", show_default=False)] = (None, None),  # type: ignore
+    p6: Annotated[tuple[float, float], typer.Option("+6", help="Mobility (*1e-9) and pKa for +6", show_default=False)] = (None, None),  # type: ignore
+    m1: Annotated[tuple[float, float], typer.Option("-1", help="Mobility (*1e-9) and pKa for -1", show_default=False)] = (None, None),  # type: ignore
+    m2: Annotated[tuple[float, float], typer.Option("-2", help="Mobility (*1e-9) and pKa for -2", show_default=False)] = (None, None),  # type: ignore
+    m3: Annotated[tuple[float, float], typer.Option("-3", help="Mobility (*1e-9) and pKa for -3", show_default=False)] = (None, None),  # type: ignore
+    m4: Annotated[tuple[float, float], typer.Option("-4", help="Mobility (*1e-9) and pKa for -4", show_default=False)] = (None, None),  # type: ignore
+    m5: Annotated[tuple[float, float], typer.Option("-5", help="Mobility (*1e-9) and pKa for -5", show_default=False)] = (None, None),  # type: ignore
+    m6: Annotated[tuple[float, float], typer.Option("-6", help="Mobility (*1e-9) and pKa for -6", show_default=False)] = (None, None),  # type: ignore
     force: Annotated[
         bool,
         typer.Option(
@@ -55,7 +49,7 @@ def add(
         typer.echo("Error: at least one of the +1 or -1 options is required", err=True)
         raise typer.Exit(code=1)
 
-    neg: List[Tuple[float, float]] = []
+    neg: list[tuple[float, float]] = []
     any_omitted = False
     for i, m in enumerate([m1, m2, m3, m4, m5, m6]):
         if m[0] is None:
@@ -67,7 +61,7 @@ def add(
         else:
             neg.insert(0, m)
 
-    pos: List[Tuple[float, float]] = []
+    pos: list[tuple[float, float]] = []
     any_omitted = False
     for i, p in enumerate([p1, p2, p3, p4, p5, p6]):
         if p[0] is None:
@@ -104,7 +98,7 @@ def add(
 @app.command()
 def info(
     names: Annotated[
-        Optional[List[str]],
+        Optional[list[str]],
         typer.Argument(help="Component names", autocompletion=complete_name),
     ] = None
 ) -> None:
@@ -182,7 +176,7 @@ def ls(
 @app.command()
 def rm(
     names: Annotated[
-        List[str], typer.Argument(autocompletion=complete_name_user_defined)
+        list[str], typer.Argument(autocompletion=complete_name_user_defined)
     ],
     force: Annotated[
         Optional[bool], typer.Option("-f", help="Ignore non-existent components")

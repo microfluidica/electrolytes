@@ -1,6 +1,7 @@
 import pkgutil
 from pathlib import Path
-from typing import Collection, Iterator, Sequence, Optional, Any, Annotated
+from collections.abc import Collection, Iterator, Sequence, Mapping, Set
+from typing import Optional, Any, Annotated
 from functools import cached_property
 from contextlib import ContextDecorator
 from warnings import warn
@@ -140,7 +141,7 @@ def _dump_constituents(constituents: list[Constituent]) -> bytes:
     )
 
 
-class _Database(ContextDecorator):
+class _Database(Mapping[str, Constituent], ContextDecorator):
     def __init__(self, user_constituents_file: Path) -> None:
         self._user_constituents_file = user_constituents_file
         self._user_constituents_lock = FileLock(

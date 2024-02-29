@@ -2,7 +2,7 @@ import pkgutil
 from pathlib import Path
 from collections.abc import Collection, Iterator, Sequence, Mapping
 from typing import Optional, Any, Annotated
-from functools import cached_property
+from functools import cached_property, singledispatchmethod
 from contextlib import ContextDecorator
 from warnings import warn
 
@@ -241,16 +241,20 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
     def user_defined(self) -> Collection[str]:
         return sorted(self._user_constituents)
 
-    def __contains__(self, obj: Any) -> bool:
-        if isinstance(obj, str):
-            name = obj.upper()
-            return name in self._default_constituents or name in self._user_constituents
-        elif isinstance(obj, Constituent):
-            try:
-                return obj == self[obj.name]
-            except KeyError:
-                return False
-        else:
+    @singledispatchmethod
+    def __contains__(self, _: Any) -> bool:  # type: ignore
+        return False
+
+    @__contains__.register
+    def _(self, obj: str) -> bool:
+        name = obj.upper()
+        return name in self._default_constituents or name in self._user_constituents
+
+    @__contains__.register
+    def _(self, obj: Constituent) -> bool:
+        try:
+            return obj == self[obj.name]
+        except KeyError:
             return False
 
     def is_user_defined(self, name: str) -> bool:

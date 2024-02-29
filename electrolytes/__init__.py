@@ -17,7 +17,7 @@ from pydantic import (
 from filelock import FileLock
 from typer import get_app_dir
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):

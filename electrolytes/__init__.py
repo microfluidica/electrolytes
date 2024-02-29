@@ -1,6 +1,6 @@
 import pkgutil
 from pathlib import Path
-from collections.abc import Collection, Iterator, Sequence, Mapping, Set
+from collections.abc import Collection, Iterator, Sequence, Mapping
 from typing import Optional, Any, Annotated
 from functools import cached_property
 from contextlib import ContextDecorator

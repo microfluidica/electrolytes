@@ -37,8 +37,8 @@ dependencies = [
 dynamic = ["version"]
 
 [project.optional-dependencies]
-lint = ["black"]
-type = [
+lint = ["ruff"]
+typing = [
     "mypy==1.*",
     "pytest>=7,<9",
 ]

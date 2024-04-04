@@ -188,10 +188,12 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
             self._user_constituents_file.write_bytes(data)
         self._user_constituents_dirty = False
 
-    def __enter__(self) -> None:
+    def __enter__(self) -> "_Database":
         if not self._user_constituents_lock.is_locked:
             self._invalidate_user_constituents()
         self._user_constituents_lock.acquire()
+
+        return self
 
     def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
         try:

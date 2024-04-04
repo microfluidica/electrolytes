@@ -1,7 +1,7 @@
 import pytest
 
 import electrolytes
-from electrolytes import *
+from electrolytes import Constituent, database
 
 
 def test_version() -> None:
@@ -10,13 +10,13 @@ def test_version() -> None:
 
 def test_list_components() -> None:
     assert database
-    l = list(database)
-    assert len(l) == len(database)
-    assert isinstance(l[0], str)
-    assert l == sorted(l)
-    assert "LYSINE" in l
-    assert "CYSTINE" in l
-    assert "SILVER" in l
+    lst = list(database)
+    assert len(lst) == len(database)
+    assert isinstance(lst[0], str)
+    assert lst == sorted(lst)
+    assert "LYSINE" in lst
+    assert "CYSTINE" in lst
+    assert "SILVER" in lst
 
 
 def test_get_component() -> None:

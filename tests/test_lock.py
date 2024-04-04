@@ -1,9 +1,7 @@
-import pytest
-
 import subprocess
 from time import sleep
 
-from electrolytes import *
+from electrolytes import Constituent, database
 
 
 def test_lock_api_cli() -> None:

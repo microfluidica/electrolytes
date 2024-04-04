@@ -3,7 +3,7 @@ import pytest
 from typer.testing import CliRunner
 
 import electrolytes
-from electrolytes import *
+from electrolytes import Constituent, database
 from electrolytes.__main__ import app
 
 

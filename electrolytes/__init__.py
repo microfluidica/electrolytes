@@ -23,18 +23,18 @@ __version__ = "0.4.2"
 class Constituent(BaseModel, populate_by_name=True, frozen=True):
     id: Optional[int] = None
     name: str
-    u_neg: Annotated[list[float], Field(alias="uNeg")] = (
-        []
-    )  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    u_pos: Annotated[list[float], Field(alias="uPos")] = (
-        []
-    )  # [+1, +2, +3, ..., +pos_count]
-    pkas_neg: Annotated[list[float], Field(alias="pKaNeg")] = (
-        []
-    )  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
-    pkas_pos: Annotated[list[float], Field(alias="pKaPos")] = (
-        []
-    )  # [+1, +2, +3, ..., +pos_count]
+    u_neg: Annotated[
+        list[float], Field(alias="uNeg")
+    ] = []  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+    u_pos: Annotated[
+        list[float], Field(alias="uPos")
+    ] = []  # [+1, +2, +3, ..., +pos_count]
+    pkas_neg: Annotated[
+        list[float], Field(alias="pKaNeg")
+    ] = []  # [-neg_count, -neg_count+1, -neg_count+2, ..., -1]
+    pkas_pos: Annotated[
+        list[float], Field(alias="pKaPos")
+    ] = []  # [+1, +2, +3, ..., +pos_count]
     neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # type: ignore
     pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # type: ignore
 

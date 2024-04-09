@@ -1,20 +1,20 @@
 import pkgutil
-from pathlib import Path
-from collections.abc import Collection, Iterator, Sequence, Mapping
-from typing import Optional, Any, Annotated
-from functools import cached_property, singledispatchmethod
+from collections.abc import Collection, Iterator, Mapping, Sequence
 from contextlib import ContextDecorator
+from functools import cached_property, singledispatchmethod
+from pathlib import Path
+from typing import Annotated, Any, Optional
 from warnings import warn
 
+from filelock import FileLock
 from pydantic import (
     BaseModel,
     Field,
-    field_validator,
-    ValidationInfo,
-    model_validator,
     TypeAdapter,
+    ValidationInfo,
+    field_validator,
+    model_validator,
 )
-from filelock import FileLock
 from typer import get_app_dir
 
 __version__ = "0.4.3"

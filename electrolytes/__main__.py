@@ -1,9 +1,8 @@
-from typing import Optional, Annotated
+from typing import Annotated, Optional
 
 import typer
 
-from . import database, Constituent, __version__
-
+from . import Constituent, __version__, database
 
 app = typer.Typer()
 

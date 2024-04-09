@@ -1,11 +1,9 @@
 import pytest
-
 from typer.testing import CliRunner
 
 import electrolytes
 from electrolytes import Constituent, database
 from electrolytes.__main__ import app
-
 
 runner = CliRunner()
 

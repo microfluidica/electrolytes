@@ -24,9 +24,9 @@ def test_get_component() -> None:
     assert isinstance(c, Constituent)
     assert c.name == "LYSINE"
     assert c.name in database
-    assert c in database
+    assert c in database  # type: ignore [comparison-overlap]
     assert c.name not in database.user_defined()
-    assert c not in database.user_defined()
+    assert c not in database.user_defined()  # type: ignore [comparison-overlap]
     assert len(c.mobilities()) == 6
     assert len(c.pkas()) == 6
     print(c.mobilities())

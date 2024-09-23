@@ -17,7 +17,7 @@ from pydantic import (
 )
 from typer import get_app_dir
 
-__version__ = "0.4.3"
+__version__ = "0.4.4"
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):

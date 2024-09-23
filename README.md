@@ -24,8 +24,6 @@ Install with [pip](https://pip.pypa.io/en/stable/):
 $ python3 -m pip install electrolytes
 ```
 
-**electrolytes** currently requires Python 3.7 or later, and a relatively recent version of pip (pip may be upgraded with ```python3 -m pip install --upgrade pip```).
-
 ## Command-line usage
 
 Invoke the `electrolytes` command-line application to search the database, find the details of a particular component, or to add/remove user-defined components. In your terminal, run:

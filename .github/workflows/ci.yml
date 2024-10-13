@@ -27,16 +27,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
-    - name: Install typing dependencies
-      run: |
-        pip install .[typing]
+        python-version-file: pyproject.toml
     - name: Check types with mypy
       run: |
-        mypy
+        uv run --extra typing mypy
 
   test:
     runs-on: ubuntu-latest
@@ -47,17 +46,18 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-        allow-prereleases: true
     - name: Install test dependencies
       run: |
-        pip install .[test]
+        uv sync --extra test --dev
     - name: Test with pytest
       run: |
-        pytest --cov=electrolytes
+        uv run pytest --cov=electrolytes
     - name: Upload code coverage results to Codecov
       uses: codecov/codecov-action@v4
       with:
@@ -68,13 +68,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
-    - name: Install build package
-      run: |
-        pip install --upgrade build
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
     - name: Check package build
       run: |
-        python -m build
+        uv build

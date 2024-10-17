@@ -29,16 +29,16 @@ def test_get_component() -> None:
     assert c not in database.user_defined()  # type: ignore [comparison-overlap]
     assert len(c.mobilities()) == 6
     assert len(c.pkas()) == 6
-    print(c.mobilities())
-    print(c.diffusivity())
     assert c.diffusivity() == pytest.approx(28.60 * 1e-9 * 8.314 * 300 / 96485)
 
 
 def test_known_component_properties() -> None:
     c = database["CYSTINE"]
-    c.mobilities() == pytest.approx([0.0, 5.39e-08, 2.7e-08, 2.7e-08, 5.39e-08, 0.0])
-    c.diffusivity() == pytest.approx(1.393350054412603e-09)
-    c.pkas() == pytest.approx([-3.0, 1.65, 2.26, 8.405, 9.845, 17])
+    assert c.mobilities() == pytest.approx(
+        [0.0, 5.39e-08, 2.7e-08, 2.7e-08, 5.39e-08, 0.0]
+    )
+    assert c.diffusivity() == pytest.approx(1.393350054412603e-09)
+    assert c.pkas() == pytest.approx([-3.0, 1.65, 2.26, 8.405, 9.845, 17])
 
 
 def test_try_get_nonexistent() -> None:

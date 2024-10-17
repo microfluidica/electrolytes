@@ -1,6 +1,6 @@
 import pkgutil
 from collections.abc import Collection, Iterator, Mapping, Sequence
-from contextlib import ContextDecorator
+from contextlib import ContextDecorator, suppress
 from functools import cached_property, singledispatchmethod
 from pathlib import Path
 from typing import Annotated, Any, Optional
@@ -62,14 +62,10 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     def diffusivity(self) -> float:
         mobs = []
-        try:
+        with suppress(IndexError):
             mobs.append(self.u_neg[-1] * 1e-9)
-        except IndexError:
-            pass
-        try:
+        with suppress(IndexError):
             mobs.append(self.u_pos[0] * 1e-9)
-        except IndexError:
-            pass
 
         return max(mobs, default=0) * 8.314 * 300 / 96485
 
@@ -78,8 +74,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         assert charge != 0
         if charge < 0:
             return 14 - charge
-        else:
-            return -charge
+        return -charge
 
     @field_validator("name")
     def _normalize_db1_names(cls, v: str, info: ValidationInfo) -> str:
@@ -170,16 +165,15 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
             warn(
                 f"failed to load user constituents from {self._user_constituents_file}: {type(e).__name__}",
                 RuntimeWarning,
+                stacklevel=2,
             )
             return {}
         return {c.name: c for c in user_constituents}
 
     def _invalidate_user_constituents(self) -> None:
         assert not self._user_constituents_dirty
-        try:
+        with suppress(AttributeError):
             del self._user_constituents
-        except AttributeError:
-            pass
 
     def _save_user_constituents(self) -> None:
         data = _dump_constituents(list(self._user_constituents.values()))
@@ -222,7 +216,8 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
                 self._user_constituents_dirty = True
             else:
                 warn(
-                    f"{constituent.name}: component was not added (name already exists in database)"
+                    f"{constituent.name}: component was not added (name already exists in database)",
+                    stacklevel=2,
                 )
 
     def __delitem__(self, name: str) -> None:
@@ -233,9 +228,8 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
                 self._user_constituents_dirty = True
         except KeyError:
             if name in self._default_constituents:
-                raise ValueError(f"{name}: cannot remove default component")
-            else:
-                raise
+                raise ValueError(f"{name}: cannot remove default component") from None
+            raise
 
     def __len__(self) -> int:
         return len(self._default_constituents) + len(self._user_constituents)

@@ -76,4 +76,30 @@ packages = [
 strict = true
 
 [tool.ruff.lint]
-extend-select = ["I", "RUF", "UP"]
+extend-select = [
+    "B",
+    "C4",
+    "ERA",
+    "F",
+    "FLY",
+    "FURB",
+    "I",
+    "ICN",
+    "INT",
+    "PERF",
+    "PIE",
+    "PLC",
+    "PLE",
+    "PLW",
+    "PT",
+    "PTH",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "T20",
+    "TCH",
+    "UP",
+    "YTT",
+]

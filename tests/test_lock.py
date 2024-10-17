@@ -1,3 +1,4 @@
+import contextlib
 import subprocess
 from time import sleep
 
@@ -6,10 +7,8 @@ from electrolytes import Constituent, database
 
 def test_lock_api_cli() -> None:
     name = "TES7342982891"
-    try:
+    with contextlib.suppress(KeyError):
         del database[name]
-    except KeyError:
-        pass
 
     assert name not in database
 

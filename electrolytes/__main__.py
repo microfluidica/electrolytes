@@ -80,7 +80,8 @@ def add(
     name = name.upper()
 
     if p1[0] is None and m1[0] is None:
-        assert p1[1] is None and m1[1] is None
+        assert p1[1] is None
+        assert m1[1] is None
         typer.echo("Error: at least one of the +1 or -1 options is required", err=True)
         raise typer.Exit(code=1)
 
@@ -146,12 +147,12 @@ def info(
         first = True
         errors_ocurred = False
         for name in names:
-            name = name.upper()
+            uppercase_name = name.upper()
 
             try:
-                constituent = database[name]
+                constituent = database[uppercase_name]
             except KeyError:
-                typer.echo(f"Error: {name}: no such component", err=True)
+                typer.echo(f"Error: {uppercase_name}: no such component", err=True)
                 errors_ocurred = True
                 continue
 
@@ -165,8 +166,8 @@ def info(
 
             if not first:
                 typer.echo()
-            typer.echo(f"Component: {name}")
-            if database.is_user_defined(name):
+            typer.echo(f"Component: {uppercase_name}")
+            if database.is_user_defined(uppercase_name):
                 typer.echo("[user-defined]")
             typer.echo("                    " + " ".join(f"{c:^+8d}" for c in charges))
             typer.echo("Mobilities (*1e-9): " + " ".join(f"{u:^8.2f}" for u in uu))
@@ -220,12 +221,12 @@ def rm(
     """Remove user-defined components from the database."""
     errors_ocurred = False
     for name in names:
-        name = name.upper()
+        uppercase_name = name.upper()
         try:
-            del database[name]
+            del database[uppercase_name]
         except KeyError:
             if not force:
-                typer.echo(f"Error: {name}: no such component", err=True)
+                typer.echo(f"Error: {uppercase_name}: no such component", err=True)
                 errors_ocurred = True
         except ValueError as e:
             typer.echo(f"Error: {e}", err=True)
@@ -269,7 +270,7 @@ def search(
 def version_callback(show: bool) -> None:
     if show:
         typer.echo(f"{__package__} {__version__}")
-        raise typer.Exit()
+        raise typer.Exit
 
 
 @app.callback()
@@ -282,7 +283,6 @@ def common(
     ] = False,
 ) -> None:
     """Database of electrolytes and their properties."""
-    pass
 
 
 if __name__ == "__main__":

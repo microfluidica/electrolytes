@@ -1,3 +1,5 @@
+import contextlib
+
 import pytest
 from typer.testing import CliRunner
 
@@ -56,10 +58,8 @@ def test_info() -> None:
 
 def test_add_and_rm() -> None:
     name = "TesT2322745845"
-    try:
+    with contextlib.suppress(KeyError):
         del database[name]
-    except KeyError:
-        pass
 
     assert name not in database
     with pytest.raises(KeyError):
@@ -137,10 +137,8 @@ def test_add_and_rm() -> None:
 
 def test_extra_charges() -> None:
     name = "TEST1328849821"
-    try:
+    with contextlib.suppress(KeyError):
         del database[name]
-    except KeyError:
-        pass
 
     assert name not in database
     with pytest.raises(KeyError):

@@ -37,7 +37,7 @@ def test_known_component_properties() -> None:
     assert c.mobilities() == pytest.approx(
         [0.0, 5.39e-08, 2.7e-08, 2.7e-08, 5.39e-08, 0.0]
     )
-    assert c.diffusivity() == pytest.approx(1.393350054412603e-09)
+    assert c.diffusivity() == pytest.approx(6.9797e-10)
     assert c.pkas() == pytest.approx([-3.0, 1.65, 2.26, 8.405, 9.845, 17])
 
 

@@ -23,6 +23,7 @@ jobs:
     - name: Upload to release
       uses: svenstaro/upload-release-action@v2
       with:
-        file: 'dist/*'
+        file: dist/*
+        file_glob: true
     - name: Publish to PyPI
       run: uv publish

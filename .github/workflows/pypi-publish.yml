@@ -20,11 +20,5 @@ jobs:
       uses: astral-sh/setup-uv@v3
     - name: Build
       run: uv build
-    - name: Upload to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: dist/*
-        file_glob: true
     - name: Publish to PyPI
       run: uv publish

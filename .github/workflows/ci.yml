@@ -54,10 +54,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install test dependencies
       run: |
-        uv sync --extra test --dev
+        uv pip install --system .[test]
     - name: Test with pytest
       run: |
-        uv run pytest --cov=electrolytes
+        pytest --cov=electrolytes
     - name: Upload code coverage results to Codecov
       uses: codecov/codecov-action@v4
       with:

@@ -48,7 +48,7 @@ Add the `--help` flag to learn what options are available.
 The Python API is provided for _electroMicroTransport_ case initialization scripts.
 
 ```python
-from electrolytes import database, Properties
+from electrolytes import database, Constituent
 ```
 
 You can look up components in the `database` as you would with `dict` (with component names as keys), and also add user-defined components with the `add` method (as if `database` were a set). Components are instances of the `Constituent` class. Extra methods are also defined for `database`:

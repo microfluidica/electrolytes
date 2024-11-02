@@ -76,30 +76,15 @@ packages = [
 strict = true
 
 [tool.ruff.lint]
-extend-select = [
-    "B",
-    "C4",
-    "ERA",
-    "F",
-    "FLY",
-    "FURB",
-    "I",
-    "ICN",
-    "INT",
-    "PERF",
-    "PIE",
-    "PLC",
-    "PLE",
-    "PLW",
-    "PT",
-    "PTH",
-    "Q",
-    "RET",
-    "RSE",
-    "RUF",
-    "SIM",
-    "T20",
-    "TCH",
-    "UP",
-    "YTT",
+extend-select = ["ALL"]
+extend-ignore = [
+    "BLE001",
+    "C901",
+    "COM812",
+    "D",
+    "E501",
+    "FA100",
+    "ISC001",
+    "PLR0913",
+    "S101",
 ]

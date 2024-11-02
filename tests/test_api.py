@@ -1,6 +1,5 @@
-import pytest
-
 import electrolytes
+import pytest
 from electrolytes import Constituent, database
 
 

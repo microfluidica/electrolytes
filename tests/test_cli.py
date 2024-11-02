@@ -1,11 +1,10 @@
 import contextlib
 
-import pytest
-from typer.testing import CliRunner
-
 import electrolytes
+import pytest
 from electrolytes import Constituent, database
 from electrolytes.__main__ import app
+from typer.testing import CliRunner
 
 runner = CliRunner()
 

@@ -3,7 +3,8 @@ from collections.abc import Collection, Iterator, Mapping, Sequence
 from contextlib import ContextDecorator, suppress
 from functools import cached_property, singledispatchmethod
 from pathlib import Path
-from typing import Annotated, Any, Optional
+from types import TracebackType
+from typing import Annotated, Optional
 from warnings import warn
 
 from filelock import FileLock
@@ -35,8 +36,8 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     pkas_pos: Annotated[
         list[float], Field(alias="pKaPos")
     ] = []  # [+1, +2, +3, ..., +pos_count]
-    neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # type: ignore
-    pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # type: ignore
+    neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # type: ignore [assignment]
+    pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # type: ignore [assignment]
 
     def mobilities(self) -> Sequence[float]:
         n = max(self.neg_count, self.pos_count, 3)
@@ -77,38 +78,47 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return -charge
 
     @field_validator("name")
+    @classmethod
     def _normalize_db1_names(cls, v: str, info: ValidationInfo) -> str:
         if info.context and info.context.get("fix", None) == "db1":
             v = v.replace(" ", "_").replace("Cl-", "CHLORO")
         return v
 
     @field_validator("name")
-    def _no_whitespace(cls, v: str, info: ValidationInfo) -> str:
+    @classmethod
+    def _no_whitespace(cls, v: str, _: ValidationInfo) -> str:
         parts = v.split()
         if len(parts) > 1 or len(parts[0]) != len(v):
-            raise ValueError("name cannot contain any whitespace")
+            msg = "name cannot contain any whitespace"
+            raise ValueError(msg)
         return parts[0]
 
     @field_validator("name")
-    def _all_uppercase(cls, v: str, info: ValidationInfo) -> str:
+    @classmethod
+    def _all_uppercase(cls, v: str, _: ValidationInfo) -> str:
         if not v.isupper():
-            raise ValueError("name must be all uppercase")
+            msg = "name must be all uppercase"
+            raise ValueError(msg)
         return v
 
     @field_validator("pkas_neg", "pkas_pos")
+    @classmethod
     def _pka_lengths(cls, v: list[float], info: ValidationInfo) -> list[float]:
         assert isinstance(info.field_name, str)
         if len(v) != len(info.data[f"u_{info.field_name[5:]}"]):
-            raise ValueError(f"len({info.field_name}) != len(u_{info.field_name[5:]})")
+            msg = f"len({info.field_name}) != len(u_{info.field_name[5:]})"
+            raise ValueError(msg)
         return v
 
     @field_validator("neg_count", "pos_count", mode="before")
+    @classmethod
     def _counts(cls, v: Optional[int], info: ValidationInfo) -> int:
         assert isinstance(info.field_name, str)
         if v is None:
             v = len(info.data[f"u_{info.field_name[:3]}"])
         elif v != len(info.data[f"u_{info.field_name[:3]}"]):
-            raise ValueError(f"{info.field_name} != len(u_{info.field_name[:3]})")
+            msg = f"{info.field_name} != len(u_{info.field_name[:3]})"
+            raise ValueError(msg)
         return v
 
     @model_validator(mode="after")
@@ -116,7 +126,8 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         pkas = [*self.pkas_neg, *self.pkas_pos]
 
         if not all(x >= y for x, y in zip(pkas, pkas[1:])):
-            raise ValueError("pKa values must not increase with charge")
+            msg = "pKa values must not increase with charge"
+            raise ValueError(msg)
 
         return self
 
@@ -148,7 +159,8 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
     def _default_constituents(self) -> dict[str, Constituent]:
         data = pkgutil.get_data(__package__, "db1.json")
         if data is None:
-            raise RuntimeError("failed to load default constituents")
+            msg = "failed to load default constituents"
+            raise RuntimeError(msg)
         constituents = _load_constituents(data, context={"fix": "db1"})
         return {c.name: c for c in constituents}
 
@@ -189,7 +201,12 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
         return self
 
-    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
+    def __exit__(
+        self,
+        exc_type: Optional[type[BaseException]],
+        exc_value: Optional[BaseException],
+        traceback: Optional[TracebackType],
+    ) -> None:
         try:
             if (
                 self._user_constituents_lock.lock_counter == 1
@@ -228,7 +245,8 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
                 self._user_constituents_dirty = True
         except KeyError:
             if name in self._default_constituents:
-                raise ValueError(f"{name}: cannot remove default component") from None
+                msg = f"{name}: cannot remove default component"
+                raise ValueError(msg) from None
             raise
 
     def __len__(self) -> int:
@@ -238,7 +256,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
         return sorted(self._user_constituents)
 
     @singledispatchmethod
-    def __contains__(self, _: Any) -> bool:  # type: ignore
+    def __contains__(self, _: object) -> bool:  # type: ignore [override]
         return False
 
     @__contains__.register

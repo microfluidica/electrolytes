@@ -23,51 +23,52 @@ def add(
     p1: Annotated[
         tuple[float, float],
         typer.Option("+1", help="Mobility (*1e-9) and pKa for +1", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     p2: Annotated[
         tuple[float, float],
         typer.Option("+2", help="Mobility (*1e-9) and pKa for +2", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     p3: Annotated[
         tuple[float, float],
         typer.Option("+3", help="Mobility (*1e-9) and pKa for +3", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     p4: Annotated[
         tuple[float, float],
         typer.Option("+4", help="Mobility (*1e-9) and pKa for +4", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     p5: Annotated[
         tuple[float, float],
         typer.Option("+5", help="Mobility (*1e-9) and pKa for +5", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     p6: Annotated[
         tuple[float, float],
         typer.Option("+6", help="Mobility (*1e-9) and pKa for +6", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m1: Annotated[
         tuple[float, float],
         typer.Option("-1", help="Mobility (*1e-9) and pKa for -1", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m2: Annotated[
         tuple[float, float],
         typer.Option("-2", help="Mobility (*1e-9) and pKa for -2", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m3: Annotated[
         tuple[float, float],
         typer.Option("-3", help="Mobility (*1e-9) and pKa for -3", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m4: Annotated[
         tuple[float, float],
         typer.Option("-4", help="Mobility (*1e-9) and pKa for -4", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m5: Annotated[
         tuple[float, float],
         typer.Option("-5", help="Mobility (*1e-9) and pKa for -5", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
     m6: Annotated[
         tuple[float, float],
         typer.Option("-6", help="Mobility (*1e-9) and pKa for -6", show_default=False),
-    ] = (None, None),  # type: ignore
+    ] = (None, None),  # type: ignore [assignment]
+    *,
     force: Annotated[
         bool,
         typer.Option(
@@ -189,6 +190,7 @@ def info(
 
 @app.command()
 def ls(
+    *,
     user: Annotated[
         Optional[bool],
         typer.Option(
@@ -214,6 +216,7 @@ def rm(
     names: Annotated[
         list[str], typer.Argument(autocompletion=complete_name_user_defined)
     ],
+    *,
     force: Annotated[
         Optional[bool], typer.Option("-f", help="Ignore non-existent components")
     ] = False,
@@ -267,7 +270,7 @@ def search(
             )
 
 
-def version_callback(show: bool) -> None:
+def version_callback(*, show: bool) -> None:
     if show:
         typer.echo(f"{__package__} {__version__}")
         raise typer.Exit
@@ -275,6 +278,7 @@ def version_callback(show: bool) -> None:
 
 @app.callback()
 def common(
+    *,
     version: Annotated[
         bool,
         typer.Option(

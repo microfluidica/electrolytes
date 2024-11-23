@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.2"]
+requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -47,6 +47,11 @@ test = [
     "pytest>=7,<9",
     "pytest-cov",
 ]
+dev = [
+    "electrolytes[lint]",
+    "electrolytes[typing]",
+    "electrolytes[test]",
+]
 
 [project.urls]
 Homepage = "https://github.com/microfluidica/electrolytes"
@@ -55,17 +60,11 @@ Repository = "https://github.com/microfluidica/electrolytes"
 [project.scripts]
 electrolytes = "electrolytes.__main__:app"
 
-[tool.setuptools]
-packages = ["electrolytes"]
-
 [tool.setuptools.dynamic]
 version = {attr = "electrolytes.__version__"}
 
 [tool.setuptools.package-data]
-electrolytes = [
-    "*.json",
-    "py.typed",
-]
+electrolytes = ["db1.json"]
 
 [tool.mypy]
 plugins = ["pydantic.mypy"]

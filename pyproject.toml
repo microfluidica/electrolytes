@@ -37,20 +37,12 @@ dependencies = [
 
 dynamic = ["version"]
 
-[project.optional-dependencies]
-lint = ["ruff"]
-typing = [
+[dependency-groups]
+dev = [
     "mypy==1.*",
     "pytest>=7,<9",
-]
-test = [
-    "pytest>=7,<9",
     "pytest-cov",
-]
-dev = [
-    "electrolytes[lint]",
-    "electrolytes[typing]",
-    "electrolytes[test]",
+    "ruff",
 ]
 
 [project.urls]

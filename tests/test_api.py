@@ -22,10 +22,10 @@ def test_get_component() -> None:
     c = database["LYSINE"]
     assert isinstance(c, Constituent)
     assert c.name == "LYSINE"
-    assert c.name in database
-    assert c in database  # type: ignore [comparison-overlap]
+    assert c.name in database  # ty: ignore[unsupported-operator]
+    assert c in database  # ty: ignore[unsupported-operator]
     assert c.name not in database.user_defined()
-    assert c not in database.user_defined()  # type: ignore [comparison-overlap]
+    assert c not in database.user_defined()
     assert len(c.mobilities()) == 6
     assert len(c.pkas()) == 6
     assert c.diffusivity() == pytest.approx(28.60 * 1e-9 * 8.314 * 300 / 96485)
@@ -51,11 +51,11 @@ def test_try_del_nonexistent() -> None:
 
 
 def test_try_add_default() -> None:
-    assert "SILVER" in database
+    assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
     assert "SILVER" not in database.user_defined()
     with pytest.warns(UserWarning):
         database.add(Constituent(name="SILVER", u_pos=[64.50], pkas_pos=[11.70]))
-    assert "SILVER" in database
+    assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
     assert "SILVER" not in database.user_defined()

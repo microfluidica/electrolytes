@@ -38,11 +38,16 @@ dependencies = [
 dynamic = ["version"]
 
 [dependency-groups]
-dev = [
-    "mypy==1.*",
+lint = ["ruff"]
+typing = ["ty"]
+test = [
     "pytest>=7,<9",
     "pytest-cov",
-    "ruff",
+]
+dev = [
+    {include-group = "lint"},
+    {include-group = "typing"},
+    {include-group = "test"},
 ]
 
 [project.urls]
@@ -57,14 +62,6 @@ version = {attr = "electrolytes.__version__"}
 
 [tool.setuptools.package-data]
 electrolytes = ["db1.json"]
-
-[tool.mypy]
-plugins = ["pydantic.mypy"]
-packages = [
-    "electrolytes",
-    "tests",
-]
-strict = true
 
 [tool.ruff.lint]
 extend-select = ["ALL"]

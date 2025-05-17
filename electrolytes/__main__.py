@@ -23,51 +23,51 @@ def add(
     p1: Annotated[
         tuple[float, float],
         typer.Option("+1", help="Mobility (*1e-9) and pKa for +1", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     p2: Annotated[
         tuple[float, float],
         typer.Option("+2", help="Mobility (*1e-9) and pKa for +2", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     p3: Annotated[
         tuple[float, float],
         typer.Option("+3", help="Mobility (*1e-9) and pKa for +3", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     p4: Annotated[
         tuple[float, float],
         typer.Option("+4", help="Mobility (*1e-9) and pKa for +4", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     p5: Annotated[
         tuple[float, float],
         typer.Option("+5", help="Mobility (*1e-9) and pKa for +5", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     p6: Annotated[
         tuple[float, float],
         typer.Option("+6", help="Mobility (*1e-9) and pKa for +6", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m1: Annotated[
         tuple[float, float],
         typer.Option("-1", help="Mobility (*1e-9) and pKa for -1", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m2: Annotated[
         tuple[float, float],
         typer.Option("-2", help="Mobility (*1e-9) and pKa for -2", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m3: Annotated[
         tuple[float, float],
         typer.Option("-3", help="Mobility (*1e-9) and pKa for -3", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m4: Annotated[
         tuple[float, float],
         typer.Option("-4", help="Mobility (*1e-9) and pKa for -4", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m5: Annotated[
         tuple[float, float],
         typer.Option("-5", help="Mobility (*1e-9) and pKa for -5", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     m6: Annotated[
         tuple[float, float],
         typer.Option("-6", help="Mobility (*1e-9) and pKa for -6", show_default=False),
-    ] = (None, None),  # type: ignore [assignment]
+    ] = (None, None),  # ty: ignore[invalid-parameter-default]
     *,
     force: Annotated[
         bool,
@@ -119,7 +119,7 @@ def add(
     )
 
     with database:
-        if name in database:
+        if name in database:  # type: ignore[unsupported-operator]
             if not database.is_user_defined(name):
                 typer.echo(f"Error: {name}: is a default component", err=True)
                 raise typer.Exit(code=1)

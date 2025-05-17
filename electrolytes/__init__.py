@@ -36,8 +36,12 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     pkas_pos: Annotated[
         list[float], Field(alias="pKaPos")
     ] = []  # [+1, +2, +3, ..., +pos_count]
-    neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # type: ignore [assignment]
-    pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # type: ignore [assignment]
+    neg_count: Annotated[  # ty: ignore[invalid-assignment]
+        int, Field(alias="negCount", validate_default=True)
+    ] = None
+    pos_count: Annotated[  # ty: ignore[invalid-assignment]
+        int, Field(alias="posCount", validate_default=True)
+    ] = None
 
     def mobilities(self) -> Sequence[float]:
         n = max(self.neg_count, self.pos_count, 3)
@@ -80,7 +84,8 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     @field_validator("name")
     @classmethod
     def _normalize_db1_names(cls, v: str, info: ValidationInfo) -> str:
-        if info.context and info.context.get("fix", None) == "db1":
+        context = info.context
+        if context is not None and context.get("fix", None) == "db1":
             v = v.replace(" ", "_").replace("Cl-", "CHLORO")
         return v
 
@@ -104,20 +109,22 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     @field_validator("pkas_neg", "pkas_pos")
     @classmethod
     def _pka_lengths(cls, v: list[float], info: ValidationInfo) -> list[float]:
-        assert isinstance(info.field_name, str)
-        if len(v) != len(info.data[f"u_{info.field_name[5:]}"]):
-            msg = f"len({info.field_name}) != len(u_{info.field_name[5:]})"
+        field_name = info.field_name
+        assert isinstance(field_name, str)
+        if len(v) != len(info.data[f"u_{field_name[5:]}"]):
+            msg = f"len({field_name}) != len(u_{field_name[5:]})"
             raise ValueError(msg)
         return v
 
     @field_validator("neg_count", "pos_count", mode="before")
     @classmethod
     def _counts(cls, v: Optional[int], info: ValidationInfo) -> int:
-        assert isinstance(info.field_name, str)
+        field_name = info.field_name
+        assert isinstance(field_name, str)
         if v is None:
-            v = len(info.data[f"u_{info.field_name[:3]}"])
-        elif v != len(info.data[f"u_{info.field_name[:3]}"]):
-            msg = f"{info.field_name} != len(u_{info.field_name[:3]})"
+            v = len(info.data[f"u_{field_name[:3]}"])
+        elif v != len(info.data[f"u_{field_name[:3]}"]):
+            msg = f"{field_name} != len(u_{field_name[:3]})"
             raise ValueError(msg)
         return v
 
@@ -157,6 +164,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
     @cached_property
     def _default_constituents(self) -> dict[str, Constituent]:
+        assert __package__ is not None
         data = pkgutil.get_data(__package__, "db1.json")
         if data is None:
             msg = "failed to load default constituents"
@@ -256,7 +264,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
         return sorted(self._user_constituents)
 
     @singledispatchmethod
-    def __contains__(self, _: object) -> bool:  # type: ignore [override]
+    def __contains__(self, _: object) -> bool:
         return False
 
     @__contains__.register
@@ -276,4 +284,5 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
         return name in self._user_constituents
 
 
+assert __package__ is not None
 database = _Database(Path(get_app_dir(__package__), "user_constituents.json"))

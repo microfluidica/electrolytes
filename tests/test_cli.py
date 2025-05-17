@@ -16,7 +16,7 @@ def test_version() -> None:
 
 
 def test_ls() -> None:
-    assert "SILVER" in database
+    assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
 
     result = runner.invoke(app, ["ls"])
@@ -33,7 +33,7 @@ def test_ls() -> None:
 
 
 def test_no_rm_default() -> None:
-    assert "SILVER" in database
+    assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
 
     result = runner.invoke(app, ["rm", "SILVER"])
@@ -60,7 +60,7 @@ def test_add_and_rm() -> None:
     with contextlib.suppress(KeyError):
         del database[name]
 
-    assert name not in database
+    assert name not in database  # ty: ignore[unsupported-operator]
     with pytest.raises(KeyError):
         database[name]
 
@@ -71,7 +71,7 @@ def test_add_and_rm() -> None:
     result = runner.invoke(app, ["info", name])
     assert result.exit_code != 0
 
-    assert "SILVER" in database
+    assert "SILVER" in database  # ty: ignore[unsupported-operator]
     result = runner.invoke(app, ["info", "SILVER", name])
     assert result.exit_code != 0
 
@@ -83,7 +83,7 @@ def test_add_and_rm() -> None:
     )
 
     assert result.exit_code == 0
-    assert name in database
+    assert name in database  # ty: ignore[unsupported-operator]
     c = database[name]
     assert len(c.mobilities()) == 6
     assert len(c.pkas()) == 6
@@ -125,7 +125,7 @@ def test_add_and_rm() -> None:
     with pytest.raises(KeyError):
         del database[name]
 
-    assert name not in database
+    assert name not in database  # ty: ignore[unsupported-operator]
 
     result = runner.invoke(app, ["rm", name])
     assert result.exit_code != 0
@@ -139,7 +139,7 @@ def test_extra_charges() -> None:
     with contextlib.suppress(KeyError):
         del database[name]
 
-    assert name not in database
+    assert name not in database  # ty: ignore[unsupported-operator]
     with pytest.raises(KeyError):
         database[name]
 
@@ -170,7 +170,7 @@ def test_extra_charges() -> None:
     )
 
     assert result.exit_code == 0
-    assert name in database
+    assert name in database  # ty: ignore[unsupported-operator]
     c = database[name]
     assert len(c.mobilities()) == 8
     assert len(c.pkas()) == 8
@@ -188,7 +188,7 @@ def test_extra_charges() -> None:
     with pytest.raises(KeyError):
         del database[name]
 
-    assert name not in database
+    assert name not in database  # ty: ignore[unsupported-operator]
 
     result = runner.invoke(app, ["rm", name])
     assert result.exit_code != 0

@@ -1,4 +1,6 @@
-from typing import Annotated, Optional
+from __future__ import annotations
+
+from typing import Annotated
 
 import typer
 
@@ -135,7 +137,7 @@ def add(
 @app.command()
 def info(
     names: Annotated[
-        Optional[list[str]],
+        list[str] | None,
         typer.Argument(help="Component names", autocompletion=complete_name),
     ] = None,
 ) -> None:
@@ -192,7 +194,7 @@ def info(
 def ls(
     *,
     user: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--user/--default", help="List only user-defined/default components"
         ),
@@ -218,7 +220,7 @@ def rm(
     ],
     *,
     force: Annotated[
-        Optional[bool], typer.Option("-f", help="Ignore non-existent components")
+        bool | None, typer.Option("-f", help="Ignore non-existent components")
     ] = False,
 ) -> None:
     """Remove user-defined components from the database."""
@@ -243,7 +245,7 @@ def rm(
 def search(
     text: str,
     user: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--user/--default", help="Search only user-defined/default components"
         ),
@@ -261,7 +263,7 @@ def search(
 
     match_indices = [name.find(text) for name in names]
 
-    for name, index in zip(names, match_indices):
+    for name, index in zip(names, match_indices, strict=True):
         if index != -1:
             typer.echo(
                 name[0:index]

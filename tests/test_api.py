@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import electrolytes
 import pytest
 from electrolytes import Constituent, database

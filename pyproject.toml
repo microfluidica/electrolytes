@@ -1,9 +1,12 @@
 [build-system]
-requires = ["setuptools>=69"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
 
 [project]
 name = "electrolytes"
+version = "0.4.7"
+license = "GPL-3.0-only"
+license-files = ["LICENSE.txt"]
 description = "Electrolyte database manager"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -35,8 +38,6 @@ dependencies = [
     "typing-extensions>=4,<5; python_version<'3.11'",
 ]
 
-dynamic = ["version"]
-
 [dependency-groups]
 lint = ["ruff"]
 typing = ["ty"]
@@ -57,11 +58,8 @@ Repository = "https://github.com/microfluidica/electrolytes"
 [project.scripts]
 electrolytes = "electrolytes.__main__:app"
 
-[tool.setuptools.dynamic]
-version = {attr = "electrolytes.__version__"}
-
-[tool.setuptools.package-data]
-electrolytes = ["db1.json"]
+[tool.uv.build-backend]
+module-root = "."
 
 [tool.ruff.lint]
 extend-select = ["ALL"]

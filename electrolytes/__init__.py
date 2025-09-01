@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.metadata
 import itertools
 import pkgutil
 import sys
@@ -29,7 +30,7 @@ else:
 if TYPE_CHECKING:
     from types import TracebackType
 
-__version__ = "0.4.7"
+__version__ = importlib.metadata.version(__package__)  # type: ignore[name-defined]
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):

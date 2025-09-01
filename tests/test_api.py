@@ -56,7 +56,7 @@ def test_try_add_default() -> None:
     assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
     assert "SILVER" not in database.user_defined()
-    with pytest.warns(UserWarning):
+    with pytest.warns(UserWarning, match=".*was not added.*"):
         database.add(Constituent(name="SILVER", u_pos=[64.50], pkas_pos=[11.70]))
     assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")

@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "electrolytes"
-version = "0.4.7"
+version = "0.4.8"
 license = "GPL-3.0-only"
 license-files = ["LICENSE.txt"]
 description = "Electrolyte database manager"

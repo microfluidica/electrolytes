@@ -58,9 +58,6 @@ Repository = "https://github.com/microfluidica/electrolytes"
 [project.scripts]
 electrolytes = "electrolytes.__main__:app"
 
-[tool.uv.build-backend]
-module-root = "."
-
 [tool.ruff.lint]
 extend-select = ["ALL"]
 extend-ignore = [

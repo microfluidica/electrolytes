@@ -48,12 +48,8 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     pkas_pos: Annotated[
         list[float], Field(alias="pKaPos")
     ] = []  # [+1, +2, +3, ..., +pos_count]
-    neg_count: Annotated[  # ty: ignore[invalid-assignment]
-        int, Field(alias="negCount", validate_default=True)
-    ] = None
-    pos_count: Annotated[  # ty: ignore[invalid-assignment]
-        int, Field(alias="posCount", validate_default=True)
-    ] = None
+    neg_count: Annotated[int, Field(alias="negCount", validate_default=True)] = None  # ty: ignore[invalid-assignment]
+    pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # ty: ignore[invalid-assignment]
 
     def mobilities(self) -> Sequence[float]:
         n = max(self.neg_count, self.pos_count, 3)
@@ -248,7 +244,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
     def add(self, constituent: Constituent) -> None:
         with self:
-            if constituent.name not in self:
+            if constituent.name not in self:  # ty: ignore[unsupported-operator]
                 self._user_constituents[constituent.name] = constituent
                 self._user_constituents_dirty = True
             else:

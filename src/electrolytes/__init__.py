@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import importlib.metadata
 import itertools
 import pkgutil
@@ -8,7 +6,7 @@ from collections.abc import Collection, Iterator, Mapping, Sequence
 from contextlib import ContextDecorator, suppress
 from functools import cached_property, singledispatchmethod
 from pathlib import Path
-from typing import TYPE_CHECKING, Annotated
+from typing import Annotated
 from warnings import warn
 
 from filelock import FileLock
@@ -27,8 +25,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import Self
 
-if TYPE_CHECKING:
-    from types import TracebackType
+from types import TracebackType
 
 __version__ = importlib.metadata.version(__package__)  # type: ignore[name-defined]
 
@@ -137,7 +134,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return v
 
     @model_validator(mode="after")
-    def _pkas_not_increasing(self) -> Constituent:
+    def _pkas_not_increasing(self) -> Self:
         pkas = [*self.pkas_neg, *self.pkas_pos]
 
         if not all(x >= y for x, y in itertools.pairwise(pkas)):

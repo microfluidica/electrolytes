@@ -6,13 +6,10 @@ import electrolytes
 import pytest
 from electrolytes import Constituent, database
 from electrolytes.__main__ import app
-from typer.testing import CliRunner
-
-runner = CliRunner()
 
 
 def test_version() -> None:
-    result = runner.invoke(app, ["--version"])
+    result = app(["--version"])
     assert result.exit_code == 0
     assert electrolytes.__version__ in result.stdout
 
@@ -21,15 +18,15 @@ def test_ls() -> None:
     assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
 
-    result = runner.invoke(app, ["ls"])
+    result = app(["ls"])
     assert result.exit_code == 0
     assert "SILVER" in result.stdout
 
-    result = runner.invoke(app, ["ls", "--default"])
+    result = app(["ls", "--default"])
     assert result.exit_code == 0
     assert "SILVER" in result.stdout
 
-    result = runner.invoke(app, ["ls", "--user"])
+    result = app(["ls", "--user"])
     assert result.exit_code == 0
     assert "SILVER" not in result.stdout
 
@@ -38,19 +35,19 @@ def test_no_rm_default() -> None:
     assert "SILVER" in database  # ty: ignore[unsupported-operator]
     assert not database.is_user_defined("SILVER")
 
-    result = runner.invoke(app, ["rm", "SILVER"])
+    result = app(["rm", "SILVER"])
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["rm", "-f", "SILVER"])
+    result = app(["rm", "-f", "SILVER"])
     assert result.exit_code != 0
 
 
 def test_info() -> None:
-    result = runner.invoke(app, ["info"])
+    result = app(["info"])
     assert result.exit_code == 0
     assert str(len(database)) in result.stdout
 
-    result = runner.invoke(app, ["info", "SILVER", "ZINC"])
+    result = app(["info", "SILVER", "ZINC"])
     assert result.exit_code == 0
     assert "SILVER" in result.stdout
     assert "ZINC" in result.stdout
@@ -66,22 +63,22 @@ def test_add_and_rm() -> None:
     with pytest.raises(KeyError):
         database[name]
 
-    result = runner.invoke(app, ["ls"])
+    result = app(["ls"])
     assert result.exit_code == 0
     assert name.upper() not in result.stdout
 
-    result = runner.invoke(app, ["info", name])
+    result = app(["info", name])
     assert result.exit_code != 0
 
     assert "SILVER" in database  # ty: ignore[unsupported-operator]
-    result = runner.invoke(app, ["info", "SILVER", name])
+    result = app(["info", "SILVER", name])
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["add", name.lower(), "-2", "4", "5"])
+    result = app(["add", name.lower(), "-2", "4", "5"])
     assert result.exit_code != 0
 
-    result = runner.invoke(
-        app, ["add", name.lower(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
+    result = app(
+        ["add", name.lower(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
     )
 
     assert result.exit_code == 0
@@ -95,33 +92,33 @@ def test_add_and_rm() -> None:
     assert c.pkas()[2:-1] == pytest.approx([-1.5, 3, 5])
     assert c.pkas()[-1] == Constituent._default_pka(-3)
 
-    result = runner.invoke(
-        app, ["add", name.upper(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
+    result = app(
+        ["add", name.upper(), "-1", "2", "3", "-2", "4", "5", "+1", "6", "-1.5"]
     )
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["add", "-f", name, "+1", "2", "7", "+2", "4", "5"])
+    result = app(["add", "-f", name, "+1", "2", "7", "+2", "4", "5"])
     assert result.exit_code == 0
     assert database[name].pos_count == 2
 
-    result = runner.invoke(app, ["info", name])
+    result = app(["info", name])
     assert result.exit_code == 0
     assert name.upper() in result.stdout
     assert "user-defined" in result.stdout
 
-    result = runner.invoke(app, ["ls"])
+    result = app(["ls"])
     assert result.exit_code == 0
     assert name.upper() in result.stdout
 
-    result = runner.invoke(app, ["ls", "--user"])
+    result = app(["ls", "--user"])
     assert result.exit_code == 0
     assert name.upper() in result.stdout
 
-    result = runner.invoke(app, ["ls", "--default"])
+    result = app(["ls", "--default"])
     assert result.exit_code == 0
     assert name.upper() not in result.stdout
 
-    result = runner.invoke(app, ["rm", name])
+    result = app(["rm", name])
     assert result.exit_code == 0
 
     with pytest.raises(KeyError):
@@ -129,10 +126,10 @@ def test_add_and_rm() -> None:
 
     assert name not in database  # ty: ignore[unsupported-operator]
 
-    result = runner.invoke(app, ["rm", name])
+    result = app(["rm", name])
     assert result.exit_code != 0
 
-    result = runner.invoke(app, ["rm", "-f", name])
+    result = app(["rm", "-f", name])
     assert result.exit_code == 0
 
 
@@ -145,8 +142,7 @@ def test_extra_charges() -> None:
     with pytest.raises(KeyError):
         database[name]
 
-    result = runner.invoke(
-        app,
+    result = app(
         [
             "add",
             name,
@@ -181,10 +177,10 @@ def test_extra_charges() -> None:
         [2, 4, 6, 8, 10, 12, Constituent._default_pka(-3), Constituent._default_pka(-4)]
     )
 
-    result = runner.invoke(app, ["info", name])
+    result = app(["info", name])
     assert result.exit_code == 0
 
-    result = runner.invoke(app, ["rm", name])
+    result = app(["rm", name])
     assert result.exit_code == 0
 
     with pytest.raises(KeyError):
@@ -192,5 +188,5 @@ def test_extra_charges() -> None:
 
     assert name not in database  # ty: ignore[unsupported-operator]
 
-    result = runner.invoke(app, ["rm", name])
+    result = app(["rm", name])
     assert result.exit_code != 0

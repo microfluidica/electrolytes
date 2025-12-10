@@ -2,6 +2,7 @@ extend = "../pyproject.toml"
 
 [lint]
 extend-ignore = [
+    "D",
     "PLR0915",
     "PLR2004",
     "S603",

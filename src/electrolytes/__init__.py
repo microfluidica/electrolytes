@@ -1,3 +1,5 @@
+"""Electrolyte database manager."""
+
 import importlib.metadata
 import itertools
 import pkgutil
@@ -10,6 +12,7 @@ from typing import Annotated
 from warnings import warn
 
 from filelock import FileLock
+from platformdirs import user_config_path
 from pydantic import (
     BaseModel,
     Field,
@@ -18,7 +21,6 @@ from pydantic import (
     field_validator,
     model_validator,
 )
-from typer import get_app_dir
 
 if sys.version_info >= (3, 11):
     from typing import Self
@@ -31,6 +33,28 @@ __version__ = importlib.metadata.version(__package__)  # type: ignore[name-defin
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):
+    """A constituent in the electrolyte database.
+
+    Attributes
+    ----------
+    id:
+        Database ID (if any).
+    name:
+        Component name (all uppercase, no whitespace).
+    u_neg:
+        List of mobilities for negative charges (in 10^-9 m^2/V/s), ordered from -1 to -neg_count.
+    u_pos:
+        List of mobilities for positive charges (in 10^-9 m^2/V/s), ordered from +1 to +pos_count.
+    pkas_neg:
+        List of pKa values for negative charges, ordered from -1 to -neg_count.
+    pkas_pos:
+        List of pKa values for positive charges, ordered from +1 to +pos_count.
+    neg_count:
+        Number of negative charge states.
+    pos_count:
+        Number of positive charge states.
+    """
+
     id: int | None = None
     name: str
     u_neg: Annotated[
@@ -49,6 +73,16 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     pos_count: Annotated[int, Field(alias="posCount", validate_default=True)] = None  # ty: ignore[invalid-assignment]
 
     def mobilities(self) -> Sequence[float]:
+        """
+        Get the mobilities for all charge states.
+
+        The return is padded with zeros to at least 3 positive and 3 negative charges.
+
+        Returns
+        -------
+        mobs:
+            Mobilities (in SI units) for charges -n to +n, where n = max(neg_count, pos_count, 3).
+        """
         n = max(self.neg_count, self.pos_count, 3)
         ret = (
             [0.0] * (n - self.pos_count)
@@ -60,6 +94,16 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return ret
 
     def pkas(self) -> Sequence[float]:
+        """
+        Get the pKa values for all charge states.
+
+        The return is padded with default values to at least 3 positive and 3 negative charges.
+
+        Returns
+        -------
+        pkas:
+            pKa values for charges -n to +n, where n = max(neg_count, pos_count, 3).
+        """
         n = max(self.neg_count, self.pos_count, 3)
         ret = (
             [self._default_pka(c) for c in range(n, self.pos_count, -1)]
@@ -71,6 +115,14 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return ret
 
     def diffusivity(self) -> float:
+        """
+        Compute the diffusivity.
+
+        Returns
+        -------
+        diffusivity:
+            Diffusivity in m^2/s.
+        """
         mobs = []
         with suppress(IndexError):
             mobs.append(self.u_neg[-1] * 1e-9)
@@ -290,4 +342,4 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
 
 assert __package__ is not None
-database = _Database(Path(get_app_dir(__package__), "user_constituents.json"))
+database = _Database(user_config_path(__package__) / "user_constituents.json")

@@ -27,7 +27,8 @@ else:
 
 from types import TracebackType
 
-__version__ = importlib.metadata.version(__package__)  # type: ignore[name-defined]
+assert __package__ is not None
+__version__ = importlib.metadata.version(__package__)
 
 
 class Constituent(BaseModel, populate_by_name=True, frozen=True):
@@ -241,7 +242,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
     def add(self, constituent: Constituent) -> None:
         with self:
-            if constituent.name not in self:  # ty: ignore[unsupported-operator]
+            if constituent.name not in self:
                 self._user_constituents[constituent.name] = constituent
                 self._user_constituents_dirty = True
             else:

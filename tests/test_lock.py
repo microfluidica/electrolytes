@@ -12,7 +12,7 @@ def test_lock_api_cli() -> None:
     with contextlib.suppress(KeyError):
         del database[name]
 
-    assert name not in database  # ty: ignore[unsupported-operator]
+    assert name not in database
 
     database.add(Constituent(name=name, u_neg=[2.73], pkas_neg=[3.14]))
 
@@ -23,4 +23,4 @@ def test_lock_api_cli() -> None:
     proc.wait()
 
     assert proc.returncode != 0
-    assert name not in database  # ty: ignore[unsupported-operator]
+    assert name not in database

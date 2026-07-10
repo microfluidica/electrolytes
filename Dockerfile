@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools \
 # set up bash completion for all users
  && echo "" >> /etc/bash.bashrc \
  && echo "# electrolytes bash completion" >> /etc/bash.bashrc \
- && electrolytes --show-completion bash >> /etc/bash.bashrc \
+ && _ELECTROLYTES_COMPLETE=source_bash electrolytes >> /etc/bash.bashrc \
 # smoke test
  && electrolytes info SILVER
 

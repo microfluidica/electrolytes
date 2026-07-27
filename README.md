@@ -54,10 +54,10 @@ from electrolytes import database, Constituent
 You can look up components in the `database` as you would with `dict` (with component names as keys), and also add user-defined components with the `add` method (as if `database` were a set). Components are instances of the `Constituent` class. Extra methods are also defined for `database`:
 
 ```python
+def user_defined(self) -> Iterable[str]: ...
 
-    def user_defined(self) -> Iterable[str]: ...
 
-    def is_user_defined(self, name: str) -> bool: ...
+def is_user_defined(self, name: str) -> bool: ...
 ```
 
 The `database` object is also usable as a context manager (i.e. `with database:`), which allows multiple operations to be performed with exclusive access to the database (locking out any other processes for the duration).
@@ -75,7 +75,9 @@ class Constituent:
     pkas_pos: Sequence[float] = []  # pKas for [+1, +2, +3, ...]
 
     # Interface for electroMicroTransport
-    def mobilities(self) -> Sequence[float]: ...  # for [..., +3, +2, +1, -1, -2, -3, ...], SI units
+    def mobilities(
+        self,
+    ) -> Sequence[float]: ...  # for [..., +3, +2, +1, -1, -2, -3, ...], SI units
     def pkas(self) -> Sequence[float]: ...  # for [..., +3, +2, +1, -1, -2, -3, ...]
     # NOTE: the above are padded if needed so that +3 and -3 are always present (len >= 6)
     def diffusivity(self) -> float: ...  # SI units

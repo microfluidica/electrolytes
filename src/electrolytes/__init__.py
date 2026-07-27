@@ -187,7 +187,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
             return {}
         try:
             user_constituents = _load_constituents(user_data)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             warn(
                 f"failed to load user constituents from {self._user_constituents_file}: {type(e).__name__}",
                 RuntimeWarning,

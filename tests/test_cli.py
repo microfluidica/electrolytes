@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import contextlib
 
-import electrolytes
 import pytest
+from typer.testing import CliRunner
+
+import electrolytes
 from electrolytes import Constituent, database
 from electrolytes.__main__ import app
-from typer.testing import CliRunner
 
 runner = CliRunner()
 

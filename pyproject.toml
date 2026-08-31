@@ -1,5 +1,5 @@
 [build-system]
-requires = ["uv_build>=0.11,<0.13"]
+requires = ["uv_build>=0.12,<0.13"]
 build-backend = "uv_build"
 
 [project]
@@ -38,11 +38,11 @@ dependencies = [
 ]
 
 [dependency-groups]
-lint = ["ruff"]
-typing = ["ty"]
+lint = ["ruff>=0.16.5,<0.17"]
+typing = ["ty>=0.0.76,<0.1"]
 test = [
     "pytest>=9,<10",
-    "pytest-cov",
+    "pytest-cov>=7,<8",
 ]
 dev = [
     {include-group = "lint"},

@@ -1,12 +1,12 @@
 import importlib.metadata
 import itertools
 import pkgutil
-import sys
 from collections.abc import Collection, Iterator, Mapping, Sequence
-from contextlib import ContextDecorator, suppress
+from contextlib import AbstractContextManager, ContextDecorator, suppress
 from functools import cached_property, singledispatchmethod
 from pathlib import Path
-from typing import Annotated
+from types import TracebackType
+from typing import Annotated, Self, override
 from warnings import warn
 
 from filelock import FileLock
@@ -19,13 +19,6 @@ from pydantic import (
     model_validator,
 )
 from typer import get_app_dir
-
-if sys.version_info >= (3, 11):
-    from typing import Self
-else:
-    from typing_extensions import Self
-
-from types import TracebackType
 
 assert __package__ is not None
 __version__ = importlib.metadata.version(__package__)
@@ -160,7 +153,9 @@ def _dump_constituents(constituents: list[Constituent]) -> bytes:
     )
 
 
-class _Database(Mapping[str, Constituent], ContextDecorator):
+class _Database(
+    Mapping[str, Constituent], AbstractContextManager["_Database"], ContextDecorator
+):
     def __init__(self, user_constituents_file: Path) -> None:
         self._user_constituents_file = user_constituents_file
         self._user_constituents_lock = FileLock(
@@ -208,6 +203,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
             self._user_constituents_file.write_bytes(data)
         self._user_constituents_dirty = False
 
+    @override
     def __enter__(self) -> Self:
         if not self._user_constituents_lock.is_locked:
             self._invalidate_user_constituents()
@@ -215,6 +211,7 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
 
         return self
 
+    @override
     def __exit__(
         self,
         exc_type: type[BaseException] | None,
@@ -230,9 +227,11 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
         finally:
             self._user_constituents_lock.release()
 
+    @override
     def __iter__(self) -> Iterator[str]:
         yield from sorted([*self._default_constituents, *self._user_constituents])
 
+    @override
     def __getitem__(self, name: str) -> Constituent:
         name = name.upper()
         try:
@@ -263,12 +262,14 @@ class _Database(Mapping[str, Constituent], ContextDecorator):
                 raise ValueError(msg) from None
             raise
 
+    @override
     def __len__(self) -> int:
         return len(self._default_constituents) + len(self._user_constituents)
 
     def user_defined(self) -> Collection[str]:
         return sorted(self._user_constituents)
 
+    @override
     @singledispatchmethod
     def __contains__(self, _: object) -> bool:
         return False

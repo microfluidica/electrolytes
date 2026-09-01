@@ -93,7 +93,7 @@ def add(
     )
 
     with database:
-        if name in database:  # type: ignore[unsupported-operator]
+        if name in database:
             if not database.is_user_defined(name):
                 print(f"Error: {name}: is a default component", file=sys.stderr)
                 sys.exit(1)

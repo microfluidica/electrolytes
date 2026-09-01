@@ -36,7 +36,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
     name:
         Component name (all uppercase, no whitespace).
     u_neg:
-        List of mobilities for negative charges (in 10^-9 m^2/V/s), ordered from -1 to -neg_count.
+        List of mobilities for negative charges (in 10^-9 m^2/V/s), ordered from -neg_count to -1.
     u_pos:
         List of mobilities for positive charges (in 10^-9 m^2/V/s), ordered from +1 to +pos_count.
     pkas_neg:

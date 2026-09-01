@@ -126,7 +126,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
         return max(mobs, default=0) * 8.314 * 300 / 96485
 
     @staticmethod
-    def _default_pka(charge: int) -> float:
+    def _default_pka(charge: int, /) -> float:
         assert charge != 0
         if charge < 0:
             return 14 - charge
@@ -134,7 +134,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     @field_validator("name")
     @classmethod
-    def _normalize_db1_names(cls, v: str, info: ValidationInfo) -> str:
+    def _normalize_db1_names(cls, v: str, info: ValidationInfo, /) -> str:
         context = info.context
         if context is not None and context.get("fix", None) == "db1":
             v = v.replace(" ", "_").replace("Cl-", "CHLORO")
@@ -142,7 +142,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     @field_validator("name")
     @classmethod
-    def _no_whitespace(cls, v: str, _: ValidationInfo) -> str:
+    def _no_whitespace(cls, v: str, _: ValidationInfo, /) -> str:
         parts = v.split()
         if len(parts) > 1 or len(parts[0]) != len(v):
             msg = "name cannot contain any whitespace"
@@ -151,7 +151,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     @field_validator("name")
     @classmethod
-    def _all_uppercase(cls, v: str, _: ValidationInfo) -> str:
+    def _all_uppercase(cls, v: str, _: ValidationInfo, /) -> str:
         if not v.isupper():
             msg = "name must be all uppercase"
             raise ValueError(msg)
@@ -159,7 +159,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     @field_validator("pkas_neg", "pkas_pos")
     @classmethod
-    def _pka_lengths(cls, v: list[float], info: ValidationInfo) -> list[float]:
+    def _pka_lengths(cls, v: list[float], info: ValidationInfo, /) -> list[float]:
         field_name = info.field_name
         assert isinstance(field_name, str)
         if len(v) != len(info.data[f"u_{field_name[5:]}"]):
@@ -169,7 +169,7 @@ class Constituent(BaseModel, populate_by_name=True, frozen=True):
 
     @field_validator("neg_count", "pos_count", mode="before")
     @classmethod
-    def _counts(cls, v: int | None, info: ValidationInfo) -> int:
+    def _counts(cls, v: int | None, info: ValidationInfo, /) -> int:
         field_name = info.field_name
         assert isinstance(field_name, str)
         if v is None:
@@ -194,12 +194,12 @@ _StoredConstituents = TypeAdapter(dict[str, list[Constituent]])
 
 
 def _load_constituents(
-    data: bytes, context: dict[str, str] | None = None
+    data: bytes, /, *, context: dict[str, str] | None = None
 ) -> list[Constituent]:
     return _StoredConstituents.validate_json(data, context=context)["constituents"]
 
 
-def _dump_constituents(constituents: list[Constituent]) -> bytes:
+def _dump_constituents(constituents: list[Constituent], /) -> bytes:
     return _StoredConstituents.dump_json(
         {"constituents": constituents}, by_alias=True, indent=4
     )
@@ -208,7 +208,7 @@ def _dump_constituents(constituents: list[Constituent]) -> bytes:
 class _Database(
     Mapping[str, Constituent], AbstractContextManager["_Database"], ContextDecorator
 ):
-    def __init__(self, user_constituents_file: Path) -> None:
+    def __init__(self, user_constituents_file: Path, /) -> None:
         self._user_constituents_file = user_constituents_file
         self._user_constituents_lock = FileLock(
             self._user_constituents_file.with_suffix(".lock")
@@ -269,6 +269,7 @@ class _Database(
         exc_type: type[BaseException] | None,
         exc_value: BaseException | None,
         traceback: TracebackType | None,
+        /,
     ) -> None:
         try:
             if (
@@ -284,14 +285,14 @@ class _Database(
         yield from sorted([*self._default_constituents, *self._user_constituents])
 
     @override
-    def __getitem__(self, name: str) -> Constituent:
+    def __getitem__(self, name: str, /) -> Constituent:
         name = name.upper()
         try:
             return self._user_constituents[name]
         except KeyError:
             return self._default_constituents[name]
 
-    def add(self, constituent: Constituent) -> None:
+    def add(self, constituent: Constituent, /) -> None:
         with self:
             if constituent.name not in self:
                 self._user_constituents[constituent.name] = constituent
@@ -302,7 +303,7 @@ class _Database(
                     stacklevel=2,
                 )
 
-    def __delitem__(self, name: str) -> None:
+    def __delitem__(self, name: str, /) -> None:
         name = name.upper()
         try:
             with self:
@@ -323,16 +324,16 @@ class _Database(
 
     @override
     @singledispatchmethod
-    def __contains__(self, _: object) -> bool:
+    def __contains__(self, _: object, /) -> bool:
         return False
 
     @__contains__.register
-    def _(self, obj: str) -> bool:
+    def _(self, obj: str, /) -> bool:
         name = obj.upper()
         return name in self._default_constituents or name in self._user_constituents
 
     @__contains__.register
-    def _(self, obj: Constituent) -> bool:
+    def _(self, obj: Constituent, /) -> bool:
         try:
             return obj == self[obj.name]
         except KeyError:

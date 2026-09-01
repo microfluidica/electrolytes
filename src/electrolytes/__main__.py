@@ -33,12 +33,10 @@ def add(
     ----------
     name:
         Component name (case-insensitive).
-    +1, +2, +3, +4, +5, +6:
-        Mobility (*1e-9) and pKa for positive charges.
-    -1, -2, -3, -4, -5, -6:
-        Mobility (*1e-9) and pKa for negative charges.
+    charges:
+        Repeated triplets: <charge> <mobility> <pKa> (e.g. "-1 2 3 +1 6 -1.5").
     force:
-        Do not prompt before replacing a user-defined component with the same name.
+        Overwrite an existing user-defined component with the same name.
     """
     name = name.upper()
 

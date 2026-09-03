@@ -34,8 +34,6 @@ dependencies = [
     "filelock>=3.12.3,<4",
     "platformdirs>=4,<5",
     "pydantic>=2.0.3,<3",
-    "pydantic>=2.8.1; python_version >= '3.13'",
-    "pydantic>=2.12.1; python_version >= '3.14'",
 ]
 
 [dependency-groups]

@@ -30,7 +30,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "cyclopts>=4.4,<5",
+    "cyclopts>=4.4,<6",
     "filelock>=3.12.3,<5",
     "platformdirs>=4,<5",
     "pydantic>=2.0.3,<3",

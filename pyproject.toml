@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "electrolytes"
-version = "0.5.1"
+version = "0.5.2"
 license = "GPL-3.0-only"
 description = "Electrolyte database manager"
 readme = "README.md"
